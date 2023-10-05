@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Base2</title>
+    <style>
+
+    </style>
+</head>
+<body>
+<form>
+    <table>
+        <th>Đăng ký học viên</th>
+
+        <tr>
+            <td>Họ và tên</td>
+            <td colspan="2"><input name="name" type="text"></td>
+        </tr>
+        <tr>
+            <td>Ngày sinh</td>
+            <td colspan="2"><input name="dob" type="date"></td>
+        </tr>
+        <tr>
+            <td>Giới tính</td>
+            <td><input name="gender" type="radio">Nam</td>
+            <td><input name="gender" type="radio">Nữ</td>
+        </tr>
+        <tr>
+            <td>Địa chỉ</td>
+            <td colspan="2"><textarea name="address"></textarea></td>
+        </tr>
+        <tr>
+            <td>Lớp</td>
+            <td colspan="2">
+                <select>
+                    <option>Lớp 10</option>
+                    <option>Lớp 11</option>
+                    <option>Lớp 12</option>
+
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>Email</td>
+            <td colspan="2"><input name="email" type="email"></td>
+        </tr>
+        <tr>
+            <td rowspan="2" style="padding-bottom: 23px">Điện thoại</td>
+            <td colspan="2"><input name="phone-number" type="number"></td>
+        </tr>
+        <tr>
+            <td>
+                <button type="submit">Đăng ký</button>
+            </td>
+            <td>
+                <button type="submit">Nhập lại</button>
+            </td>
+
+        </tr>
+
+    </table>
+</form>
+</body>
+</html>
