@@ -4,33 +4,45 @@
     <meta charset="UTF-8">
     <title>Base2</title>
     <style>
-
+        .tittle{
+            background-color:aqua;
+            color: blue;
+        }
+        table{
+            background-color: #e3e7be;
+            height: 300px;
+            width: 300px;
+        }
+        .blue{
+            color: blue;
+        }
     </style>
 </head>
 <body>
 <form>
     <table>
-        <th>Đăng ký học viên</th>
-
+        <tr class="tittle">
+        <th colspan="2">ĐĂNG KÝ HỌC VIÊN</th>
+        </tr>
         <tr>
-            <td>Họ và tên</td>
+            <td class="blue">Họ và tên</td>
             <td colspan="2"><input name="name" type="text"></td>
         </tr>
         <tr>
-            <td>Ngày sinh</td>
+            <td class="blue">Ngày sinh</td>
             <td colspan="2"><input name="dob" type="date"></td>
         </tr>
         <tr>
-            <td>Giới tính</td>
+            <td class="blue">Giới tính</td>
             <td><input name="gender" type="radio">Nam</td>
             <td><input name="gender" type="radio">Nữ</td>
         </tr>
         <tr>
-            <td>Địa chỉ</td>
+            <td class="blue">Địa chỉ</td>
             <td colspan="2"><textarea name="address"></textarea></td>
         </tr>
         <tr>
-            <td>Lớp</td>
+            <td class="blue">Lớp</td>
             <td colspan="2">
                 <select>
                     <option>Lớp 10</option>
@@ -41,11 +53,11 @@
             </td>
         </tr>
         <tr>
-            <td>Email</td>
+            <td class="blue">Email</td>
             <td colspan="2"><input name="email" type="email"></td>
         </tr>
         <tr>
-            <td rowspan="2" style="padding-bottom: 23px">Điện thoại</td>
+            <td rowspan="2" style="padding-bottom: 23px" class="blue">Điện thoại</td>
             <td colspan="2"><input name="phone-number" type="number"></td>
         </tr>
         <tr>
