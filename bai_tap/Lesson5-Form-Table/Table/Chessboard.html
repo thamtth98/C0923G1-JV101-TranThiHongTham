@@ -5,7 +5,6 @@
     <title>Chessboard</title>
     <style>
         table td, th {
-            border: 1px solid darkgray;
             border-collapse: collapse;
             background-color: black;
         }
@@ -16,11 +15,11 @@
             border-collapse: collapse;
         }
 
-        table.chessboard tr:nth-child(2n+1) td:nth-child(2n+1) {
-            background-color: white; /* Màu đen cho các ô cột lẻ */
+        table tr:nth-child(2n+1) td:nth-child(2n+1) {
+            background-color: white; /* Màu trắng cho các ô cột lẻ */
         }
-        table.chessboard tr:nth-child(2n) td:nth-child(2n) {
-            background-color: white; /* Màu đen cho các ô cột lẻ */
+        table tr:nth-child(2n) td:nth-child(2n) {
+            background-color: white; /* Màu trắng cho các ô cột lẻ */
         }
         #yellow {
             background-color: yellow;
@@ -32,7 +31,7 @@
     </style>
 </head>
 <body>
-<table class="chessboard">
+<table>
     <tr style="background-color: yellow">
         <th></th>
         <th>1</th>

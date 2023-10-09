@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tip calculator</title>
+    <script src="tipCalculator.js"></script>
+</head>
+<style>
+    body {
+        line-height: 30px;
+        /*width: 300px;*/
+    }
+
+    #header {
+        background-color: black;
+        color: white;
+        text-align: center;
+        font-size: 20px;
+    }
+
+    #footer {
+        text-align: center;
+    }
+
+    .btn {
+        padding: 10px;
+        background-color: #bb3636;
+        color: white;
+    }
+    .container{
+        background-color: #bb3636;
+        padding: 20px;
+        width: 300px;
+    }
+    .contain{
+        background-color: #dddddd;
+        width: 290px;
+        padding: 5px;
+        border-radius: 15px;
+    }
+
+</style>
+<body>
+<div class="container">
+    <div class="contain">
+        <div id="header">TIP CALCULATOR</div>
+        <div id="body">
+            <label>
+                How much was your bill?<br>
+                $ <input type="number" id="bill">
+            </label><br>
+            <label>
+                How was your service? <br>
+                <select id="service">
+                    <option>30% - Outstanding</option>
+                    <option>20% - Good</option>
+                    <option>15% - It was OK</option>
+                    <option>10% - Bad</option>
+                    <option>5% - Terrible</option>
+                </select>
+            </label><br>
+            <label>
+                How many people are sharing the bill?<br>
+                <input type="number" id="people"> people
+            </label>
+        </div>
+        <br>
+        <div id="footer">
+            <input type="button" VALUE="CALCULATE!" onclick="calculate()" class="btn">
+            <div>
+                <p>TIP AMOUNT</p>
+                <p id="result">$</p>
+                <p>each</p>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
