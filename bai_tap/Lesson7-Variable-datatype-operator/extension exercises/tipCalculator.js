@@ -20,7 +20,10 @@ function calculate() {
             result = bill * 0.05 / people
             break;
     }
-    console.log(result)
-    document.getElementById("result").innerHTML += result
+    // var a = 5;
+    // var b = --a + a++ + a--;
+    // console.log(a);
+    console.log(result);
+    document.getElementById("result").innerHTML += result;
 }
 

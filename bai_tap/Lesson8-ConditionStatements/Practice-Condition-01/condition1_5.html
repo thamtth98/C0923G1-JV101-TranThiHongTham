@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let testMark = +prompt("Nhập điểm bài kiểm tra");
+  let midtermMark = +prompt("Nhập điểm kiểm tra giữa kỳ");
+  let finalMark = +prompt("Nhập điểm kiểm tra cuối kỳ");
+  let average = (testMark*0.1 + midtermMark*0.3 + finalMark*0.6);
+  if(average >= 8){
+      alert("Học sinh giỏi");
+  } else if(average >= 6.5) {
+      alert("Học sinh khá");
+  } else {
+      alert("Học sinh trung bình");
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let age = +prompt("Nhập vào số tuổi");
+    if(age > 0 && parseInt(age) === age) {
+        if(age >= 16) {
+            alert("Đủ điều kiện vào học lớp 10");
+        } else {
+            alert("Không đủ tuổi vào học lớp 10")
+        }
+    } else {
+        alert("Nhập tuổi sai, nhập lại tuổi");
+        age = +prompt("Nhập lại tuổi");
+    }
+</script>
+</body>
+</html>

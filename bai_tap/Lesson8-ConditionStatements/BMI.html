@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BMI</title>
+</head>
+<body>
+<h2>Tính chỉ số BMI (chỉ số cân nặng)</h2>
+<table>
+    <tr>
+        <td>Nhập cân nặng: (kg)</td>
+        <td><input type="number" id="weight"></td>
+    </tr>
+    <tr>
+        <td>Nhập chiều cao: (m)</td>
+        <td><input type="number" id="height"></td>
+    </tr>
+    <tr>
+        <td><input type="button" value="Kiểm tra" onclick="check()"></td>
+    </tr>
+</table>
+<div id="result"></div>
+<script>
+    function check(){
+        let weight = document.getElementById("weight").value;
+        let height = document.getElementById("height").value;
+        let bmi = weight/(Math.pow(height,2));
+        let result = document.getElementById("result");
+        if(bmi >= 30) {
+            result = "Béo phì";
+        } else if (bmi >= 25) {
+            result = "Bình thường";
+        } else if (bmi >= 18.5) {
+            result = "Gầy";
+        }else if (bmi < 18.5) {
+            result = "Quá gầy";
+        }
+        document.getElementById("result").innerHTML = `Chỉ số BMI là: ${bmi} ${result}`;
+    }
+
+
+</script>
+</body>
+</html>

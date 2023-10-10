@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let revenue = +prompt("Nhập số doanh thu");
+  let commission;
+  if(revenue <= 500){
+      commission = 0.05 * revenue;
+  } else if(revenue <= 800){
+      commission = 0.1 * revenue;
+  } else if(revenue <= 1000){
+      commission = 0.2 * revenue;
+  } else {
+      commission = 0.3 * revenue;
+  }
+  alert(`Tiền hoa hồng là: ${commission}`);
+</script>
+</body>
+</html>
