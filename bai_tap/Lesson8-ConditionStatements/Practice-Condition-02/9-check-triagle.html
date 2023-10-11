@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    alert("Nhập vào ba số để xem 3 cạnh đó có thể tạo thành 1 tam giác không");
+    let a = +prompt("Nhập số thứ nhất");
+    while (a <= 0) {
+        alert("Cạnh không thể âm, nhập lại");
+        a = +prompt("Nhập số thứ nhất");
+    }
+    let b = +prompt("Nhập số thứ 2");
+    while (b <= 0) {
+        alert("Cạnh không thể âm, nhập lại");
+        b = +prompt("Nhập số thứ 2");
+    }
+    let c = +prompt("Nhập số thứ 3");
+    while (c <= 0) {
+        alert("Cạnh không thể âm, nhập lại");
+        c = +prompt("Nhập số thứ 3");
+    }
+    if (a + b > c && a + c > b && b + c > a) {
+        alert(`Bộ 3 số ${a}, ${b}, ${c} tạo thành 1 tam giác`)
+    } else {
+        alert(`Bộ 3 số ${a}, ${b}, ${c} không thể tạo thành 1 tam giác`)
+    }
+</script>
+</body>
+</html>

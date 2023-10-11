@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>First degree equation</title>
+</head>
+<body>
+<script>
+    let a = +prompt("Nhập hệ số a trong phương trình ax + b = 0");
+    while (a === 0) {
+        alert("Hệ số a phải khác 0, nhập lại");
+        a = +prompt("Nhập hệ số a trong phương tình ax + b = 0");
+    }
+    let b = +prompt("Nhập hệ số b trong phương trình ax + b = 0");
+    let x = -b / a;
+    alert(`x tìm được là ${x}`);
+</script>
+</body>
+</html>

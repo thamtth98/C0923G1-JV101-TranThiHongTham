@@ -10,6 +10,7 @@
   let midtermMark = +prompt("Nhập điểm kiểm tra giữa kỳ");
   let finalMark = +prompt("Nhập điểm kiểm tra cuối kỳ");
   let average = (testMark*0.1 + midtermMark*0.3 + finalMark*0.6);
+  if(average >= 0 && average <= 10) {
   if(average >= 8){
       alert("Học sinh giỏi");
   } else if(average >= 6.5) {
@@ -17,6 +18,7 @@
   } else {
       alert("Học sinh trung bình");
   }
+  } else {alert("Nhập sai điểm, nhập lại")}
 </script>
 </body>
 </html>

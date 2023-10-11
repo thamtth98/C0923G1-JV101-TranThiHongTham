@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Square</title>
+</head>
+<body>
+<script>
+    let edge = +prompt("Nhập cạnh của hình vuông");
+    let area;
+    while (edge < 0) {
+        alert("Nhập sai cạnh, nhập lại");
+        edge = +prompt("Nhập cạnh của hình vuông");
+    }
+    if (edge >= 0) {
+        area = edge * edge;
+        alert(`Diện tích hình vuông là ${area}`);
+    }
+</script>
+</body>
+</html>

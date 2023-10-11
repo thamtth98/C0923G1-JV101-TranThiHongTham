@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PIT</title>
+</head>
+<body>
+<script>
+    let salary = +prompt("Nhập tổng tiền lương của bạn (triệu)");
+    while (salary <= 0) {
+        alert("Tiền lương phải là số dương");
+        salary = +prompt("Nhập tổng tiền lương của bạn (triệu)");
+    }
+    let tExemption = +prompt("Nhập số tiền được miễn thuế (triệu)");
+    let deductions = +prompt("Nhập các khoản giảm trừ (triệu)");
+    let tIncome = salary - tExemption - deductions;
+    let tax;
+    if (tIncome > 0) {
+        if (tIncome <= 60) {
+            tax = tIncome * 0.05;
+        } else if(tIncome <= 120) {
+            tax = tIncome * 0.1;
+        } else if(tIncome <= 216) {
+            tax = tIncome * 0.15;
+        } else if(tIncome <= 384) {
+            tax = tIncome * 0.2;
+        } else if(tIncome <= 624) {
+            tax = tIncome * 0.25;
+        } else if (tIncome <= 960) {
+            tax = tIncome * 0.3;
+        }else {
+            tax = tIncome * 0.35
+        }
+        alert(`Tiền thuế TNCN bạn phải nộp là ${tax} triệu`);
+    } else {
+        alert("Bạn không phải nộp thuế thu nhập cá nhân")
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Area square triangle</title>
+</head>
+<body>
+<script>
+    let a = +prompt("Nhập cạnh góc vuông thứ nhất của tam giác vuông");
+    let b = +prompt("Nhập cạnh góc vuông thứ 2 của tam giác vuông");
+    let area;
+    while (!(a >= 0 && b >= 0)) {
+        alert("Nhập cạnh sai, nhập lại");
+        a = +prompt("Nhập cạnh góc vuông thứ nhất của tam giác vuông");
+        b = +prompt("Nhập cạnh góc vuông thứ 2 của tam giác vuông");
+    }
+    if (a >= 0 && b >= 0) {
+        area = a * b / 2;
+        alert(`Diện tích của tam giác vuông là ${area}`);
+    }
+</script>
+</body>
+</html>

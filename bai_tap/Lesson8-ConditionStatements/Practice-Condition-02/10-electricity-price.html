@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let oldNumber = +prompt("Nhập số điện tháng trước");
+    while (oldNumber < 0) {
+        alert("Nhập sai, nhập lại");
+        oldNumber = +prompt("Nhập số điện tháng trước");
+    }
+    let newNumber = +prompt("Nhập số điện hiện tại");
+    while (newNumber < 0) {
+        alert("Nhập sai, nhập lại");
+        newNumber = +prompt("Nhập số điện hiện tại");
+    }
+    let elecNumber = newNumber - oldNumber;
+    if (elecNumber < 0) {
+        alert("Số điện hiện tại không thể nhỏ hơn số điện tháng trước");
+    } else {
+        let price = elecNumber * 3000;
+        alert(`Giá tiền điện tháng này là ${price}`);
+    }
+</script>
+</body>
+</html>
