@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>For loop</title>
+</head>
+<body>
+<h2>For Loops</h2>
+<p id="result"></p>
+<button onclick="bai1()">Click me</button>
+<script>
+    function bai1() {
+        let text = "";
+        for (let i = 0; i < 5; i++) {
+            text = "The number is " + i + "<br>";
+            console.log(i)
+            document.getElementById("result").innerHTML += text;
+        }
+    }
+    function bai2() {
+        let num = +prompt("Enter number: ");
+        let total = 0;
+        for (let i = 1; i <= num; i++ ){
+            total = total + i;
+        }
+        alert("Sum is: " + total);
+    }
+
+</script>
+</body>
+</html>

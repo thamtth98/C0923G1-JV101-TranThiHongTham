@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Multiplication table</title>
+</head>
+<body>
+<script>
+    let multip = "<table border='2' width='800px'>";
+    for (let i = 1; i <= 10; i++) {
+        multip += `<tr>`;
+        for (let j = 2; j <= 10; j++) {
+            multip += `<td width="500px" height="50px"> ${j} x ${i} = ${j * i}`;
+        }
+    }
+    document.write(multip);
+</script>
+</body>
+</html>

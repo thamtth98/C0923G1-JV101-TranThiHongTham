@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Prime</title>
+</head>
+<body>
+<h2>20 số nguyên tố đầu tiên là:<br></h2>
+<script>
+    let countPrime = 0;
+    let num = 2;
+    let count = 0;
+    while (countPrime < 20) {
+        count = 0;
+        for (let i = 2; i <= Math.sqrt(num); i++) {
+            if (num % i === 0) {
+                count++;
+                break;
+            }
+        }
+        if (count === 0) {
+            document.write(num + "<br>");
+            countPrime++;
+        }
+        num++;
+    }
+
+
+    //cách dùng for
+    // let num = 2;
+    // let count;
+    // for (let countPrime = 0; countPrime < 30; num++) {
+    //     count = 0;
+    //     for (let i = 2; i <= Math.sqrt(num); i++) {
+    //         if (num % i === 0) {
+    //             count++;
+    //             break;
+    //         }
+    //     }
+    //     if (count === 0) {
+    //         document.write(num + " là số nguyên tố" + "<br>");
+    //         countPrime++;
+    //     }
+    // }
+</script>
+</body>
+</html>
