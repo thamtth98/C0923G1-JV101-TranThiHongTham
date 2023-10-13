@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button onclick="play()">Chơi</button>
+<script>
+    function play() {
+        let i = 0;
+        let num;
+        let choseNum, randomNum;
+        for (let i = 1; i <= 3; i++) {
+            num = +prompt("Tạo một số ngẫu nhiên từ 0 đến n, nhập n");
+            randomNum = Math.floor(Math.random() * (num + 1));
+            choseNum = +prompt("Nhập vào số bạn đoán");
+            if (randomNum === choseNum) {
+                alert("Bạn đoán đúng số random rồi");
+                return;
+            } else if (randomNum > choseNum) {
+                alert("Số bạn đoán lớn hơn rồi")
+            } else if (randomNum > choseNum) {
+                alert("Số bạn đoán bé hơn rồi")
+            }
+            document.write(`Số được random lần ${i} là ${randomNum} <br>`);
+        }
+        alert("Bạn hết lượt nhập")
+    }
+
+</script>
+</body>
+</html>
