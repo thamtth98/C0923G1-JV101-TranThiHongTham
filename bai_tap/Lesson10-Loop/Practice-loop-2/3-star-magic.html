@@ -6,13 +6,56 @@
 </head>
 <body>
 <script>
-    let result1 = "";
-    for (let i = 0; i < 5; i++) {
-        result1 += "*";
-        document.write(result1 + "<br>")
+    function excercise1() {
+        let result1 = "";
+        for (let i = 0; i < 5; i++) {
+            result1 += "*";
+            document.write(result1 + "<br>")
+        }
     }
+    // excercise1();
 
-    for(let i)
+    function excercise2() {
+        let result2;
+        for (let i = 5; i >= 1; i--) {
+            result2 = "";
+            for (let j = 1; j <= i; j++) {
+                result2 = "*";
+                document.write(result2);
+            }
+            document.write("<br>");
+            console.log(result2);
+        }
+    }
+    // excercise2();
+
+    function excercise3() {
+        for (let i = 1; i <= 5; i++) {
+            for (j = 5; j >= 1; j--) {
+                if (j <= i) {
+                    document.write("*");
+                } else
+                    document.write("&nbsp&nbsp");
+            }
+            document.write("<br>");
+        }
+        document.write("<br>");
+    }
+    excercise3()
+
+    function exercise4() {
+        for (let i = 5; i > 0; i--) {
+            for (let j = 5; j > 0; j--) {
+                if (j > i) {
+                    document.write("&nbsp&nbsp");
+                } else
+                    document.write("*");
+            }
+            document.write("<br>");
+        }
+    }
+    exercise4()
+
 </script>
 </body>
 </html>

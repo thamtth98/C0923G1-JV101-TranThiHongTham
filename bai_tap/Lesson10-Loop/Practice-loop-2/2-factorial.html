@@ -8,11 +8,11 @@
 <script>
     let result = 1;
     let num = +prompt("Nhập số muốn tính giai thừa");
-    for (let i = 1; i < num; i++ ) {
-        result += result * i;
+    for (let i = 1; i <= num; i++ ) {
+        result *= i;
         console.log(result);
     }
-    document.write(`Giai thừa của số ${num} là ${result}`)
+    document.write(`Giai thừa của số ${num} là ${result}`);
 </script>
 </body>
 </html>
