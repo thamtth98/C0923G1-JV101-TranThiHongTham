@@ -7,10 +7,10 @@
 <body>
 <label>Nhập từ tiếng Việt</label>
 <input type="text" id="input">
-<button onclick="translate()">Dịch</button>
+<button type="button" onclick="trans()">Translate</button>
 <div id="result"></div>
 <script>
-    function translate() {
+    function trans() {
         let arrEng = ["banana", "orange", "pen", "pencil", "book", "flower", "calendar"];
         let arrVie = ["chuối", "cam", "bút", "bút chì", "sách", "hoa", "lịch"];
         let string = document.getElementById("input").value;
