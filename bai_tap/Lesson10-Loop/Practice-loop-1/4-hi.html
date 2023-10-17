@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let a = 1;
+  let b = 2;
+  let total
+  for(let i= 1; i <= a; i++){
+      total = a + b;
+      a = b;
+      b = total;
+      if (a % 5 === 0) {
+          console.log("Số đầu tin của dãy Fibonacci chia hết cho 5 là " + a);
+          break
+      }
+  }
+</script>
+</body>
+</html>

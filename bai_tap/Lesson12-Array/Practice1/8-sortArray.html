@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sort</title>
+</head>
+<body>
+<script>
+    let arr = [];
+    for (let i = 0; i < 10; i++) {
+        arr[i] = +prompt("Mời bạn nhập phần tử thứ " + i);
+    }
+    arr.sort((a, b) => a - b);
+    document.write(arr);
+</script>
+</body>
+</html>

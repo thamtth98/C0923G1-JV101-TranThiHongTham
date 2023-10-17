@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Array function</title>
+</head>
+<body>
+<script>
+    function exc1() {
+        let myColor = ["Red", "Green", "White", "Black"];
+        myColor.join();
+        document.write(myColor);
+    }
+
+    // exc1()
+
+    function exc2() {
+        let num = +prompt("Nhập vào số n nguyên dương")
+        while (!(parseInt(num) === num && num >= 0)) {
+            num = +prompt("Nhập vào số n nguyên dương")
+        }
+        let newNum = num.toString();
+        let result = [newNum[0]];
+        for (let i = 1; i < newNum.length; i++) {
+            if ((newNum[i - 1] % 2 === 0) && (newNum[i] % 2 === 0)) {
+                result.push("-", newNum[i]);
+            } else {
+                result.push(newNum[i]);
+            }
+        }
+        console.log(result.join(''));
+    }
+
+    // exc2()
+
+    function exc3() {
+        let str = prompt("Nhập chuỗi nè")
+        let upper = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        let lower = 'abcdefghijklmnopqrstuvwxyz';
+        let result = [];
+        for (let i = 0; i < str.length; i++) {
+            if (upper.includes(str[i])) {
+                result.push(str[i].toLowerCase());
+            } else if (lower.includes(str[i])) {
+                result.push(str[i].toUpperCase());
+            } else {
+                result.push(str[i])
+            }
+        }
+        document.write(result.join(''));
+    }
+
+    exc3()
+
+    //Cách 2 của exc3:
+    // let str = prompt("Nhập chuỗi");
+    // var UPPER = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    // var LOWER = 'abcdefghijklmnopqrstuvwxyz';
+    // var result = [];
+    //
+    // for(var x=0; x<str.length; x++)
+    // {
+    //     if(UPPER.indexOf(str[x]) !== -1)
+    //     {
+    //         result.push(str[x].toLowerCase());
+    //     }
+    //     else if(LOWER.indexOf(str[x]) !== -1)
+    //     {
+    //         result.push(str[x].toUpperCase());
+    //     }
+    //     else
+    //     {
+    //         result.push(str[x]);
+    //     }
+    // }
+    // console.log(result.join(''));
+</script>
+</body>
+</html>

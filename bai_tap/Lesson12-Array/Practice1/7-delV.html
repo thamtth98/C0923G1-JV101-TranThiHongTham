@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arr = [];
+    for (let i = 0; i < 10; i++) {
+        arr[i] = +prompt("Mời bạn nhập phần tử thứ " + i);
+    }
+    document.write("Mảng ban đầu là: " + arr + "<br>");
+    let numV = +prompt("Nhập số nguyên N");
+    for (let i = 0; i < 10; i++) {
+        if (arr[i] === numV) {
+            arr.splice(i, 1)
+        }
+    }
+    document.write("Mảng đã xóa số nguyên N là: " + arr);
+</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arr = [];
+    let check = false;
+    for (let i = 0; i < 10; i++) {
+        arr[i] = +prompt("Mời bạn nhập phần tử thứ " + i);
+    }
+    let numV = +prompt("Nhập số nguyên N");
+    for (let i = 0; i < 10; i++) {
+        if (arr[i] === numV) {
+            check = true;
+        }
+    }
+    if (check) {
+        document.write("V is in the array")
+    } else {
+        document.write("V is not in the array")
+    }
+</script>
+</body>
+</html>
