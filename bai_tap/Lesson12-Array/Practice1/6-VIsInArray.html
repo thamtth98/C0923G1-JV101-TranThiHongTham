@@ -9,9 +9,9 @@
     let arr = [];
     let check = false;
     for (let i = 0; i < 10; i++) {
-        arr[i] = +prompt("Mời bạn nhập phần tử thứ " + i);
+        arr[i] = parseInt(prompt("Mời bạn nhập phần tử thứ " + i));
     }
-    let numV = +prompt("Nhập số nguyên N");
+    let numV = parseInt(prompt("Nhập số nguyên N"));
     for (let i = 0; i < 10; i++) {
         if (arr[i] === numV) {
             check = true;

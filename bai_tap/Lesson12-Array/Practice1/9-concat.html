@@ -8,15 +8,17 @@
 <script>
     let aArr = [];
     let bArr = [];
+    let cArr = [];
     alert("Nhập mảng a")
     for (let i = 0; i < 10; i++) {
-        aArr[i] = +prompt("Mời bạn nhập phần tử thứ " + i);
+        aArr[i] = parseInt(prompt("Mời bạn nhập phần tử thứ " + i));
     }
     alert("Nhập mảng b")
     for (let i = 0; i < 10; i++) {
-        bArr[i] = +prompt("Mời bạn nhập phần tử thứ " + i);
+        bArr[i] = parseInt(prompt("Mời bạn nhập phần tử thứ " + i));
     }
-    let cArr = aArr.concat(bArr);
+    // cArr = aArr.concat(bArr);
+    cArr.push(aArr, bArr);
     document.write(aArr + "<br>");
     document.write(bArr + "<br>")
     document.write(cArr + "<br>");

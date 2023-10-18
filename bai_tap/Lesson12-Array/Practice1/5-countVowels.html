@@ -8,9 +8,9 @@
 <script>
     let arr = [];
     let count = 0;
-    let lengthOfArray = +prompt("Nhập độ dài mảng");
+    let lengthOfArray = parseInt(prompt("Nhập độ dài mảng"));
     for (let i = 0; i < lengthOfArray; i++) {
-        arr[i] = +prompt("Mời bạn nhập phần tử thứ " + i);
+        arr[i] = parseInt(prompt("Mời bạn nhập phần tử thứ " + i));
     }
     for (let j = 0; j < lengthOfArray; j++) {
         if (arr[j] < 0) {

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+   // Viết chương trình nhập vào 2 mảng, và kiểm tra 2 mảng
+    let aArr = [];
+    let bArr = [];
+    let check = false;
+    let lengthOfA = parseInt(prompt("Nhập số phần tử mảng thứ nhất"));
+    for (let i = 0; i < lengthOfA; i++) {
+        aArr[i] = parseInt(prompt("Mời bạn nhập phần tử thứ " + i));
+    }
+    let lengthOfB = parseInt(prompt("Nhập số phần tử mảng thứ 2"));
+    for (let i = 0; i < lengthOfB; i++) {
+        bArr[i] = parseInt(prompt("Mời bạn nhập phần tử thứ " + i));
+    }
+    document.write("Mảng thứ nhất là :" + aArr + "<br>");
+    document.write("Mảng thứ hai là :" + bArr + "<br>");
+    if (lengthOfA !== lengthOfB) {
+        check = false;
+    } else {
+        for (let i = 0; i < lengthOfA; i++) {
+            if (aArr[i] === bArr[i]) {
+                check = true;
+            }
+            console.log(aArr[i]);
+            console.log(bArr[i]);
+        }
+    }
+    if (check) {
+        document.write("Hai mảng giống nhau như đúc")
+    } else {
+        document.write("Hai mảng khác nhau rồi")
+    }
+</script>
+</body>
+</html>

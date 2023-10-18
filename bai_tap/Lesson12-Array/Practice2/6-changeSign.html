@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arr = [];
+    let lengthOfarr = parseInt(prompt("Nhập số phần tử mảng thứ nhất"));
+    alert("Nhập mảng để tìm tất cả các ký tự trong mảng là (-) và thay thế các ký tự này bởi ký tự ( _ )");
+    for (let i = 0; i < lengthOfarr; i++) {
+        arr[i] = prompt(`Mời bạn nhập phần tử thứ ${i} `);
+    }
+    document.write(`Array vừa nhập: ${arr} <br>`);
+    for (let i = 0; i < lengthOfarr; i++) {
+        if (arr[i] === "-") {
+            arr[i] = "_"
+        }
+    }
+    document.write(`Array mới: ${arr}`);
+</script>
+</body>
+</html>

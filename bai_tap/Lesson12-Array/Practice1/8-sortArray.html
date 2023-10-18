@@ -7,10 +7,20 @@
 <body>
 <script>
     let arr = [];
+    let c;
     for (let i = 0; i < 10; i++) {
-        arr[i] = +prompt("Mời bạn nhập phần tử thứ " + i);
+        arr[i] = parseInt(prompt("Mời bạn nhập phần tử thứ " + i));
     }
-    arr.sort((a, b) => a - b);
+    // arr.sort((a, b) => b - a);
+    for (let i = 0; i < 10; i++) {
+        for (let j = arr.length - 1; j > i; j--) {
+            if (arr[j - 1] < arr[j]) {
+                c = arr[j];
+                arr[j] = arr[j - 1];
+                arr[j - 1] = c;
+            }
+        }
+    }
     document.write(arr);
 </script>
 </body>

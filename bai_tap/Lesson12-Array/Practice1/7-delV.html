@@ -7,14 +7,18 @@
 <body>
 <script>
     let arr = [];
-    for (let i = 0; i < 10; i++) {
-        arr[i] = +prompt("Mời bạn nhập phần tử thứ " + i);
+    let temporary = 0;
+    for (let i = 0; i < 4; i++) {
+        arr[i] = parseInt(prompt("Mời bạn nhập phần tử thứ " + i));
     }
     document.write("Mảng ban đầu là: " + arr + "<br>");
-    let numV = +prompt("Nhập số nguyên N");
-    for (let i = 0; i < 10; i++) {
+    let numV = parseInt(prompt("Nhập số nguyên N"));
+    for (let i = 0; i < 4; i++) {
+        for(let j = arr.length)
         if (arr[i] === numV) {
-            arr.splice(i, 1)
+            arr[i + 1] = temporary;
+            temporary = arr[i];
+            continue;
         }
     }
     document.write("Mảng đã xóa số nguyên N là: " + arr);

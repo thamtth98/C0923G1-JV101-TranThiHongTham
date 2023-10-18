@@ -7,15 +7,17 @@
 <body>
 <script>
     let arr = [];
-    let newArr = [];
-    let lengthOfArray = +prompt("Nhập độ dài mảng");
+    let count = 0;
+    let lengthOfArray = parseInt(prompt("Nhập độ dài mảng"));
     for (let i = 0; i < lengthOfArray; i++) {
         arr[i] = prompt("Mời bạn nhập phần tử thứ " + i);
     }
-    for (let i = 1; i <= lengthOfArray; i++) {
-        newArr.push(arr[arr.length - i])
+    for (let i = 0; i < lengthOfArray; i++) {
+        if (!(isNaN(arr[i]))) {
+            count += 1;
+        }
     }
-    document.write("Mảng đảo ngược là: " + newArr);
+    document.write(`Có ${count} phần tử số trong mảng`);
 </script>
 </body>
 </html>
