@@ -13,20 +13,21 @@
     function trans() {
         let arrEng = ["banana", "orange", "pen", "pencil", "book", "flower", "calendar"];
         let arrVie = ["chuối", "cam", "bút", "bút chì", "sách", "hoa", "lịch"];
+        let check = false;
         let string = document.getElementById("input").value;
-        let index = 0;
         let result = "";
         for (let i = 0; i < arrEng.length; i++) {
-            if (string === arrEng[i]) {
-                index = i;
-                for (let j = 0; j < arrVie.length; j++) {
-                    if (index === j) {
-                        result = arrVie[j];
-                    }
-                }
+            if (string === arrVie[i]) {
+                result += arrEng[i];
+                check = true;
+                break;
             }
         }
-        document.getElementById("result").innerHTML = result;
+        if (!check) {
+            document.getElementById("result").innerHTML = "Không tìm thấy từ này trong số từ sẵn có của tui";
+        } else {
+            document.getElementById("result").innerHTML = `Từ tìm thấy là: ${result}`;
+        }
     }
 </script>
 </body>

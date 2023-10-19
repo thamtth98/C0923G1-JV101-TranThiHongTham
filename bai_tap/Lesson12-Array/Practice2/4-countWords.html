@@ -6,14 +6,24 @@
 </head>
 <body>
 <script>
-    let str = prompt(" Nhập chuỗi để tui đếm từ");
-    let count = 0;
-    for (let i = 0; i < str.length; i++) {
-        if (str[i] === " ") {
-            count += 1;
+    function countWords(str) {
+        let count = 0;
+        let inWord = false;
+
+        for (let i = 0; i < str.length; i++) {
+            if (str[i] === ' ') {
+                inWord = false;
+            } else if (!inWord) {
+                inWord = true;
+                count++;
+            }
         }
+        return count;
     }
-    document.write(`Số từ tui đếm được là: ${count + 1}`);
+
+    const str = prompt("Nhập chuỗi để tui đếm từ");
+    const count = countWords(str);
+    document.write("Số từ trong chuỗi là: " + count);
 </script>
 </body>
 </html>
