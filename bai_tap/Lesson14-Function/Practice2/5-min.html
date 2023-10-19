@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function findMin(a, b, c) {
+        let min = a;
+        if (min > b) {
+            min = b;
+        } else if (min > c) {
+            min = c;
+        }
+        return min
+    }
+
+    let a = +prompt("Input first number");
+    let b = +prompt("Input second number");
+    let c = +prompt("Input third number");
+    alert(`The min of value in 3 number is: ${findMin(a, b, c)}`);
+</script>
+</body>
+</html>

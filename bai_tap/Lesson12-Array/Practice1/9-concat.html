@@ -10,15 +10,20 @@
     let bArr = [];
     let cArr = [];
     alert("Nhập mảng a")
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < 3; i++) {
         aArr[i] = parseInt(prompt("Mời bạn nhập phần tử thứ " + i));
     }
     alert("Nhập mảng b")
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < 3; i++) {
         bArr[i] = parseInt(prompt("Mời bạn nhập phần tử thứ " + i));
     }
     // cArr = aArr.concat(bArr);
-    cArr.push(aArr, bArr);
+    for(let i = 0; i < aArr.length; i++){
+        cArr.push(aArr[i]);
+    }
+    for(let i = 0; i < bArr.length; i++){
+        cArr.push(bArr[i]);
+    }
     document.write(aArr + "<br>");
     document.write(bArr + "<br>")
     document.write(cArr + "<br>");

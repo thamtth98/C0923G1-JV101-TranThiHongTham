@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let idol = ["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe", "Regulus"];
+    let constellation = ["UrsaMinor", "Tarurus", "Cygnus", "Lyra", "Aquila", "UrsaMajor", "Leo"];
+    let result;
+
+    function guessConstellation(name) {
+        for (let i = 0; i < idol.length; i++) {
+            if (name === idol[i]) {
+                result = constellation[i];
+                return true;
+            }
+        }
+        return false;
+    }
+
+    let name = prompt("Enter your idol");
+    if (guessConstellation(name)) {
+        document.write(`The idol has constellation is ${result}`);
+    } else {
+        document.write(`Not found idol`);
+    }
+</script>
+</body>
+</html>
