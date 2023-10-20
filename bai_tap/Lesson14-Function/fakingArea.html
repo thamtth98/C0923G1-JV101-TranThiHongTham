@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>Nhập vào đây những gì bạn muốn</h2>
+<textarea onkeyup="fakingArea()" id="text"></textarea>
+<script>
+    function fakingArea() {
+        let str = "Đố bạn";
+        let text = document.getElementById("text").value;
+        for (let i = 0; i < str.length; i++) {
+            text += (str[i]);
+        }
+        console.log(text)
+    }
+</script>
+</body>
+</html>

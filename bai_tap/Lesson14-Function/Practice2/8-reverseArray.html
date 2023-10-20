@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arr = [];
+    let newArr = [];
+    let lengthOfArray = +prompt("Nhập độ dài mảng");
+    for (let i = 0; i < lengthOfArray; i++) {
+        arr[i] = prompt("Mời bạn nhập phần tử thứ " + i);
+    }
+
+    function reverseArray() {
+        for (let i = 1; i <= lengthOfArray; i++) {
+            newArr.push(arr[arr.length - i])
+        }
+        document.write(newArr.join(''));
+    }
+
+    reverseArray()
+</script>
+</body>
+</html>

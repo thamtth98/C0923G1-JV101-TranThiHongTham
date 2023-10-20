@@ -6,9 +6,16 @@
 </head>
 <body>
 <script>
-  function isPositiveInteger() {
+    function isPositiveInteger() {
+        return number > 0;
+    }
 
-  }
+    let number = parseInt(prompt("Nhập vào số nguyên"));
+    if (isPositiveInteger(number)) {
+        alert("True");
+    } else {
+        alert("False");
+    }
 </script>
 </body>
 </html>

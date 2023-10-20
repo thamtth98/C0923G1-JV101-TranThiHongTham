@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function countNumberAppearance() {
+        let count = 0;
+        let arr = [];
+        let lengthOfArray = +prompt("Please enter length of array");
+        for (let i = 0; i < lengthOfArray; i++) {
+            arr[i] = prompt("Input the element i(th) " + i);
+        }
+        let character = prompt("Please enter the integer number N");
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] === character) {
+                count++;
+            }
+        }
+        if (count === 0) {
+            return -1
+        } else {
+            return count
+        }
+    }
+
+    console.log(countNumberAppearance())
+
+</script>
+</body>
+</html>
