@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input placeholder="Nhập độ C" id="tempC" name="tempC">
+<button onclick="change()"> Chuyển đổi</button>
+<div id="result"></div>
+<script>
+    class Temperature {
+        constructor(celsius) {
+            this.celsius = celsius;
+        }
+
+        setFahrenheit() {
+            return `Độ F là ${(this.celsius) * 9 / 5 + 32}`
+        }
+
+        setKelvin() {
+            return `Độ K là ${(this.celsius) + 273.15}`
+        }
+    }
+
+    function change() {
+        let tempC = document.getElementById("tempC").value;
+        let temp = new Temperature(tempC);
+        let tempF = temp.setFahrenheit();
+        let tempK = temp.setKelvin();
+        let result = document.getElementById("result");
+        result.innerHTML = `${tempF} <br> ${tempK}`
+    }
+
+</script>
+</body>
+</html>

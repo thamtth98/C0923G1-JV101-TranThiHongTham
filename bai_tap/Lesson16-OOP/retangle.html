@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="myCanvas" width="200" height="100"></canvas>
+<br>
+<script>
+    class Rectangle {
+        constructor(height, width) {
+            this.height = height;
+            this.width = width;
+        }
+
+        getArea() {
+            return `Diện tích hình chữ nhật là ${this.height * this.width}`;
+        }
+
+        getPerimeter() {
+            return `Chu vi hình chữ nhật là ${(this.height + this.width) * 2}`;
+        }
+
+        createRec() {
+            let canvas = document.getElementById("myCanvas");
+            let pointRec = canvas.getContext("2d");
+            pointRec.fillStyle = "red";
+            pointRec.fillRect(0, 0, this.width, this.height);
+        }
+
+    }
+
+    let rectangle = new Rectangle(100, 200);
+    let area = rectangle.getArea();
+    let perimeter = rectangle.getPerimeter();
+    rectangle.createRec();
+    document.write(area + "<br>");
+    document.write(perimeter);
+
+</script>
+</body>
+</html>
