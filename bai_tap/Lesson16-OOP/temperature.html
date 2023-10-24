@@ -14,11 +14,11 @@
             this.celsius = celsius;
         }
 
-        setFahrenheit() {
+        changeToFahrenheit() {
             return `Độ F là ${(this.celsius) * 9 / 5 + 32}`
         }
 
-        setKelvin() {
+        changeToKelvin() {
             return `Độ K là ${(this.celsius) + 273.15}`
         }
     }
@@ -26,8 +26,8 @@
     function change() {
         let tempC = document.getElementById("tempC").value;
         let temp = new Temperature(tempC);
-        let tempF = temp.setFahrenheit();
-        let tempK = temp.setKelvin();
+        let tempF = temp.changeToFahrenheit();
+        let tempK = temp.changeToKelvin();
         let result = document.getElementById("result");
         result.innerHTML = `${tempF} <br> ${tempK}`
     }

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    class Apple {
+        constructor(weight) {
+            this.weight = weight;
+        }
+
+        getWeight() {
+            return this.weight;
+        }
+
+        isEmpty() {
+            if (this.weight <= 0) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+        decrease() {
+            if (this.isEmpty()) {
+                return `The apple is empty`;
+            } else {
+                this.weight--;
+            }
+        }
+    }
+
+
+    class Human {
+        constructor(name, gender, weight) {
+            this.name = name;
+            this.gender = gender;
+            this.weight = weight;
+        }
+
+        getName() {
+            return this.name;
+        }
+
+        getWeight() {
+            return this.weight;
+        }
+
+        setName(name) {
+            this.name = name;
+        }
+
+        setWeight(weight) {
+            this.weight = weight;
+        }
+
+        getGender() {
+            if (this.name === "Adam") {
+                return "Male";
+            } else if (this.name === "Eva") {
+                return "Female";
+            }
+        }
+
+        isMale() {
+            if (this.gender === 1) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        say(string) {
+            document.write(string);
+        }
+
+        checkApple(apple) {
+            return apple.isEmpty();
+        }
+
+        eat(apple) {
+            if (apple.getWeight() >= 0) {
+                apple.decrease();
+                this.weight++;
+            } else {
+                alert("Have eaten all the apple");
+            }
+        }
+    }
+
+    let apple = new Apple(10);
+    let adam = new Human("Adam", 1, 70);
+    let eva = new Human("Eva", 0, 45);
+    adam.say("My name's Adam <br>");
+    eva.say("My name's Eva <br>");
+
+    while (!(apple.isEmpty())) {
+        document.write(`<br> Adam eating apple <br>`);
+        adam.eat(apple);
+        document.write(`The apple remaining is ${apple.getWeight()} unit <br>`);
+        document.write(`Weight of Adam is ${adam.getWeight()} unit <br>`);
+
+
+        document.write(`Eva eating apple <br>`);
+        eva.eat(apple);
+        document.write(`The apple remaining is ${apple.getWeight()} unit <br>`);
+        document.write(`Weight of Eva is ${eva.getWeight()} unit <br> <br>`);
+
+
+
+    }
+</script>
+</body>
+</html>
