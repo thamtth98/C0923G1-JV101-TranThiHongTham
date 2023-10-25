@@ -5,9 +5,9 @@
     <title>Title</title>
 </head>
 <body>
-<div>
-    <img src="">
-</div>
+<img src="https://www.w3schools.com/js/pic_bulboff.gif" alt="The bulb" id="myImage"/>
+<button onclick="buttonTurn()">Turn on/turn off</button>
+<div id="result"></div>
 <script>
     class ElectricLamp {
         constructor(status) {
@@ -46,8 +46,20 @@
 
     let lamp = new ElectricLamp(false);
     let switchButton = new SwitchButton(false, lamp);
-    document.write(`Turn on the light: ${switchButton.switchOn()} <br>`);
-    document.write(`Turn off the light: ${switchButton.switchOff()}`);
+
+    function buttonTurn() {
+        let image = document.getElementById("myImage");
+        let result = document.getElementById("result");
+        if (image.src.match("bulbon")) {
+            switchButton.switchOn();
+            result.innerHTML = "Turn off the light"
+            image.src = "https://www.w3schools.com/js/pic_bulboff.gif";
+        } else {
+            switchButton.switchOff();
+            result.innerHTML = "Turn on the light"
+            image.src = "https://www.w3schools.com/js/pic_bulbon.gif";
+        }
+    }
 </script>
 </body>
 </html>
