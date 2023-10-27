@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>Hãy chọn món bạn thích:</h2>
+<label><input type="radio" name="chooseDrink" class="cafe" onchange="checkDrink('cafe')">1 - Cafe</label><br>
+<label><input type="radio" name="chooseDrink" class="orange" onchange="checkDrink('orange')">2 - Cam vắt</label><br>
+<label><input type="radio" name="chooseDrink" class="carrot" onchange="checkDrink('carrot')">3 - Nước ép cà rốt</label><br>
+<label><input type="radio" name="chooseDrink" class="tomato" onchange="checkDrink('tomato')">4 - Nước ép cà chua</label><br>
+<label><input type="radio" name="chooseDrink" class="water" onchange="checkDrink('water')">5 - Nước lọc</label><br>
+<label><input type="radio" name="chooseDrink" class="coconut" onchange="checkDrink('coconut')">6 - Nước dừa</label><br>
+<input placeholder="Quality" id="quality">
+<button onclick="total()">Total</button>
+
+<div id="result"></div>
+<script>
+    function checkDrink(drink) {
+        let value = document.getElementById("result");
+        let quality = document.getElementById("quality").value;
+        switch (drink) {
+            case "cafe":
+                value.innerHTML = `
+                The unit price is 5.000 VND
+                The total is: ${quality * 5000} VND
+                `
+            // function total() {
+            // let total = ${(document.getElementById("quality")) * 5000};
+            // The total is ${total}
+            //     function total(){
+            //         value.innerHTML += `The total is ${(document.getElementById("quality").value) * 5000}`
+            // }
+        }
+    }
+
+</script>
+</body>
+</html>

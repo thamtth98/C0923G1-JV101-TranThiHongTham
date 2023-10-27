@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // debugger
+    let arrayA = [1, 2, 3, 4, 7, 8, 9];
+    let arrayB = [10, 5, 3, 5, 6, 9, 5, 7, 8, 7];
+    let arr = [];
+    let check = false;
+    for (let i = 0; i < arrayB.length; i++) {
+        check = false;
+        for (let j = 0; j < arrayA.length; j++) {
+            if (arrayB[i] === arrayA[j]) {
+                check = true;
+                break;
+            }
+        }
+        if (!check) {
+            if (!arr.includes(arrayB[i])) {
+                arr.push(arrayB[i]);
+            }
+        }
+    }
+    arr.sort((a, b) => a - b);
+    console.log(arr)
+</script>
+</body>
+</html>

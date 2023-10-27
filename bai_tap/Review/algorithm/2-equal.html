@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    debugger
+    let a = "aabcc";
+    let b = "adcaa";
+    let arrA = a.split("");
+    let arrB = b.split("");
+
+    let count = 0;
+    for (let i = 0; i < arrB.length; i++) {
+        for (let j = 0; j < arrA.length; j++) {
+            if (arrB[i] === arrA[j]) {
+                arrA[j] = "-";
+                console.log(arrA);
+                console.log(arrB);
+                count++;
+                break;
+            }
+        }
+    }
+    console.log(count);
+</script>
+</body>
+</html>

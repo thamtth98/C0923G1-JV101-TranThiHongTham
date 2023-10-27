@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let salary = +prompt("Nhập lương của bạn (triệu)");
+    let pit;
+    while (salary < 0) {
+        alert("Lương không thể âm")
+        salary = +prompt("Nhập lương của bạn (triệu)");
+    }
+    if(salary < 7) {
+        pit = salary * 0.05;
+    } else if(salary < 15) {
+        pit = salary * 0.1;
+    }else {
+        pit = salary * 0.2;
+    }
+    alert(`Thuế TNCN là ${pit} triệu`);
+</script>
+</body>
+</html>

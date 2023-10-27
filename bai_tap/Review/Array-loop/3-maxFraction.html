@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let numerators = [5, 2, 5];
+    let denominators = [6, 3, 4];
+    let max = 0;
+    let index = 0;
+    let numeratorsMax = 0;
+    let denomiMax = 0;
+    for (let i = 0; i < numerators.length; i++) {
+        max = numerators[0] / denominators[0];
+        if ((numerators[i] / denominators[i]) > max) {
+            max = numerators[i] / denominators[i];
+            numeratorsMax = numerators[i];
+            denomiMax = denominators[i];
+            index = i;
+        }
+    }
+    document.write(`Max fraction is ${numeratorsMax}/${denomiMax} in ${index}`);
+</script>
+</body>
+</html>

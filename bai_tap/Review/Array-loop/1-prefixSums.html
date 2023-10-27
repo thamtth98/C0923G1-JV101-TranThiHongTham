@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let length = +prompt("Length of array");
+    let charNew = 0;
+    let arr = [];
+    for (let i = 0; i < length; i++) {
+        arr[i] = +prompt(`Input the character ${i}(th)`);
+    }
+    let prefixSum = [];
+    for (let i = 0; i < arr.length; i++) {
+        charNew += arr[i];
+        prefixSum.push(charNew);
+    }
+    console.log(prefixSum)
+
+
+</script>
+</body>
+</html>
