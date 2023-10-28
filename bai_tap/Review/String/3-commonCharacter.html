@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let strA = "aabfccd";
+    let strB = "adcaa";
+    let arrA = strA.split("");
+    let arrB = strB.split("");
+    let count = 0;
+    for (let i = 0; i < arrA.length; i++) {
+        for (let j = 0; j < arrB.length; j++) {
+            if (arrA[i] === arrB[j]) {
+                arrB[j] = "";
+                count++;
+                break;
+            }
+        }
+    }
+    console.log(count);
+</script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arr = [];
+    let count = 0;
+    let numPrime = [];
+    let height = +prompt("Nhập chiều cao của ma trận (Có bao nhiêu mảng)");
+    let width = +prompt("Nhập chiều rộng của ma trận (Mỗi mảng chứa bao nhiêu phần tử)");
+    for (let i = 0; i < height; i++) {
+        arr[i] = [];
+        alert(`Nhập mảng thứ ${i}`);
+        for (let j = 0; j < width; j++) {
+            arr[i][j] = +prompt(`Nhập mảng thứ ${i} phần tử thứ ${j}`);
+        }
+    }
+
+    function checkPrime(number) {
+        if (number < 2) {
+            return false;
+        } else {
+            for (let i = 2; i <= Math.sqrt(number); i++) {
+                if (number % i === 0) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
+    function isPrime() {
+        for (let i = 0; i < height; i++) {
+            for (let j = 0; j < width; j++) {
+                if (checkPrime(arr[i][j])) {
+                    count++;
+                }
+            }
+        }
+        return count;
+
+    }
+
+    console.log(arr)
+    console.log(isPrime(arr));
+
+
+</script>
+</body>
+</html>

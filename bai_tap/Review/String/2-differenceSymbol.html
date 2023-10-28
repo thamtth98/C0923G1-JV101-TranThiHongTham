@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // debugger
+    let str = prompt("Nhập xâu kí tự");
+    let count = 0;
+    for (let i = 0; i < str.length; i++) {
+        for (let j = i + 1; j < str.length; j++) {
+            if (str[i] === str[j]) {
+                count += 1;
+                break;
+            }
+        }
+    }
+    let result = str.length - count;
+    alert(`Có ${result} kí tự khác nhau`);
+</script>
+</body>
+</html>

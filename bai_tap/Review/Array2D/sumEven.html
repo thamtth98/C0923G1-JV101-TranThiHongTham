@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function calculatorSum() {
+        for (let i = 0; i < height; i++) {
+            for (let j = 0; j < width; j++) {
+                if (arr[i][j] % 2 === 0) {
+                    sum += arr[i][j];
+                }
+            }
+        }
+        return sum;
+    }
+
+    let arr = [];
+    let sum = 0;
+    let height = +prompt("Nhập chiều cao của ma trận (Có bao nhiêu mảng)");
+    let width = +prompt("Nhập chiều rộng của ma trận (Mỗi mảng chứa bao nhiêu phần tử)");
+    for (let i = 0; i < height; i++) {
+        arr[i] = [];
+        alert(`Nhập mảng thứ ${i}`);
+        for (let j = 0; j < width; j++) {
+            arr[i][j] = +prompt(`Nhập mảng thứ ${i} phần tử thứ ${j}`);
+        }
+    }
+    alert(`Tổng phần tử chẵn trong ma trận là ${calculatorSum(arr)}`);
+</script>
+</body>
+</html>
