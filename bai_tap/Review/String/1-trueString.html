@@ -14,6 +14,7 @@
             newArr.push(toArray[i]);
         }
     }
+
     let newStr = "";
     for (let i = 0; i < newArr.length; i++) {
         for (let j = 0; j < newArr[i].length; j++) {
@@ -25,7 +26,22 @@
         }
         newStr += " ";
     }
-    document.write(newStr)
+    let findChaMax = newStr.split(" ");
+    console.log(findChaMax);
+    let maxLengthChar;
+    let index = 0;
+    for (let i = 0; i < findChaMax.length; i++) {
+        maxLengthChar = findChaMax[0].length;
+        console.log(findChaMax[i]);
+        if (maxLengthChar < findChaMax[i].length) {
+            maxLengthChar = findChaMax[i].length;
+            index = i;
+        }
+    }
+    document.write(`The first string is: ${str} <br>`);
+    document.write(`Normalize string is: ${newStr} <br>`);
+    document.write(`The longest word is: ${findChaMax[index]}`);
+
 
 </script>
 </body>
