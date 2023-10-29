@@ -29,10 +29,11 @@
                 }
             }
         }
+        numPrime.push(number);
         return true;
     }
 
-    function isPrime() {
+    function isPrimeInArray() {
         for (let i = 0; i < height; i++) {
             for (let j = 0; j < width; j++) {
                 if (checkPrime(arr[i][j])) {
@@ -44,10 +45,9 @@
 
     }
 
-    console.log(arr)
-    console.log(isPrime(arr));
-
-
+    document.write(`Mảng ban đầu: ${arr} <br>`);
+    document.write(`Số nguyên tố trong mảng: ${isPrimeInArray(arr)} <br>`);
+    document.write(`Danh sách số nguyên tố trong mảng là: ${numPrime} <br>`);
 </script>
 </body>
 </html>

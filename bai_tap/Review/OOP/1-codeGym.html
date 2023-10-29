@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    table, th, td, tr {
+        border: 2px solid black;
+        border-collapse: collapse;
+        height: 30px;
+        width: 500px;
+    }
+
+    th {
+    }
+</style>
+<body>
+
+<button onclick="addStudent()">Add student</button>
+<button onclick="editStudent()">Edit student</button>
+<button onclick="delStudent()">Delete student</button>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Class</th>
+        <th>Email</th>
+        <th>Date of birth</th>
+        <th>Module</th>
+    </tr>
+    <tbody id="result"></tbody>
+</table>
+<script>
+    class Students {
+        constructor(id, name, grade, email, dateOfBirth, module) {
+            this.id = id;
+            this.name = name;
+            this.grade = grade;
+            this.email = email;
+            this.dateOfBirth = dateOfBirth;
+            this.module = module;
+        }
+
+        getId() {
+            return this.id;
+        }
+
+        getName() {
+            return this.name;
+        }
+
+        getEmail() {
+            return this.email;
+        }
+
+        getGrade() {
+            return this.grade;
+        }
+
+        getDateOfBirth() {
+            return this.dateOfBirth;
+        }
+
+        getModule() {
+            return this.module;
+        }
+
+        setId(newId) {
+            this.id = newId;
+        }
+
+        setName(newName) {
+            this.name = newName;
+        }
+
+        setEmail(newEmail) {
+            this.email = newEmail;
+        }
+
+        setGrade(newGrade) {
+            this.grade = newGrade;
+        }
+
+        setDateOfBirth(newDob) {
+            this.dateOfBirth = newDob;
+        }
+
+        setModule(newModule) {
+            this.module = newModule;
+        }
+
+        addNewStudent() {
+            let result = document.getElementById("result");
+            return result.innerHTML += `<tr>
+                        <td>${this.getId()}</td>
+                        <td>${this.getName()}</td>
+                        <td>${this.getGrade()}</td>
+                        <td>${this.getEmail()}</td>
+                        <td>${this.getDateOfBirth()}</td>
+                        <td>${this.getModule()}</td>
+                        </tr>`
+        }
+    }
+
+    function addStudent() {
+        let id = prompt("Input student ID:");
+        let name = prompt("Name of new student:");
+        let grade = prompt("Class of new student:");
+        let email = prompt("Email of new student:");
+        let dateOfBirth = prompt("Date of birth of new student:");
+        let module = prompt("Module of new student:");
+        let add = new Students(id, name, grade, email, dateOfBirth, module);
+        add.addNewStudent();
+    }
+
+    function editStudent() {
+        let id = prompt("Input student ID:");
+        if(id === this.id){
+            let name = prompt("Name of new student:");
+            let grade = prompt("Class of new student:");
+            let email = prompt("Email of new student:");
+            let dateOfBirth = prompt("Date of birth of new student:");
+        } else {
+            alert("Not found ID");
+        }
+
+
+    }
+</script>
+</body>
+</html>
