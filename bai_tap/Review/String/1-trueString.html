@@ -26,21 +26,20 @@
         }
         newStr += " ";
     }
-    let findChaMax = newStr.split(" ");
-    console.log(findChaMax);
+    let arrayMax = newStr.split(" ");
     let maxLengthChar;
-    let index = 0;
-    for (let i = 0; i < findChaMax.length; i++) {
-        maxLengthChar = findChaMax[0].length;
-        console.log(findChaMax[i]);
-        if (maxLengthChar < findChaMax[i].length) {
-            maxLengthChar = findChaMax[i].length;
-            index = i;
+    let maxChar = arrayMax[0];
+    for (let i = 0; i < arrayMax.length; i++) {
+        maxLengthChar = arrayMax[0].length;
+        console.log(arrayMax[i]);
+        if (maxLengthChar < arrayMax[i].length) {
+            maxLengthChar = arrayMax[i].length;
+            maxChar = arrayMax[i];
         }
     }
     document.write(`The first string is: ${str} <br>`);
     document.write(`Normalize string is: ${newStr} <br>`);
-    document.write(`The longest word is: ${findChaMax[index]}`);
+    document.write(`The longest word is: ${maxChar}`);
 
 
 </script>
