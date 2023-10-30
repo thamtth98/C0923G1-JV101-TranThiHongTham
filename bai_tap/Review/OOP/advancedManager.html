@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<style>
+    /*table, th, td, tr {*/
+    /*    border: 2px solid black;*/
+    /*    border-collapse: collapse;*/
+    /*    height: 30px;*/
+    /*    width: 700px;*/
+    /*}*/
+
+    /*th {*/
+    /*}*/
+    body{
+        margin: 50px;
+    }
+</style>
+<body>
+<div class="mb-3 row">
+    <label class="col-sm-2 col-form-label">ID</label>
+    <div class="col-sm-5">
+        <input type="text" class="form-control" id="id">
+    </div>
+</div>
+<div class="mb-3 row">
+    <label class="col-sm-2 col-form-label">Name</label>
+    <div class="col-sm-5">
+        <input type="text" class="form-control" id="name">
+    </div>
+</div>
+<div class="mb-3 row">
+    <label class="col-sm-2 col-form-label">Class</label>
+    <div class="col-sm-5">
+        <input type="number" class="form-control" id="grade">
+    </div>
+</div>
+<div class="mb-3 row">
+    <label class="col-sm-2 col-form-label">Email</label>
+    <div class="col-sm-5">
+        <input type="email" class="form-control" id="email">
+    </div>
+</div>
+<div class="mb-3 row">
+    <label class="col-sm-2 col-form-label">Date of birth</label>
+    <div class="col-sm-5">
+        <input type="date" class="form-control" id="dateOfBirth">
+    </div>
+</div>
+<div class="mb-3 row">
+    <label class="col-sm-2 col-form-label">Module</label>
+    <div class="col-sm-5">
+        <input type="number" class="form-control" id="module">
+    </div>
+</div>
+<button type="button" class="btn btn-primary" onclick="addStudent()">Add student</button>
+<button type="button" class="btn btn-secondary" onclick="editStudent()">Edit student</button>
+<button type="button" class="btn btn-danger" onclick="delStudent()">Delete student</button>
+<br><br>
+<table class="table table-success table-striped">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Class</th>
+        <th>Email</th>
+        <th>Date of birth</th>
+        <th>Module</th>
+    </tr>
+
+    <tbody id="result"></tbody>
+</table>
+<script>
+    class Students {
+        constructor(id, name, grade, email, dateOfBirth, module) {
+            this.id = id;
+            this.name = name;
+            this.grade = grade;
+            this.email = email;
+            this.dateOfBirth = dateOfBirth;
+            this.module = module;
+        }
+
+        getId() {
+            return this.id;
+        }
+
+        getName() {
+            return this.name;
+        }
+
+        getEmail() {
+            return this.email;
+        }
+
+        getGrade() {
+            return this.grade;
+        }
+
+        getDateOfBirth() {
+            return this.dateOfBirth;
+        }
+
+        getModule() {
+            return this.module;
+        }
+
+        setId(newId) {
+            this.id = newId;
+        }
+
+        setName(newName) {
+            this.name = newName;
+        }
+
+        setEmail(newEmail) {
+            this.email = newEmail;
+        }
+
+        setGrade(newGrade) {
+            this.grade = newGrade;
+        }
+
+        setDateOfBirth(newDob) {
+            this.dateOfBirth = newDob;
+        }
+
+        setModule(newModule) {
+            this.module = newModule;
+        }
+    }
+
+    let listStudents = [];
+    let result = document.getElementById("result");
+
+    function displayTable(list) {
+        for (let i of list) {
+            result.innerHTML += `<tr>
+                        <td>${i.id}</td>
+                        <td>${i.name}</td>
+                        <td>${i.grade}</td>
+                        <td>${i.email}</td>
+                        <td>${i.dateOfBirth}</td>
+                        <td>${i.module}</td>
+                        </tr>`;
+        }
+    }
+
+    function addStudent() {
+        let id = document.getElementById("id").value;
+        let name = document.getElementById("name").value;
+        if (name.length > 4) {
+            alert("The max input name is 50 character");
+        }
+        let grade = document.getElementById("grade").value;
+        let email = document.getElementById("email").value;
+        let dateOfBirth = document.getElementById("dateOfBirth").value;
+        let module = document.getElementById("module").value;
+        if (module < 1 || module > 6) {
+            alert("Module ranges from 1 to 6");
+        }
+        listStudents.push(new Students(id, name, grade, email, dateOfBirth, module));
+        result.innerHTML = "";
+        displayTable(listStudents);
+    }
+
+    console.log(listStudents);
+
+    function editStudent() {
+        let id = document.getElementById("id").value;
+        let check = false;
+        for (let i in listStudents) {
+            check = false;
+            if (id === listStudents[i].id) {
+                let newName = document.getElementById("name").value;
+                if (newName.length > 4) {
+                    alert("The max input name is 50 character");
+                }
+                let newGrade = document.getElementById("grade").value;
+                let newEmail = document.getElementById("email").value;
+                let newDateOfBirth = document.getElementById("dateOfBirth").value;
+                let newModule = document.getElementById("module").value;
+                if (newModule < 1 || newModule > 6) {
+                    alert("Module ranges from 1 to 6");
+                }
+                listStudents[i] = {
+                    "id": id,
+                    "name": newName,
+                    "grade": newGrade,
+                    "email": newEmail,
+                    "dateOfBirth": newDateOfBirth,
+                    "module": newModule,
+                }
+                check = true;
+                break;
+            }
+        }
+        result.innerHTML = "";
+        displayTable(listStudents);
+        if (!check) {
+            alert("Not found ID");
+        }
+        console.log(listStudents);
+    }
+
+    function delStudent() {
+        let id = document.getElementById("id").value;
+        let check = false;
+        for (let i in listStudents) {
+            check = false;
+            if (id === listStudents[i].id) {
+                check = true;
+                listStudents.splice(+i, 1);
+                result.innerHTML = "";
+                displayTable(listStudents);
+                alert("Deleted!");
+            }
+        }
+        if (!check) {
+            alert("Not found ID");
+        }
+    }
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>

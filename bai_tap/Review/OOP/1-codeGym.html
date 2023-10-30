@@ -9,7 +9,7 @@
         border: 2px solid black;
         border-collapse: collapse;
         height: 30px;
-        width: 500px;
+        width: 700px;
     }
 
     th {
@@ -29,6 +29,7 @@
         <th>Date of birth</th>
         <th>Module</th>
     </tr>
+
     <tbody id="result"></tbody>
 </table>
 <script>
@@ -89,19 +90,24 @@
         setModule(newModule) {
             this.module = newModule;
         }
+    }
 
-        addNewStudent() {
-            let result = document.getElementById("result");
-            return result.innerHTML += `<tr>
-                        <td>${this.getId()}</td>
-                        <td>${this.getName()}</td>
-                        <td>${this.getGrade()}</td>
-                        <td>${this.getEmail()}</td>
-                        <td>${this.getDateOfBirth()}</td>
-                        <td>${this.getModule()}</td>
-                        </tr>`
+    let listStudents = [];
+    // listStudents.push(new Students(1, "thắm", "C09", "tham@codegym.vn", "10/10/2000", 1));
+    let result = document.getElementById("result");
+    function displayTable(list) {
+        for (let i of list) {
+            result.innerHTML += `<tr>
+                        <td>${i.id}</td>
+                        <td>${i.name}</td>
+                        <td>${i.grade}</td>
+                        <td>${i.email}</td>
+                        <td>${i.dateOfBirth}</td>
+                        <td>${i.module}</td>
+                        </tr>`;
         }
     }
+    // displayTable(listStudents);
 
     function addStudent() {
         let id = prompt("Input student ID:");
@@ -110,22 +116,60 @@
         let email = prompt("Email of new student:");
         let dateOfBirth = prompt("Date of birth of new student:");
         let module = prompt("Module of new student:");
-        let add = new Students(id, name, grade, email, dateOfBirth, module);
-        add.addNewStudent();
+        listStudents.push(new Students(id, name, grade, email, dateOfBirth, module));
+        result.innerHTML = "";
+        displayTable(listStudents);
     }
+
+    console.log(listStudents);
 
     function editStudent() {
         let id = prompt("Input student ID:");
-        if(id === this.id){
-            let name = prompt("Name of new student:");
-            let grade = prompt("Class of new student:");
-            let email = prompt("Email of new student:");
-            let dateOfBirth = prompt("Date of birth of new student:");
-        } else {
+        let check = false;
+        for (let i in listStudents) {
+            check = false;
+            if (id === listStudents[i].id) {
+                let newName = prompt("Edit name of new student:");
+                let newGrade = prompt("Edit class of new student:");
+                let newEmail = prompt("Edit email of new student:");
+                let newDateOfBirth = prompt("Edit date of birth of new student:");
+                let newModule = prompt("Edit module of new student:");
+                listStudents[i] = {
+                    "id": id,
+                    "name": newName,
+                    "grade": newGrade,
+                    "email": newEmail,
+                    "dateOfBirth": newDateOfBirth,
+                    "module": newModule,
+                }
+                check = true;
+                break;
+            }
+        }
+        result.innerHTML = "";
+        displayTable(listStudents);
+        if (!check) {
             alert("Not found ID");
         }
+        console.log(listStudents);
+    }
 
-
+    function delStudent() {
+        let id = prompt("Input ID student you want to delete: ");
+        let check = false;
+        for (let i in listStudents) {
+            check = false;
+            if (id === listStudents[i].id) {
+                check = true;
+                listStudents.splice(+i,1);
+                result.innerHTML = "";
+                displayTable(listStudents);
+                alert("Deleted!");
+            }
+        }
+        if(!check){
+            alert("Not found ID");
+        }
     }
 </script>
 </body>
