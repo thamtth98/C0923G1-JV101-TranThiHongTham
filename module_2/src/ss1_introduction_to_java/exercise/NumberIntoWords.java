@@ -45,16 +45,20 @@ public class NumberIntoWords {
             String resultTens = "";
             if(tens == 0){
                 resultTens = wordsUnitList[unit];
-            } else if (tens < 10) {
+            } else if (tens <= 10) {
                 resultTens = "and " + wordsUnitList[unit];
             } else if(tens == 11) {
-                resultTens = "Elevent " ;
+                resultTens = "and Elevent " ;
             } else if(tens == 12) {
-                resultTens = "Twelve " ;
-            } else if(tens == 13) {
-                resultTens = "Twelve " ;
-            }else if(tens < 20){
-                resultTens = "and ten " + wordsUnitList[unit];
+                resultTens = "and Twelve " ;
+            }else if(tens == 13) {
+                resultTens = "and Third teen " ;
+            }else if(tens == 14) {
+                resultTens = "and Four teen " ;
+            }else if(tens == 15) {
+                resultTens = "and Fifteen " ;
+            } else if(tens < 20) {
+                resultTens = "and " + wordsUnitList[unit]+ " teen " ;
             }else if(tens < 30){
                 resultTens = "and Twenty " + wordsUnitList[unit];
             } else if (tens < 40) {
