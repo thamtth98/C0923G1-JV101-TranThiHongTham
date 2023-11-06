@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // debugger
+    let h = +prompt("Input the hight of the isosceles Triagle");
+    for(let i = 0; i < h; i++){
+        for(let j = 0; j <= 2*h-1; j++) {
+            document.write("&nbsp&nbsp");
+            if (j === h - i) {
+                for (let k = h - i; k <= h + i; k++) {
+                    document.write("*");
+                }
+            }
+        }
+        document.write("<br>");
+    }
+</script>
+</body>
+</html>
