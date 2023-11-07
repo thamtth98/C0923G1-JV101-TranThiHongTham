@@ -26,19 +26,11 @@ public class ArrayMerged {
             secondArr[i] = scanner.nextInt();
         }
         int[] arrTotal = new int[lengthFirst + lengthSecond];
-        for (int i = 0; i < arrTotal.length; i++) {
-            for (int j = 0; j < firstArray.length; j++) {
-                if (i == j) {
-                    arrTotal[i] = firstArray[j];
-                }
-            }
+        for (int i = 0; i < firstArray.length; i++) {
+                    arrTotal[i] = firstArray[i];
         }
         for (int i = firstArray.length; i < arrTotal.length; i++) {
-            for (int j = 0; j < secondArr.length; j++) {
-                if (j == i - firstArray.length) {
-                    arrTotal[i] = secondArr[j];
-                }
-            }
+                    arrTotal[i] = secondArr[i - firstArray.length];
         }
         System.out.println("Array merged is:");
         System.out.println(Arrays.toString(arrTotal));
