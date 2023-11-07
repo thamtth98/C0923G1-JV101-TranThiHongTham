@@ -19,7 +19,7 @@ public class ElementMin {
         int length = scanner.nextInt();
         int[] arr = new int[length];
         for (int i = 0; i < length; i++) {
-            System.out.printf("Input the %d element: ",i);
+            System.out.printf("Input the %d element: ", i);
             arr[i] = scanner.nextInt();
         }
         System.out.println(findMin(arr));
