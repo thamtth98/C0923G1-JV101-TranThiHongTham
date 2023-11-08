@@ -1,6 +1,4 @@
-package ss2_Loop_and_array.exercise.medthod;
-
-import java.util.Scanner;
+package ss3_method.exercise;
 
 public class ElementMax {
     public static float findMax(float[][] array) {
@@ -16,8 +14,8 @@ public class ElementMax {
     }
 
     public static void main(String[] args) {
-        float[][] maxtric = SumOfDiagonal.createMaxtric();
-        System.out.println("The max in maxtric is:" + findMax(maxtric));
+        float[][] matrix = SumOfDiagonal.createMatrix();
+        System.out.println("The max in matrix is:" + findMax(matrix));
     }
 
 }

@@ -1,4 +1,4 @@
-package ss2_Loop_and_array.exercise.medthod;
+package ss3_method.exercise;
 
 import java.util.Scanner;
 
@@ -11,24 +11,24 @@ public class SumOfDiagonal {
         return sum;
     }
 
-    public static float[][] createMaxtric() {
+    public static float[][] createMatrix() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Input the elements in 2D array = in each array: ");
         int length2DArray = scanner.nextInt();
-        float[][] maxtric = new float[length2DArray][length2DArray];
+        float[][] matrix = new float[length2DArray][length2DArray];
         float number;
         for (int i = 0; i < length2DArray; i++) {
             for (int j = 0; j < length2DArray; j++) {
                 System.out.printf("Input the value of array in [%d][%d]", i, j);
                 number = scanner.nextFloat();
-                maxtric[i][j] = number;
+                matrix[i][j] = number;
             }
         }
-        return maxtric;
+        return matrix;
     }
 
     public static void main(String[] args) {
-        float[][] maxtric = createMaxtric();
-        System.out.println(sumOfDiagonal(maxtric));
+        float[][] matrix = createMatrix();
+        System.out.println(sumOfDiagonal(matrix));
     }
 }

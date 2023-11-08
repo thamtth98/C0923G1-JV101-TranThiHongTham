@@ -1,4 +1,4 @@
-package ss2_Loop_and_array.exercise.medthod;
+package ss3_method.exercise;
 
 import java.util.Scanner;
 
@@ -15,7 +15,7 @@ public class SumOfColumn {
     }
 
     public static void main(String[] args) {
-        float[][] arr = SumOfDiagonal.createMaxtric();
+        float[][] arr = SumOfDiagonal.createMatrix();
         System.out.println("Sum of column is: " + sumColumn(arr));
     }
 }

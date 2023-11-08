@@ -1,4 +1,4 @@
-package ss2_Loop_and_array.practice.method;
+package ss3_method.practice;
 import java.util.Scanner;
 public class TemperatureChange {
     public static void main(String[] args) {
