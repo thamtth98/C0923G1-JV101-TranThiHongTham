@@ -1,4 +1,4 @@
-package ss5_getter_setter_accsess_modifier.exercise.accessModifier;
+package ss5_getter_setter_accsess_modifier.exercise.access_modifier;
 
 public class Circle {
     private double radius;
@@ -19,14 +19,6 @@ public class Circle {
 
     public String getColor() {
         return color;
-    }
-
-    public void setRadius(double radius) {
-        this.radius = radius;
-    }
-
-    public void setColor(String color) {
-        this.color = color;
     }
 
     public double getArea() {

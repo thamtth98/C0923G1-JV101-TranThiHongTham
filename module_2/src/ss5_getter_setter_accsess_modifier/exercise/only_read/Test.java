@@ -1,4 +1,4 @@
-package ss5_getter_setter_accsess_modifier.exercise.onlyRead;
+package ss5_getter_setter_accsess_modifier.exercise.only_read;
 
 public class Test {
     public static void main(String[] args) {

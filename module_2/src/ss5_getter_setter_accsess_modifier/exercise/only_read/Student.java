@@ -1,4 +1,4 @@
-package ss5_getter_setter_accsess_modifier.exercise.onlyRead;
+package ss5_getter_setter_accsess_modifier.exercise.only_read;
 
 public class Student {
     private String name;
@@ -9,16 +9,8 @@ public class Student {
         this.classes = "C02";
     }
 
-    public String getName() {
-        return name;
-    }
-
     public void setName(String name) {
         this.name = name;
-    }
-
-    public String getClasses() {
-        return classes;
     }
 
     public void setClasses(String classes) {
