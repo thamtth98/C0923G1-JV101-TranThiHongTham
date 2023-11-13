@@ -1,22 +1,28 @@
-package ss6_inheritance.exercise.circle_cylinder;
+package ss7_interface_abstract.exercise.colorable;
 
-public class Circle {
-private double radius;
-private String color;
+
+public class Circle extends Shape {
+    private double radius;
+    private String color;
+
+    public Circle() {
+    }
+
+    public Circle(double radius) {
+        this.radius = radius;
+    }
 
     public Circle(double radius, String color) {
         this.radius = radius;
         this.color = color;
     }
 
-    public Circle(double radius) {
-    }
 
     public Circle(double radius, String color, boolean filled) {
+        super(color, filled);
+        this.radius = radius;
     }
 
-    public Circle() {
-    }
 
     public double getRadius() {
         return radius;
@@ -36,13 +42,18 @@ private String color;
 
     public double getArea() {
         return radius * radius * Math.PI;
-}
+    }
+
+    public double getPerimeter() {
+        return 2 * radius * Math.PI;
+    }
 
     @Override
     public String toString() {
-        return "Circle{" +
-                "radius=" + radius +
-                ", color='" + color + '\'' +
+        return "{Circle: " +
+                "radius = " + radius +
+                ", color = " + color +
+                ", area = " + getArea() +
                 '}';
     }
 }
