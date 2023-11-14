@@ -1,7 +1,6 @@
 package ss9_clean_code_refactoring;
 
 public class TennisGame {
-    static int tempScore = 0;
     static String love = "Love";
     static String fifteen = "Fifteen";
     static String thirty = "Thirty";
