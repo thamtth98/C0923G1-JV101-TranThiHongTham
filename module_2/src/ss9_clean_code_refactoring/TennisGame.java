@@ -1,15 +1,15 @@
 package ss9_clean_code_refactoring;
 
 public class TennisGame {
-    static String love = "Love";
-    static String fifteen = "Fifteen";
-    static String thirty = "Thirty";
-    static String forty = "Forty";
-    static String all = "-All";
+    private final static String LOVE = "Love";
+    private final static String FIFTEEN = "Fifteen";
+    private static final String THIRTY = "Thirty";
+    private final static String FORTY = "Forty";
+    private final static String ALL = "-All";
 
     public static String getScore(String firstPlayerName, String secondPlayerName, int firstPlayerPoint, int secondPlayerPoint) {
         if (ruleWin(firstPlayerPoint, secondPlayerPoint)) {
-            return isScoringMethod(firstPlayerPoint);
+            return (isScoringMethod(firstPlayerPoint) + ALL);
         } else if (isFourPoint(firstPlayerPoint, secondPlayerPoint)) {
             return (getGameResult(firstPlayerPoint, secondPlayerPoint));
         } else {
@@ -24,13 +24,13 @@ public class TennisGame {
     public static String isScoringMethod(int score) {
         switch (score) {
             case 0:
-                return love + all;
+                return LOVE ;
             case 1:
-                return fifteen + all;
+                return FIFTEEN ;
             case 2:
-                return thirty + all;
+                return THIRTY ;
             case 3:
-                return forty + all;
+                return FORTY ;
             default:
                 return "Deuce";
         }
@@ -67,18 +67,19 @@ public class TennisGame {
     }
 
     private static void appendScore(StringBuilder result, int score) {
+        isScoringMethod(score);
         switch (score) {
             case 0:
-                result.append(love);
+                result.append(LOVE);
                 break;
             case 1:
-                result.append(fifteen);
+                result.append(FIFTEEN);
                 break;
             case 2:
-                result.append(thirty);
+                result.append(THIRTY);
                 break;
             case 3:
-                result.append(forty);
+                result.append(FORTY);
                 break;
         }
     }
