@@ -92,8 +92,8 @@ public class MyList<E> {
 
     public void clear() {
         size = 0;
-        for (Object item : elements) {
-            item = null;
+        for (int i = 0; i < elements.length; i++) {
+            elements[i] = null;
         }
     }
 }
