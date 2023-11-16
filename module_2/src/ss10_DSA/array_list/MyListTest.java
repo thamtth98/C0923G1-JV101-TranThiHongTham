@@ -48,11 +48,11 @@ public class MyListTest {
         studentMyList.add(student4);
 //        studentMyList.clear();
 
-        for (int i = 0; i < studentMyList.size();i++){
-            Student student = (Student) studentMyList.elements[i];
-            System.out.println(student.id);
-            System.out.println(student.name);
-        }
+//        for (int i = 0; i < studentMyList.size();i++){
+//            Student student = (Student) studentMyList.elements[i];
+//            System.out.println(student.id);
+//            System.out.println(student.name);
+//        }
         System.out.println(studentMyList.get(3).getName());
         System.out.println(studentMyList.indexOf(student1));
         System.out.println(studentMyList.contains(student3));

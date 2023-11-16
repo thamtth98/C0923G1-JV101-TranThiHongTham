@@ -6,7 +6,7 @@ public class MyList<E> {
     private int size = 0;
     static final int DEFAULT_CAPACITY = 10;
 
-    Object[] elements;
+    private Object[] elements;
 
     public MyList() {
         elements = new Object[DEFAULT_CAPACITY];
@@ -31,14 +31,13 @@ public class MyList<E> {
     }
 
     public void add(E element, int index) {
-        if (index > elements.length) {
+        if (index > size) {
             throw new IllegalArgumentException("IndexOutOfBoundsException: " + index);
         } else if (elements.length == size) {
             this.ensureCapacity(5);
         } else {
-            if (elements[index] == null) {
-                elements[index] = element;
-                size++;
+            if (index == size) {
+                add(element);
             } else {
                 for (int i = size + 1; i >= index; i--) {
                     elements[i] = elements[i - 1];
@@ -67,13 +66,14 @@ public class MyList<E> {
 
     public int indexOf(E o) {
         int index = -1;
-        for (int i = 0; i <size;i++){
-            if(this.elements[i].equals(o)){
+        for (int i = 0; i < size; i++) {
+            if (this.elements[i].equals(o)) {
                 return i;
             }
         }
         return index;
     }
+
     public boolean contains(E o) {
         return indexOf(o) != -1;
     }
@@ -86,13 +86,18 @@ public class MyList<E> {
             throw new IllegalArgumentException("MinimumCapacity: " + minCapacity);
         }
     }
-    public E get(int index){
-        return (E) elements[index];
+
+    public E get(int index) {
+        if (index < 0 || index > size) {
+            throw new IllegalArgumentException("Error index");
+        }else {
+            return (E) elements[index];
+        }
     }
 
     public void clear() {
         size = 0;
-        for (int i = 0; i < elements.length; i++) {
+        for (int i = 0; i < size; i++) {
             elements[i] = null;
         }
     }
