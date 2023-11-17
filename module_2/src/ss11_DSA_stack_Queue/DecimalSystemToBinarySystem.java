@@ -11,7 +11,10 @@ public class DecimalSystemToBinarySystem {
         Stack<Integer> numberStack = new Stack<>();
         StringBuilder resultString = new StringBuilder();
         int result = number % 2;
-        while (number >0) {
+        if(number == 0){
+            resultString.append(0);
+        }
+        while (number > 0) {
             result = number % 2;
             System.out.print(result + "\t");
             numberStack.push(result);
