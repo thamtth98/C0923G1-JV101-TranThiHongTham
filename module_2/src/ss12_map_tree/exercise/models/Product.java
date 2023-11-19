@@ -1,4 +1,4 @@
-package ss12_map_tree.exercise.model;
+package ss12_map_tree.exercise.models;
 
 public class Product {
     private Integer id;
@@ -14,6 +14,9 @@ public class Product {
         this.name = name;
         this.price = price;
         this.quality = quality;
+    }
+
+    public Product(String controlPlate, String manufacturerName, String yearOfManufacturer, String owner) {
     }
 
 

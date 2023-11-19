@@ -1,8 +1,8 @@
-package ss12_map_tree.exercise.service;
+package ss12_map_tree.exercise.services;
 
-import ss12_map_tree.exercise.model.Product;
-import ss12_map_tree.exercise.repository.IProductRepo;
-import ss12_map_tree.exercise.repository.ProductRepo;
+import ss12_map_tree.exercise.models.Product;
+import ss12_map_tree.exercise.repositories.IProductRepo;
+import ss12_map_tree.exercise.repositories.ProductRepo;
 
 import java.util.List;
 

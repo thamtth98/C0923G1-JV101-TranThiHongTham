@@ -1,8 +1,8 @@
-package ss12_map_tree.exercise.controller;
+package ss12_map_tree.exercise.controllers;
 
-import ss12_map_tree.exercise.model.Product;
-import ss12_map_tree.exercise.service.IProductService;
-import ss12_map_tree.exercise.service.ProductService;
+import ss12_map_tree.exercise.models.Product;
+import ss12_map_tree.exercise.services.IProductService;
+import ss12_map_tree.exercise.services.ProductService;
 
 import java.util.List;
 
@@ -21,6 +21,6 @@ public class ProductController {
     }
 
     public void remove(Integer id) {
-        iProductService.remove();
+        iProductService.remove(id);
     }
 }

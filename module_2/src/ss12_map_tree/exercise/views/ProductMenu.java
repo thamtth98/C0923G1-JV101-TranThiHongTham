@@ -1,9 +1,8 @@
-package ss12_map_tree.exercise.view;
+package ss12_map_tree.exercise.views;
 
-import ss12_map_tree.exercise.controller.ProductController;
-import ss12_map_tree.exercise.model.Product;
+import ss12_map_tree.exercise.controllers.ProductController;
+import ss12_map_tree.exercise.models.Product;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
@@ -31,8 +30,14 @@ public class ProductMenu {
                     productController.addProduct(product);
                     System.out.println("Added!");
                     break;
+                case 2:
+                    product = inputInfoProduct();
+                    productController.addProduct(product);
+                    System.out.println("Added!");
+                    break;
                 case 3:
-                    Integer id = Integer.valueOf(scanner.nextLine());
+                    System.out.print("Input the id you want delete:");
+                    Integer id = Integer.parseInt(scanner.nextLine());
                     Product productRemove = productController.findCode(id);
                     if (productRemove == null) {
                         System.out.println("Not found ID");
@@ -42,17 +47,20 @@ public class ProductMenu {
                         String confirm = scanner.nextLine();
                         if (confirm.equals("y")) {
                             productController.remove(id);
-                            System.out.println("Deleted");
+                            System.out.println("Deleted!");
                         }
                     }
+                    break;
                 case 4:
                     List<Product> products = productController.findAll();
                     for (Product item : products) {
                         System.out.println(item);
                     }
+                    break;
             }
         } while (choice != 7);
     }
+
     private Product inputInfoProduct() {
         System.out.print("Input the ID: ");
         Integer id = Integer.valueOf(scanner.nextLine());

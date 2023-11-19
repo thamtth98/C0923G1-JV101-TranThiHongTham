@@ -1,4 +1,4 @@
-package ss12_map_tree.exercise.view;
+package ss12_map_tree.exercise.views;
 
 import java.util.Scanner;
 
@@ -8,9 +8,9 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Just start managing products!!");
         String choice;
-        System.out.print("Let's enter y to start!!");
+        System.out.print("Let's enter E to start!!");
         choice = scanner.nextLine();
-        if(choice.equals("y")){
+        if(choice.toLowerCase().equals("e")){
             productMenu.menuProduct();
         }else {
             System.out.println("Exit");
