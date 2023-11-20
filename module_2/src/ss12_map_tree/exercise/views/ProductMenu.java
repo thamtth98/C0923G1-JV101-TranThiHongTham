@@ -13,6 +13,10 @@ public class ProductMenu {
 
     public void menuProduct() {
         int choice;
+        List<Product> products;
+        Integer id;
+        Product product;
+        Product productRemove;
         do {
             System.out.println("1. Add product");
             System.out.println("2. Edit product");
@@ -24,21 +28,21 @@ public class ProductMenu {
             Scanner scanner = new Scanner(System.in);
             System.out.println("Please enter the number: ");
             choice = Integer.parseInt(scanner.nextLine());
+            product = inputInfoProduct();
             switch (choice) {
                 case 1:
-                    Product product = inputInfoProduct();
-                    productController.addProduct(product);
-                    System.out.println("Added!");
-                    break;
-                case 2:
                     product = inputInfoProduct();
                     productController.addProduct(product);
                     System.out.println("Added!");
                     break;
+//                case 2:
+//                    productController.addProduct(product);
+//                    System.out.println("Added!");
+//                    break;
                 case 3:
                     System.out.print("Input the id you want delete:");
-                    Integer id = Integer.parseInt(scanner.nextLine());
-                    Product productRemove = productController.findCode(id);
+                    id = Integer.parseInt(scanner.nextLine());
+                    productRemove = productController.findCode(id);
                     if (productRemove == null) {
                         System.out.println("Not found ID");
                     } else {
@@ -52,13 +56,15 @@ public class ProductMenu {
                     }
                     break;
                 case 4:
-                    List<Product> products = productController.findAll();
+                   products = productController.findAll();
                     for (Product item : products) {
                         System.out.println(item);
                     }
                     break;
+                case 7:
+                    return;
             }
-        } while (choice != 7);
+        } while (choice != 8);
     }
 
     private Product inputInfoProduct() {
