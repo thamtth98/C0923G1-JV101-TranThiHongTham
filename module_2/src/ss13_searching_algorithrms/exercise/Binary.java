@@ -35,10 +35,16 @@ public class Binary {
     }
 
     public static void main(String[] args) {
-        int[] arr = {1, 8, 4, 6, 3, 13, 5, 9};
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Input the length of array: ");
+        int lengthArr = Integer.parseInt(scanner.nextLine());
+        int[] arr = new int[lengthArr];
+        for(int i = 0; i < lengthArr; i++){
+            System.out.println("Input the element of array in " + i);
+            arr[i] = Integer.parseInt(scanner.nextLine());
+        }
         System.out.println(Arrays.toString(sortArr(arr)));
         System.out.print("Input the number: ");
-        Scanner scanner = new Scanner(System.in);
         int value = Integer.parseInt(scanner.nextLine());
         System.out.println(binarySearch(arr, 0, arr.length - 1, value));
     }
