@@ -23,4 +23,21 @@ public class ProductController {
     public void remove(Integer id) {
         iProductService.remove(id);
     }
+
+
+    public void editName(String name,Product product) {
+        iProductService.editName(name,product);
+    }
+
+    public void editPrice(int price, Product product) {
+        iProductService.editPrice(price,product);
+    }
+
+    public void editQuality(int quality, Product product) {
+        iProductService.editQuality(quality,product);
+    }
+
+    public List<Product> findProduct(Integer id) {
+        return iProductService.findProduct(id);
+    }
 }

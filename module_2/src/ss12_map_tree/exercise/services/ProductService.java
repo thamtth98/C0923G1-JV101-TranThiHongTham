@@ -33,4 +33,24 @@ public class ProductService implements IProductService{
     public void remove(Integer id) {
         iProductRepo.remove(id);
     }
+
+    @Override
+    public void editName(String name, Product product) {
+        iProductRepo.editName(name, product);
+    }
+
+    @Override
+    public void editPrice(int price, Product product) {
+        iProductRepo.editPrice(price,product);
+    }
+
+    @Override
+    public void editQuality(int quality, Product product) {
+        iProductRepo.editQuality(quality,product);
+    }
+
+    @Override
+    public List<Product> findProduct(Integer id) {
+       return iProductRepo.findProduct(id);
+    }
 }

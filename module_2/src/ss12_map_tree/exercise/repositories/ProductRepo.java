@@ -44,4 +44,31 @@ public class ProductRepo implements IProductRepo {
         }
     }
 
+    @Override
+    public void editName(String name,Product product) {
+        product.setName(name);
+    }
+
+    @Override
+    public void editPrice(int price, Product product) {
+        product.setPrice(price);
+    }
+
+    @Override
+    public void editQuality(int quality, Product product) {
+        product.setQuality(quality);
+    }
+
+    @Override
+    public List<Product> findProduct(Integer id) {
+        List<Product> products1 = new ArrayList<>();
+        for (Product product:products ){
+            if(product.getId().equals(id)){
+                products1.add(product);
+                return products1;
+            }
+        }
+        return null;
+    }
+
 }
