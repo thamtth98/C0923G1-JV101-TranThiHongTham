@@ -20,7 +20,7 @@ public class hi {
         int d = 0;
         for (int j = 0; j < arrIndex.size() - 1; j++) {
             k = arrIndex.get(j);
-            if(arrIndex.get(0) !=0) {
+            if(j == 0 && arrIndex.get(0) !=0) {
                 arrays.add(s.substring(0, k));
             }
             d = arrIndex.get(j + 1);
