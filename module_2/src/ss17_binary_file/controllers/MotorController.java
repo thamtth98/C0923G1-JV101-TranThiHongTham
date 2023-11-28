@@ -1,4 +1,4 @@
-package ss17_binary_file.cotrollers;
+package ss17_binary_file.controllers;
 
 import ss17_binary_file.models.Motorbike;
 import ss17_binary_file.services.IMotorService;

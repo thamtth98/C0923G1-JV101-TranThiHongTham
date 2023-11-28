@@ -1,20 +1,15 @@
 package ss17_binary_file.views;
 
 import ss17_binary_file.common.ExceptionDouble;
-import ss17_binary_file.cotrollers.MotorController;
+import ss17_binary_file.controllers.MotorController;
 import ss17_binary_file.models.Motorbike;
 
-import javax.imageio.IIOException;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.ObjectOutputStream;
 import java.util.List;
 import java.util.Scanner;
 
 public class MotorManagement {
-    Motorbike motorbike = new Motorbike();
-    MotorController motorController = new MotorController();
+    private Motorbike motorbike = new Motorbike();
+    private MotorController motorController = new MotorController();
 
     public void addMotor(Motorbike motorbike) {
         motorController.addMotor(motorbike);
