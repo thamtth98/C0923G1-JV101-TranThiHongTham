@@ -1,16 +1,14 @@
-package case_study.models;
+package case_study.models.facility;
 
-import java.util.Date;
-
-public class Resort {
+public class Facility {
     private String idService;
     private String name;
     private Double area;
     private Double rentalCosts;
     private Integer numberOfPeople;
-    private Date typeDate;
+    private String typeDate;
 
-    public Resort(String idService, String name, Double area, Double rentalCosts, Integer numberOfPeople, Date typeDate) {
+    public Facility(String idService, String name, Double area, Double rentalCosts, Integer numberOfPeople, String typeDate) {
         this.idService = idService;
         this.name = name;
         this.area = area;
@@ -19,7 +17,7 @@ public class Resort {
         this.typeDate = typeDate;
     }
 
-    public Resort() {
+    public Facility() {
     }
 
     public String getIdService() {
@@ -62,11 +60,11 @@ public class Resort {
         this.numberOfPeople = numberOfPeople;
     }
 
-    public Date getTypeDate() {
+    public String getTypeDate() {
         return typeDate;
     }
 
-    public void setTypeDate(Date typeDate) {
+    public void setTypeDate(String typeDate) {
         this.typeDate = typeDate;
     }
 
