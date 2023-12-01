@@ -7,7 +7,7 @@ private String idCustomer;
 private String typeCustomer;
 private String address;
 
-    public Customer(String name, Date dateOfBirth, String gender, Integer idNumber, Integer phoneNumber, String email, String idCustomer, String typeCustomer, String address) {
+    public Customer(String name, String dateOfBirth, String gender, Integer idNumber, Integer phoneNumber, String email, String idCustomer, String typeCustomer, String address) {
         super(name, dateOfBirth, gender, idNumber, phoneNumber, email);
         this.idCustomer = idCustomer;
         this.typeCustomer = typeCustomer;

@@ -4,13 +4,13 @@ import java.util.Date;
 
 public class Person {
     private String name;
-    private Date dateOfBirth;
+    private String dateOfBirth;
     private String gender;
     private Integer idNumber;
     private Integer phoneNumber;
     private String email;
 
-    public Person(String name, Date dateOfBirth, String gender, Integer idNumber, Integer phoneNumber, String email) {
+    public Person(String name, String dateOfBirth, String gender, Integer idNumber, Integer phoneNumber, String email) {
         this.name = name;
         this.dateOfBirth = dateOfBirth;
         this.gender = gender;
@@ -30,11 +30,11 @@ public class Person {
         this.name = name;
     }
 
-    public Date getDateOfBirth() {
+    public String getDateOfBirth() {
         return dateOfBirth;
     }
 
-    public void setDateOfBirth(Date dateOfBirth) {
+    public void setDateOfBirth(String dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
     }
 

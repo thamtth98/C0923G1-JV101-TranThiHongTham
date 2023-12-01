@@ -1,4 +1,4 @@
-package case_study.utils;
+package case_study.utils.exception;
 
 import java.util.Scanner;
 
@@ -11,7 +11,7 @@ public class ExceptionInteger {
                 number = Integer.parseInt(scanner.nextLine());
                 break;
             }catch (NumberFormatException e){
-                System.out.println("Not a choice, please input again: ");
+                System.out.println("Number is not in correct format, please input again: ");
             }
         }
         return number;

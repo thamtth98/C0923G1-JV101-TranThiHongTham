@@ -1,9 +1,10 @@
 package case_study.views;
 
-import case_study.utils.ExceptionInteger;
+import case_study.utils.exception.ExceptionInteger;
 
 public class MainResort {
     private static ResortManagement resortManagement = new ResortManagement();
+    private static EmployeeManagement employeeManagement = new EmployeeManagement();
 
     public static void main(String[] args) {
         int choice;
@@ -13,7 +14,7 @@ public class MainResort {
             choice = ExceptionInteger.checkIntegerNumber();
             switch (choice) {
                 case 1:
-                    resortManagement.displayList();
+                    employeeManagement.displayList();
                     break;
                 case 2:
                     resortManagement.customer();

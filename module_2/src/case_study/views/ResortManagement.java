@@ -1,32 +1,24 @@
 package case_study.views;
 
-import case_study.repository.IEmployeeRepository;
-import case_study.repository.impl.EmployeeRepository;
+import case_study.models.person.Employee;
 import case_study.services.IEmployeeService;
 import case_study.services.IFacilityService;
 import case_study.services.impl.EmployeeService;
 import case_study.services.impl.FacilityService;
-import case_study.utils.ExceptionInteger;
+import case_study.utils.exception.ExceptionInteger;
+import case_study.utils.exception.ExceptionLong;
+import case_study.utils.regex.Regex;
+import case_study.utils.WriteEmployee;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
 
 public class ResortManagement {
     private static IFacilityService iFacilityService = new FacilityService();
     private static IEmployeeService iEmployeeService = new EmployeeService();
     private static int number;
-    public void displayList() {
-        System.out.println("1. Display list employees\n" +
-                "2. Add new employee\n" +
-                "3. Edit employee\n" +
-                "4. Delete employee\n" +
-                "5. Search by name employee\n" +
-                "6. Return main menu\n");
-        number = ExceptionInteger.checkIntegerNumber();
-        switch (number){
-            case 1:
-                iEmployeeService.displayEmployee();
-                break;
-        }
-
-    }
+    private static Scanner scanner = new Scanner(System.in);
 
     public void customer() {
         System.out.println("1. Display list customers\n" +

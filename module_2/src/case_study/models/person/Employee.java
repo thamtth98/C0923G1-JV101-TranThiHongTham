@@ -6,17 +6,9 @@ public class Employee extends Person{
     private String idStaff;
     private String level;
     private String position;
-    private Double salary;
+    private Long salary;
 
-    public Employee(String idStaff, String level, String position, Double salary) {
-        this.idStaff = idStaff;
-        this.level = level;
-        this.position = position;
-        this.salary = salary;
-    }
-
-    public Employee(String name, Date dateOfBirth, String gender, Integer idNumber, Integer phoneNumber, String email, String idStaff, String level, String position, Double salary) {
-        super(name, dateOfBirth, gender, idNumber, phoneNumber, email);
+    public Employee(String idStaff, String level, String position, Long salary) {
         this.idStaff = idStaff;
         this.level = level;
         this.position = position;
@@ -24,6 +16,14 @@ public class Employee extends Person{
     }
 
     public Employee() {
+    }
+
+    public Employee(String idStaff, String name, String dateOfBirth, String gender, Integer idNumber, Integer phoneNumber, String email, String level, String position, Long salary) {
+        super(name, dateOfBirth, gender, idNumber, phoneNumber, email);
+        this.idStaff = idStaff;
+        this.level = level;
+        this.position = position;
+        this.salary = salary;
     }
 
     public String getIdStaff() {
@@ -50,24 +50,24 @@ public class Employee extends Person{
         this.position = position;
     }
 
-    public Double getSalary() {
+    public Long getSalary() {
         return salary;
     }
 
-    public void setSalary(Double salary) {
+    public void setSalary(Long salary) {
         this.salary = salary;
     }
 
     @Override
     public String toString() {
         return "Employee{" +
-                "name='" + super.getName() + '\'' +
+                "idStaff='" + idStaff + '\'' +
+                ", name='" + super.getName() + '\'' +
                 ", dateOfBirth=" + super.getDateOfBirth()+
                 ", gender='" + super.getGender() + '\'' +
                 ", idNumber=" + super.getIdNumber() +
                 ", phoneNumber=" + super.getPhoneNumber() +
                 ", email='" + super.getEmail() + '\'' +
-                "idStaff='" + idStaff + '\'' +
                 ", level='" + level + '\'' +
                 ", position='" + position + '\'' +
                 ", salary=" + salary +
