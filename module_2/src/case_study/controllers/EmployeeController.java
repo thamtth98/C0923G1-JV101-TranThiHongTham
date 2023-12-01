@@ -4,6 +4,7 @@ import case_study.models.person.Employee;
 import case_study.services.IEmployeeService;
 import case_study.services.impl.EmployeeService;
 
+import java.time.LocalDate;
 import java.util.List;
 
 public class EmployeeController {
@@ -27,18 +28,18 @@ public class EmployeeController {
         iEmployeeService.editName(employee,name);
     }
 
-    public void editDateOfBirth(Employee employee, String dateOfBirth) {
+
+    public void editDateOfBirth(Employee employee, LocalDate dateOfBirth) {
         iEmployeeService.editDateOfBirth(employee,dateOfBirth);
     }
-
     public void editGender(Employee employee, String gender) {
         iEmployeeService.editGender(employee,gender);
     }
 
-    public void editIdNumber(Employee employee, Integer idNumber) {
+    public void editIdNumber(Employee employee, String idNumber) {
         iEmployeeService.editIdNumber(employee,idNumber);
     }
-    public void editPhoneNumber(Employee employee, Integer phoneNumber) {
+    public void editPhoneNumber(Employee employee, String phoneNumber) {
         iEmployeeService.editPhoneNumber(employee,phoneNumber);
     }
     public void editEmail(Employee employee, String email) {
@@ -65,4 +66,6 @@ public class EmployeeController {
     public List<Employee> findByName(String name) {
         return iEmployeeService.findByName(name);
     }
+
+
 }

@@ -2,6 +2,7 @@ package case_study.repository;
 
 import case_study.models.person.Employee;
 
+import java.time.LocalDate;
 import java.util.List;
 
 public interface IEmployeeRepository {
@@ -11,13 +12,13 @@ public interface IEmployeeRepository {
 
     void editName(Employee employee, String name);
 
-    void editDateOfBirth(Employee employee, String dateOfBirth);
+    void editDateOfBirth(Employee employee, LocalDate dateOfBirth);
 
     void editGender(Employee employee, String gender);
 
-    void editPhoneNumber(Employee employee, Integer phoneNumber);
+    void editPhoneNumber(Employee employee, String phoneNumber);
 
-    void editIdNumber(Employee employee, Integer idNumber);
+    void editIdNumber(Employee employee, String idNumber);
 
     void editEmail(Employee employee, String email);
 
@@ -32,4 +33,5 @@ public interface IEmployeeRepository {
     void addEmployee(Employee employee);
 
     List<Employee> findByName(String name);
+
 }

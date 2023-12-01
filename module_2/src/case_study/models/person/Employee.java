@@ -1,5 +1,6 @@
 package case_study.models.person;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 public class Employee extends Person{
@@ -18,7 +19,7 @@ public class Employee extends Person{
     public Employee() {
     }
 
-    public Employee(String idStaff, String name, String dateOfBirth, String gender, Integer idNumber, Integer phoneNumber, String email, String level, String position, Long salary) {
+    public Employee(String idStaff, String name, LocalDate dateOfBirth, String gender, String idNumber, String phoneNumber, String email, String level, String position, Long salary) {
         super(name, dateOfBirth, gender, idNumber, phoneNumber, email);
         this.idStaff = idStaff;
         this.level = level;

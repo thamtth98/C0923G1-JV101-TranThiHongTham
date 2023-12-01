@@ -1,16 +1,17 @@
 package case_study.models.person;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 public class Person {
     private String name;
-    private String dateOfBirth;
+    private LocalDate dateOfBirth;
     private String gender;
-    private Integer idNumber;
-    private Integer phoneNumber;
+    private String idNumber;
+    private String phoneNumber;
     private String email;
 
-    public Person(String name, String dateOfBirth, String gender, Integer idNumber, Integer phoneNumber, String email) {
+    public Person(String name, LocalDate dateOfBirth, String gender, String idNumber, String phoneNumber, String email) {
         this.name = name;
         this.dateOfBirth = dateOfBirth;
         this.gender = gender;
@@ -30,11 +31,11 @@ public class Person {
         this.name = name;
     }
 
-    public String getDateOfBirth() {
+    public LocalDate getDateOfBirth() {
         return dateOfBirth;
     }
 
-    public void setDateOfBirth(String dateOfBirth) {
+    public void setDateOfBirth(LocalDate dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
     }
 
@@ -46,19 +47,19 @@ public class Person {
         this.gender = gender;
     }
 
-    public Integer getIdNumber() {
+    public String getIdNumber() {
         return idNumber;
     }
 
-    public void setIdNumber(Integer idNumber) {
+    public void setIdNumber(String idNumber) {
         this.idNumber = idNumber;
     }
 
-    public Integer getPhoneNumber() {
+    public String getPhoneNumber() {
         return phoneNumber;
     }
 
-    public void setPhoneNumber(Integer phoneNumber) {
+    public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 

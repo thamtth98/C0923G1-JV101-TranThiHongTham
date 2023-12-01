@@ -5,6 +5,7 @@ import case_study.repository.IEmployeeRepository;
 import case_study.utils.ReadEmployeeList;
 import case_study.utils.WriteEmployee;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -46,10 +47,11 @@ public class EmployeeRepository implements IEmployeeRepository {
     }
 
     @Override
-    public void editDateOfBirth(Employee employee, String dateOfBirth) {
+    public void editDateOfBirth(Employee employee, LocalDate dateOfBirth) {
         employee.setDateOfBirth(dateOfBirth);
         WriteEmployee.writeFile(employeeList);
     }
+
 
     @Override
     public void editGender(Employee employee, String gender) {
@@ -58,13 +60,13 @@ public class EmployeeRepository implements IEmployeeRepository {
     }
 
     @Override
-    public void editPhoneNumber(Employee employee, Integer phoneNumber) {
+    public void editPhoneNumber(Employee employee, String phoneNumber) {
         employee.setPhoneNumber(phoneNumber);
         WriteEmployee.writeFile(employeeList);
     }
 
     @Override
-    public void editIdNumber(Employee employee, Integer idNumber) {
+    public void editIdNumber(Employee employee, String idNumber) {
         employee.setIdNumber(idNumber);
         WriteEmployee.writeFile(employeeList);
     }

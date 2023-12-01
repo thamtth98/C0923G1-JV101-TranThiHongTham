@@ -5,6 +5,7 @@ import case_study.repository.IEmployeeRepository;
 import case_study.repository.impl.EmployeeRepository;
 import case_study.services.IEmployeeService;
 
+import java.time.LocalDate;
 import java.util.List;
 
 public class EmployeeService implements IEmployeeService {
@@ -30,9 +31,10 @@ public class EmployeeService implements IEmployeeService {
     }
 
     @Override
-    public void editDateOfBirth(Employee employee, String dateOfBirth) {
+    public void editDateOfBirth(Employee employee, LocalDate dateOfBirth) {
         iEmployeeRepository.editDateOfBirth(employee,dateOfBirth);
     }
+
 
     @Override
     public void editGender(Employee employee, String gender) {
@@ -40,12 +42,12 @@ public class EmployeeService implements IEmployeeService {
     }
 
     @Override
-    public void editIdNumber(Employee employee, Integer idNumber) {
+    public void editIdNumber(Employee employee, String idNumber) {
         iEmployeeRepository.editIdNumber(employee,idNumber);
     }
 
     @Override
-    public void editPhoneNumber(Employee employee, Integer phoneNumber) {
+    public void editPhoneNumber(Employee employee, String phoneNumber) {
         iEmployeeRepository.editPhoneNumber(employee,phoneNumber);
     }
 
