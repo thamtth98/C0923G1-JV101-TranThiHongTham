@@ -2,8 +2,8 @@ package case_study.repository.impl;
 
 import case_study.models.person.Employee;
 import case_study.repository.IEmployeeRepository;
-import case_study.utils.ReadEmployeeList;
-import case_study.utils.WriteEmployee;
+import case_study.utils.FileEmployee.ReadEmployeeList;
+import case_study.utils.FileEmployee.WriteEmployee;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -18,19 +18,17 @@ public class EmployeeRepository implements IEmployeeRepository {
     }
 
     @Override
-    public List<Employee> displayEmployee() {
+    public List<Employee> display() {
         return employeeList;
     }
     @Override
-    public void addEmployee(Employee employee) {
+    public void add(Employee employee) {
         employeeList.add(employee);
         WriteEmployee.writeFile(employeeList);
     }
 
-
-
     @Override
-    public Employee findIdStaff(String idStaff) {
+    public Employee findId(String idStaff) {
         for (Employee employee : employeeList) {
             if (employee.getIdStaff().equalsIgnoreCase(idStaff)) {
                 return employee;
@@ -96,7 +94,7 @@ public class EmployeeRepository implements IEmployeeRepository {
     }
 
     @Override
-    public void deleteEmployee(Employee employee) {
+    public void delete(Employee employee) {
         employeeList.remove(employee);
         WriteEmployee.writeFile(employeeList);
     }

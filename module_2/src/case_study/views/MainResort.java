@@ -5,6 +5,8 @@ import case_study.utils.exception.ExceptionInteger;
 public class MainResort {
     private static ResortManagement resortManagement = new ResortManagement();
     private static EmployeeManagement employeeManagement = new EmployeeManagement();
+    private static CustomerManagement customerManagement = new CustomerManagement();
+    private static FacilityManagement facilityManagement = new FacilityManagement();
 
     public static void main(String[] args) {
         int choice;
@@ -17,10 +19,10 @@ public class MainResort {
                     employeeManagement.displayList();
                     break;
                 case 2:
-                    resortManagement.customer();
+                    customerManagement.customer();
                     break;
                 case 3:
-                    resortManagement.facility();
+                    facilityManagement.facility();
                     break;
                 case 4:
                     resortManagement.booking();

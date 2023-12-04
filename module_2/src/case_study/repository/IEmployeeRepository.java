@@ -5,10 +5,7 @@ import case_study.models.person.Employee;
 import java.time.LocalDate;
 import java.util.List;
 
-public interface IEmployeeRepository {
-    List<Employee> displayEmployee();
-
-    Employee findIdStaff(String idStaff);
+public interface IEmployeeRepository extends IRepository<Employee>{
 
     void editName(Employee employee, String name);
 
@@ -27,10 +24,6 @@ public interface IEmployeeRepository {
     void editPosition(Employee employee, String position);
 
     void editSalary(Employee employee, Long salary);
-
-    void deleteEmployee(Employee employee);
-
-    void addEmployee(Employee employee);
 
     List<Employee> findByName(String name);
 

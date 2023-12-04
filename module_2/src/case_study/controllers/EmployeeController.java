@@ -10,16 +10,16 @@ import java.util.List;
 public class EmployeeController {
     public static IEmployeeService iEmployeeService= new EmployeeService();
 
-    public List<Employee> displayEmployee() {
-        return iEmployeeService.displayEmployee();
+    public List<Employee> display() {
+        return iEmployeeService.display();
     }
     public void addEmployee(Employee employee) {
-        iEmployeeService.addEmployee(employee);
+        iEmployeeService.add(employee);
     }
 
 
     public Employee findIdStaff(String idStaff) {
-        return iEmployeeService.findIdStaff(idStaff);
+        return iEmployeeService.findId(idStaff);
     }
 
 
@@ -59,7 +59,7 @@ public class EmployeeController {
 
 
     public void deleteEmployee(Employee employee) {
-        iEmployeeService.deleteEmployee(employee);
+        iEmployeeService.delete(employee);
     }
 
 

@@ -5,21 +5,15 @@ import case_study.models.person.Employee;
 import java.time.LocalDate;
 import java.util.List;
 
-public interface IEmployeeService {
-    List<Employee> displayEmployee();
-
-    Employee findIdStaff(String idStaff);
-    void addEmployee(Employee employee);
+public interface IEmployeeService extends IService<Employee>{
 
     void editName(Employee employee, String name);
 
     void editDateOfBirth(Employee employee, LocalDate dateOfBirth);
 
-
     void editGender(Employee employee, String gender);
 
     void editIdNumber(Employee employee, String idNumber);
-
 
     void editPhoneNumber(Employee employee, String phoneNumber);
 
@@ -30,7 +24,6 @@ public interface IEmployeeService {
 
     void editSalary(Employee employee, Long salary);
 
-    void deleteEmployee(Employee employee);
 
     List<Employee> findByName(String name);
 

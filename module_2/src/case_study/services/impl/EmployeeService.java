@@ -11,18 +11,18 @@ import java.util.List;
 public class EmployeeService implements IEmployeeService {
     private static IEmployeeRepository iEmployeeRepository = new EmployeeRepository();
     @Override
-    public List<Employee> displayEmployee() {
-        return iEmployeeRepository.displayEmployee();
+    public List<Employee> display() {
+        return iEmployeeRepository.display();
     }
 
     @Override
-    public Employee findIdStaff(String idStaff) {
-        return iEmployeeRepository.findIdStaff(idStaff);
+    public Employee findId(String idStaff) {
+        return iEmployeeRepository.findId(idStaff);
     }
 
     @Override
-    public void addEmployee(Employee employee) {
-        iEmployeeRepository.addEmployee(employee);
+    public void add(Employee employee) {
+        iEmployeeRepository.add(employee);
     }
 
     @Override
@@ -73,8 +73,8 @@ public class EmployeeService implements IEmployeeService {
     }
 
     @Override
-    public void deleteEmployee(Employee employee) {
-        iEmployeeRepository.deleteEmployee(employee);
+    public void delete(Employee employee) {
+        iEmployeeRepository.delete(employee);
     }
 
     @Override

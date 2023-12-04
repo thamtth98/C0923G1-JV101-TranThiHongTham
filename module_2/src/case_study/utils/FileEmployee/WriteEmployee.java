@@ -1,4 +1,4 @@
-package case_study.utils;
+package case_study.utils.FileEmployee;
 
 import case_study.models.person.Employee;
 
@@ -35,18 +35,18 @@ public class WriteEmployee {
         }
     }
 
-    public static void deleteContain() {
-        PrintWriter writer = null;
-        try {
-            writer = new PrintWriter(new FileWriter(FILE_EMPLOYEE));
-            writer.print("");
-        } catch (IOException e) {
-            System.out.println("Input/Output exception!");
-        } finally {
-            if (writer != null) {
-                writer.close();
-            }
-        }
-
-    }
+//    public static void deleteContain() {
+//        PrintWriter writer = null;
+//        try {
+//            writer = new PrintWriter(new FileWriter(FILE_EMPLOYEE));
+//            writer.print("");
+//        } catch (IOException e) {
+//            System.out.println("Input/Output exception!");
+//        } finally {
+//            if (writer != null) {
+//                writer.close();
+//            }
+//        }
+//
+//    }
 }
