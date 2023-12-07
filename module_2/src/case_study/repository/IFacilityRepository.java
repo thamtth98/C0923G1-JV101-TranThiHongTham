@@ -8,7 +8,7 @@ import case_study.models.facility.Villa;
 import java.util.Map;
 
 public interface IFacilityRepository {
-    Map<Facility, Integer> display();
+    Map<Facility, Integer> displayFacility();
 
     void addVilla(Villa villa);
 
@@ -19,4 +19,7 @@ public interface IFacilityRepository {
     Map<Facility, Integer> listMaintenance();
 
     Facility findIdService(String idService);
+
+
+    void delFacility(Facility facility);
 }

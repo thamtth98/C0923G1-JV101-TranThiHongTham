@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="0d6d7e0c-4850-484d-94fa-bed928ede108" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/module_2/src/case_study/controllers/FacilityController.java" beforeDir="false" afterPath="$PROJECT_DIR$/module_2/src/case_study/controllers/FacilityController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module_2/src/case_study/models/booking/Booking.java" beforeDir="false" afterPath="$PROJECT_DIR$/module_2/src/case_study/models/booking/Booking.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module_2/src/case_study/models/facility/House.java" beforeDir="false" afterPath="$PROJECT_DIR$/module_2/src/case_study/models/facility/House.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module_2/src/case_study/models/facility/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/module_2/src/case_study/models/facility/Room.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module_2/src/case_study/models/facility/Villa.java" beforeDir="false" afterPath="$PROJECT_DIR$/module_2/src/case_study/models/facility/Villa.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module_2/src/case_study/models/person/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/module_2/src/case_study/models/person/Customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module_2/src/case_study/repository/IFacilityRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/module_2/src/case_study/repository/IFacilityRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module_2/src/case_study/repository/impl/FacilityRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/module_2/src/case_study/repository/impl/FacilityRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module_2/src/case_study/services/IFacilityService.java" beforeDir="false" afterPath="$PROJECT_DIR$/module_2/src/case_study/services/IFacilityService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module_2/src/case_study/services/impl/FacilityService.java" beforeDir="false" afterPath="$PROJECT_DIR$/module_2/src/case_study/services/impl/FacilityService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module_2/src/case_study/utils/data/dataCustomer.csv" beforeDir="false" afterPath="$PROJECT_DIR$/module_2/src/case_study/utils/data/dataCustomer.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module_2/src/case_study/utils/regex/Regex.java" beforeDir="false" afterPath="$PROJECT_DIR$/module_2/src/case_study/utils/regex/Regex.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module_2/src/case_study/views/CustomerManagement.java" beforeDir="false" afterPath="$PROJECT_DIR$/module_2/src/case_study/views/CustomerManagement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module_2/src/case_study/views/EmployeeManagement.java" beforeDir="false" afterPath="$PROJECT_DIR$/module_2/src/case_study/views/EmployeeManagement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module_2/src/case_study/views/FacilityManagement.java" beforeDir="false" afterPath="$PROJECT_DIR$/module_2/src/case_study/views/FacilityManagement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module_2/src/case_study/views/ResortManagement.java" beforeDir="false" afterPath="$PROJECT_DIR$/module_2/src/case_study/views/ResortManagement.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="2ZDfbKbmvLiv4U7nCIm4JWUcTpu" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "D:/LUA/C0923G1-JV101/C0923G1-JV101-TranThiHongTham/module_2",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="0d6d7e0c-4850-484d-94fa-bed928ede108" name="Changes" comment="" />
+      <created>1701961640731</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1701961640731</updated>
+      <workItem from="1701961641717" duration="20000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

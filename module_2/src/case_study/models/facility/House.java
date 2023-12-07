@@ -37,8 +37,14 @@ public class House extends Facility {
     @Override
     public String toString() {
         return "House{" +
-                "roomHouse='" + roomHouse + '\'' +
+                "id='" + super.getIdService() +
+                ", name='" + super.getName() +
+                ", are=" + super.getArea() +
+                ", rentalCosts=" + super.getRentalCosts() +
+                ", numberOfPeople=" + super.getNumberOfPeople() +
+                ", typeDate=" + super.getTypeDate() +
+                ", roomHouse='" + roomHouse + '\'' +
                 ", numberOfFloorHouse=" + numberOfFloorHouse +
-                "} " + super.toString();
+                "} ";
     }
 }

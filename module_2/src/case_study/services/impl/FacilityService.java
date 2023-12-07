@@ -14,8 +14,8 @@ public class FacilityService implements IFacilityService {
     private IFacilityRepository iFacilityRepository = new FacilityRepository();
 
     @Override
-    public Map<Facility, Integer> display() {
-        return iFacilityRepository.display();
+    public Map<Facility, Integer> displayFacility() {
+        return iFacilityRepository.displayFacility();
     }
 
     @Override
@@ -42,4 +42,11 @@ public class FacilityService implements IFacilityService {
     public Facility findIdService(String idService) {
         return iFacilityRepository.findIdService(idService);
     }
+
+    @Override
+    public void delFacility(Facility facility) {
+        iFacilityRepository.delFacility(facility);
+    }
+
+
 }

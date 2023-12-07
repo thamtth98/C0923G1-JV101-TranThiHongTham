@@ -4,7 +4,6 @@ import case_study.services.IEmployeeService;
 import case_study.services.IFacilityService;
 import case_study.services.impl.EmployeeService;
 import case_study.services.impl.FacilityService;
-import case_study.utils.exception.ExceptionInteger;
 
 import java.util.Scanner;
 
@@ -28,5 +27,10 @@ public class ResortManagement {
         System.out.println("1. Display list customers use service\n" +
                 "2. Display list customers get voucher\n" +
                 "3. Return main menu\n");
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        return super.equals(obj);
     }
 }

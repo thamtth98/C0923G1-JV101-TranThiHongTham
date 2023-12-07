@@ -15,6 +15,9 @@ public class Regex {
     private static final String REGEX_DATE_OF_BIRTH = "^\\d{4}-(0[1-9]|1[0-2])-(0[1-9]|1\\d|2\\d|3[0-1])$";
     private static final String REGEX_ID_CUSTOMER = "^KH-\\d{4}$";
     private static final String REGEX_EMAIL = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]+$";
+    private static final String REGEX_ID_VILLA = "^SVVL-\\d{4}$";
+    private static final String REGEX_ID_HOUSE = "^SVHO-\\d{4}$";
+    private static final String REGEX_ID_ROOM = "^SVRO-\\d{4}$";
 
 
     private static Scanner scanner = new Scanner(System.in);
@@ -105,7 +108,7 @@ public class Regex {
         LocalDate dateOfBirth = LocalDate.parse(str);
         LocalDate now = LocalDate.now();
         Period age = Period.between(dateOfBirth,now);
-        if (age.getYears() > 18){
+        if (age.getYears() >= 18){
             return true;
         } else {
             return false;
@@ -124,9 +127,49 @@ public class Regex {
         }
         return str;
     }
-
-    public static void main(String[] args) {
-        checkEmail();
+    public static String checkIDVilla(){
+        System.out.print("Input the ID villa (SVVL-YYYY (Y is number)): ");
+        str = scanner.nextLine();
+        while (true) {
+            if(str.matches(REGEX_ID_VILLA)){
+                break;
+            }else {
+                System.out.println("ID is NOT correct format, input again the ID villa (SVVL-YYYY (Y is number)): ");
+                str = scanner.nextLine();
+            }
+        }
+        return str;
     }
+    public static String checkIDHouse(){
+        System.out.print("Input the ID house (SVHO-YYYY (Y is number)): ");
+        str = scanner.nextLine();
+        while (true) {
+            if(str.matches(REGEX_ID_HOUSE)){
+                break;
+            }else {
+                System.out.println("ID is NOT correct format, input again the ID house (SVHO-YYYY (Y is number)): ");
+                str = scanner.nextLine();
+            }
+        }
+        return str;
+    }
+    public static String checkIDRoom(){
+        System.out.print("Input the ID room (SVRO-YYYY (Y is number)): ");
+        str = scanner.nextLine();
+        while (true) {
+            if(str.matches(REGEX_ID_HOUSE)){
+                break;
+            }else {
+                System.out.println("ID is NOT correct format, input again the ID room (SVRO-YYYY (Y is number)): ");
+                str = scanner.nextLine();
+            }
+        }
+        return str;
+    }
+
+
+//    public static void main(String[] args) {
+//        checkEmail();
+//    }
 
 }

@@ -2,6 +2,7 @@ package case_study.models.person;
 
 import java.time.LocalDate;
 import java.util.Date;
+import java.util.Objects;
 
 public class Customer extends Person{
 private String idCustomer;
@@ -61,5 +62,18 @@ private String address;
                 ", typeCustomer='" + typeCustomer + '\'' +
                 ", address='" + address + '\'' +
                 "} ";
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Customer customer = (Customer) o;
+        return Objects.equals(idCustomer, customer.idCustomer) && Objects.equals(typeCustomer, customer.typeCustomer) && Objects.equals(address, customer.address);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(idCustomer, typeCustomer, address);
     }
 }

@@ -77,13 +77,13 @@ public class EmployeeManagement {
                             switch (number) {
                                 case 1:
                                     System.out.print("Input the new name: ");
-                                    name = scanner.nextLine();
+                                    name = Regex.checkName();
                                     employeeController.editName(employee, name);
                                     System.out.println("Edit success!");
                                     break;
                                 case 2:
                                     System.out.print("Input the new date of birth: ");
-                                    dateOfBirth = LocalDate.parse(scanner.nextLine());
+                                    dateOfBirth = checkAge();
                                     employeeController.editDateOfBirth(employee, dateOfBirth);
                                     System.out.println("Edit success!");
                                     break;
@@ -94,19 +94,19 @@ public class EmployeeManagement {
                                     break;
                                 case 4:
                                     System.out.print("Input the new ID number: ");
-                                    idNumber = scanner.nextLine();
+                                    idNumber = Regex.checkIDNumber();
                                     employeeController.editIdNumber(employee, idNumber);
                                     System.out.println("Edit success!");
                                     break;
                                 case 5:
                                     System.out.print("Input the new phone number: ");
-                                    phoneNumber = scanner.nextLine();
+                                    phoneNumber = Regex.checkPhoneNumber();
                                     employeeController.editPhoneNumber(employee, phoneNumber);
                                     System.out.println("Edit success!");
                                     break;
                                 case 6:
                                     System.out.print("Input the new email: ");
-                                    email = scanner.nextLine();
+                                    email = Regex.checkEmail();
                                     employeeController.editEmail(employee, email);
                                     System.out.println("Edit success!");
                                     break;
@@ -181,15 +181,7 @@ public class EmployeeManagement {
 
         String name = Regex.checkName();
 
-        String dateOfBirthStr = Regex.checkDateOfBirth();
-        LocalDate dateOfBirth = LocalDate.parse(dateOfBirthStr);
-        boolean checkAge = Regex.checkAge(dateOfBirthStr);
-        while (!checkAge) {
-            System.out.println("Age not enough 18 old!, input again: ");
-            dateOfBirthStr = Regex.checkDateOfBirth();
-            dateOfBirth = LocalDate.parse(dateOfBirthStr);
-            checkAge = Regex.checkAge(dateOfBirthStr);
-        }
+        LocalDate dateOfBirth = checkAge();
 
         String gender = gender();
 
@@ -203,13 +195,29 @@ public class EmployeeManagement {
 
         String position = position();
 
+        long salary = checkSalary();
+        return new Employee(idStaff, name, dateOfBirth, gender, idNumber, phoneNumber, email, level, position, salary);
+    }
+    public static long checkSalary(){
         System.out.println("Input the salary: ");
         long salary = ExceptionLong.checkLongNumber();
         while (salary <= 0) {
             System.out.println("Salary cannot be negative, input again: ");
             salary = ExceptionLong.checkLongNumber();
         }
-        return new Employee(idStaff, name, dateOfBirth, gender, idNumber, phoneNumber, email, level, position, salary);
+        return salary;
+    }
+    public static LocalDate checkAge(){
+        String dateOfBirthStr = Regex.checkDateOfBirth();
+        LocalDate dateOfBirth = LocalDate.parse(dateOfBirthStr);
+        boolean checkAge = Regex.checkAge(dateOfBirthStr);
+        while (!checkAge) {
+            System.out.println("Age not enough 18 old, input again: ");
+            dateOfBirthStr = Regex.checkDateOfBirth();
+            dateOfBirth = LocalDate.parse(dateOfBirthStr);
+            checkAge = Regex.checkAge(dateOfBirthStr);
+        }
+        return dateOfBirth;
     }
 
     public static String gender() {

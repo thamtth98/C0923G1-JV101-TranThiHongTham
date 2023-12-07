@@ -9,14 +9,13 @@ import java.time.LocalDate;
 import java.util.List;
 import java.util.Scanner;
 
-import static case_study.views.EmployeeManagement.gender;
-import static case_study.views.EmployeeManagement.level;
+import static case_study.views.EmployeeManagement.*;
 
 public class CustomerManagement {
     private static CustomerController customerController = new CustomerController();
     private static Scanner scanner = new Scanner(System.in);
 
-    public void customer() {
+    public static void customer() {
         String idCustomer;
         String choice;
         int number;
@@ -38,6 +37,7 @@ public class CustomerManagement {
                     "4. Delete customer\n" +
                     "5. Search by name customer\n" +
                     "6. Return main menu\n");
+            System.out.println("Let's choice: ");
             number = ExceptionInteger.checkIntegerNumber();
             switch (number) {
                 case 1:
@@ -55,8 +55,6 @@ public class CustomerManagement {
                     System.out.println("Input the ID you want edit: ");
                     String id = scanner.nextLine();
                     customer = customerController.findId(id);
-                    //String idCustomer, String name, LocalDate dateOfBirth, String gender,
-                    // String idNumber, String phoneNumber, String email, String typeCustomer, String address
                     if (customer != null) {
                         System.out.println("Information you want edit " + customer);
                         System.out.print("You want edit, enter y to confirm edit: ");
@@ -75,13 +73,13 @@ public class CustomerManagement {
                             switch (number) {
                                 case 1:
                                     System.out.print("Input the new name: ");
-                                    name = scanner.nextLine();
+                                    name = Regex.checkName();
                                     CustomerController.editName(customer, name);
                                     System.out.println("Edit success!");
                                     break;
                                 case 2:
                                     System.out.print("Input the new date of birth: ");
-                                    dateOfBirth = LocalDate.parse(scanner.nextLine());
+                                    dateOfBirth = checkAge();
                                     customerController.editDateOfBirth(customer, dateOfBirth);
                                     System.out.println("Edit success!");
                                     break;
@@ -92,24 +90,24 @@ public class CustomerManagement {
                                     break;
                                 case 4:
                                     System.out.print("Input the new ID number: ");
-                                    idNumber = scanner.nextLine();
+                                    idNumber = Regex.checkIDNumber();
                                     customerController.editIdNumber(customer, idNumber);
                                     System.out.println("Edit success!");
                                     break;
                                 case 5:
                                     System.out.print("Input the new phone number: ");
-                                    phoneNumber = scanner.nextLine();
+                                    phoneNumber = Regex.checkPhoneNumber();
                                     customerController.editPhoneNumber(customer, phoneNumber);
                                     System.out.println("Edit success!");
                                     break;
                                 case 6:
                                     System.out.print("Input the new email: ");
-                                    email = scanner.nextLine();
+                                    email = Regex.checkEmail();
                                     customerController.editEmail(customer, email);
                                     System.out.println("Edit success!");
                                     break;
                                 case 7:
-                                    typeCustomer = scanner.nextLine();
+                                    typeCustomer = typeCustomer();
                                     customerController.editTypeCustomer(customer, typeCustomer);
                                     System.out.println("Edit success!");
                                     break;
@@ -169,7 +167,7 @@ public class CustomerManagement {
 
     }
 
-    public Customer infoCustomer() {
+    public static Customer infoCustomer() {
         String idCustomer = Regex.checkIDCustomer();
         while (customerController.findId(idCustomer) != null) {
             System.out.println("ID already exists, cannot be duplicated, input again: ");
@@ -177,15 +175,8 @@ public class CustomerManagement {
         }
         String name = Regex.checkName();
 
-        String dateOfBirthStr = Regex.checkDateOfBirth();
-        LocalDate dateOfBirth = LocalDate.parse(dateOfBirthStr);
-        boolean checkAge = Regex.checkAge(dateOfBirthStr);
-        while (!checkAge) {
-            System.out.println("Age not enough 18 old!, input again: ");
-            dateOfBirthStr = Regex.checkDateOfBirth();
-            dateOfBirth = LocalDate.parse(dateOfBirthStr);
-            checkAge = Regex.checkAge(dateOfBirthStr);
-        }
+        LocalDate dateOfBirth = checkAge();
+
         String gender = gender();
 
         String idNumber = Regex.checkIDNumber();

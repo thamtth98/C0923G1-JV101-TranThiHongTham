@@ -15,7 +15,7 @@ public class FacilityController {
     public static IFacilityService iFacilityService= new FacilityService();
 
     public Map<Facility,Integer> display() {
-        return iFacilityService.display();
+        return iFacilityService.displayFacility();
     }
 
     public void addVilla(Villa villa) {
@@ -36,5 +36,11 @@ public class FacilityController {
 
     public Facility findIdService(String idService) {
         return iFacilityService.findIdService(idService);
+    }
+
+
+
+    public void delFacility(Facility facility) {
+        iFacilityService.delFacility(facility);
     }
 }

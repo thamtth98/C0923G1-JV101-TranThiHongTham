@@ -14,12 +14,13 @@ public class FacilityRepository implements IFacilityRepository {
     static {
         //String idService, String name, Double area, Double rentalCosts,
         // Integer numberOfPeople, String typeDate, String roomHouse, Integer numberOfFloorHouse
-        Facility house = new House("H-01","green-house",100.0,1300000.0,5,"Short","505",13);
+        Facility house = new House("HO-01","green-house",100.0,1300000.0,5,"Short","505",13);
         facilityList.put(house,5);
     }
+    //hashcode viết theo băm, các kiểu cùng data sẽ nằm trên cùng 1 dòng,
 
     @Override
-    public Map<Facility, Integer> display() {
+    public Map<Facility, Integer> displayFacility() {
         return facilityList;
     }
 
@@ -58,4 +59,11 @@ public class FacilityRepository implements IFacilityRepository {
         }
         return null;
     }
+
+    @Override
+    public void delFacility(Facility facility) {
+        facilityList.remove(facility);
+    }
+
+
 }

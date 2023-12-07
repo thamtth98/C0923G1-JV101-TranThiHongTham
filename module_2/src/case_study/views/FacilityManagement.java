@@ -6,6 +6,8 @@ import case_study.models.facility.House;
 import case_study.models.facility.Room;
 import case_study.models.facility.Villa;
 import case_study.utils.exception.ExceptionInteger;
+import case_study.utils.regex.Regex;
+import ss17_binary_file.common.ExceptionDouble;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -15,7 +17,8 @@ public class FacilityManagement {
     private static FacilityController facilityController = new FacilityController();
     private static int number;
     private static Scanner scanner = new Scanner(System.in);
-    private static Map<Facility,Integer> facilityList = new LinkedHashMap<>();
+    private static Map<Facility, Integer> facilityList = new LinkedHashMap<>();
+
     public void facility() {
         do {
             System.out.println("1. Display list facility\n" +
@@ -23,11 +26,12 @@ public class FacilityManagement {
                     "3. Display list facility maintenance\n" +
                     "4. Delete facility\n" +
                     "5. Return main menu\n");
+            System.out.println("Let's choice: ");
             number = ExceptionInteger.checkIntegerNumber();
-            switch (number){
+            switch (number) {
                 case 1:
                     facilityList = facilityController.display();
-                    for(Map.Entry<Facility, Integer> temp: facilityList.entrySet()){
+                    for (Map.Entry<Facility, Integer> temp : facilityList.entrySet()) {
                         System.out.println(temp);
                     }
                     break;
@@ -36,7 +40,7 @@ public class FacilityManagement {
                     break;
                 case 3:
                     facilityList = facilityController.listMaintenance();
-                    for(Map.Entry<Facility, Integer> temp: facilityList.entrySet()){
+                    for (Map.Entry<Facility, Integer> temp : facilityList.entrySet()) {
                         System.out.println(temp);
                     }
                     break;
@@ -44,22 +48,38 @@ public class FacilityManagement {
                     System.out.println("Input the ID: ");
                     String idService = scanner.nextLine();
                     Facility facility = facilityController.findIdService(idService);
-                    if(facility !=null){
-
+                    if (facility != null) {
+                        System.out.println("Find: " + facility);
+                        System.out.println("Do you want delete? enter y to confirm: ");
+                        String confirm = scanner.nextLine();
+                        if (confirm.equalsIgnoreCase("y")) {
+                            facilityController.delFacility(facility);
+                            System.out.println("Deleted!");
+                        } else {
+                            System.out.println("NOT delete!");
+                        }
+                    } else {
+                        System.out.println("Not found ID!");
                     }
                     break;
+                case 5:
+                    return;
+                default:
+                    System.out.println("Please choice number in the list!");
             }
-        }while (true);
+        } while (true);
 
     }
-    public static void menuAdd(){
+
+    public static void menuAdd() {
         do {
             System.out.println("1. Add New Villa\n" +
                     "2. Add New House\n" +
                     "3. Add New Room\n" +
                     "4. Back to menu\n");
+            System.out.println("Let's choice: ");
             number = ExceptionInteger.checkIntegerNumber();
-            switch (number){
+            switch (number) {
                 case 1:
                     Villa villa = infoVilla();
                     facilityController.addVilla(villa);
@@ -77,92 +97,142 @@ public class FacilityManagement {
                     break;
                 case 4:
                     return;
+                default:
+                    System.out.println("Please choice number in the list!");
             }
-        }while (true);
+        } while (true);
     }
 
-    private static Room infoRoom() {
-        //String idService, String name, Double area, Double rentalCosts,
-        // Integer numberOfPeople, String typeDate, String freeService
-        System.out.println("Input idService");
-        String idService = scanner.nextLine();
+    private static String rentalType() {
+        do {
+            System.out.println("1. By year \n" +
+                    "2. By month\n" +
+                    "3. By day");
+            System.out.print("Choice the type rental: ");
+            int number = ExceptionInteger.checkIntegerNumber();
+            switch (number) {
+                case 1:
+                    return "By year";
+                case 2:
+                    return "By month";
+                case 3:
+                    return "By day";
+                default:
+                    System.out.println("Please choice the number in the list!");
+            }
+        } while (true);
+    }
 
-        System.out.println("Input name");
-        String name = scanner.nextLine();
+    public static double inputArea() {
+        System.out.println("Input area (m2): ");
+        double area = ExceptionDouble.checkParseDouble();
+        while (area <= 30) {
+            System.out.println("The area must be greater than 30 m2, input again: ");
+            area = ExceptionDouble.checkParseDouble();
+        }
+        return area;
+    }
 
-        System.out.println("Input area");
-        Double area = Double.parseDouble(scanner.nextLine());
+    public static double inputRentalCosts() {
+        double rentalCosts = ExceptionDouble.checkParseDouble();
+        while (rentalCosts <= 0) {
+            System.out.println("The area must be positive number, input again: ");
+            rentalCosts = ExceptionDouble.checkParseDouble();
+        }
+        return rentalCosts;
+    }
 
-        System.out.println("Input rentalCosts");
-        Double rentalCosts = Double.parseDouble(scanner.nextLine());
-
-        System.out.println("Input numberOfPeople");
-        Integer numberOfPeople = Integer.parseInt(scanner.nextLine());
-        System.out.println("Input typeDate");
-        String typeDate = scanner.nextLine();
-        System.out.println("Input freeService");
-        String freeService = scanner.nextLine();
-        return new Room(idService,name,area,rentalCosts,numberOfPeople,typeDate,freeService);
+    public static int inputNumberOfPeople() {
+        System.out.println("Let's input people: ");
+        int numberOfPeople = ExceptionInteger.checkIntegerNumber();
+        while (numberOfPeople < 0 || numberOfPeople >= 20) {
+            System.out.println("Maximum number of people must be >0 and less than <20, input again: ");
+            numberOfPeople = ExceptionInteger.checkIntegerNumber();
+        }
+        return numberOfPeople;
     }
 
     private static House infoHouse() {
-        //String idService, String name, Double area, Double rentalCosts,
-        // Integer numberOfPeople, String typeDate, String roomHouse, Integer numberOfFloorHouse
-        System.out.println("Input idService");
-        String idService = scanner.nextLine();
 
-        System.out.println("Input name");
-        String name = scanner.nextLine();
+        String idService = Regex.checkIDHouse();
 
-        System.out.println("Input area");
-        Double area = Double.parseDouble(scanner.nextLine());
+        String name = Regex.checkName();
+        double area = inputArea();
+        double rentalCosts = inputRentalCosts();
 
-        System.out.println("Input rentalCosts");
-        Double rentalCosts = Double.parseDouble(scanner.nextLine());
+        int numberOfPeople = inputNumberOfPeople();
 
-        System.out.println("Input numberOfPeople");
-        Integer numberOfPeople = Integer.parseInt(scanner.nextLine());
-        System.out.println("Input typeDate");
-        String typeDate = scanner.nextLine();
+        String rentalType = rentalType();
 
-        System.out.println("Input roomHouse");
-        String roomHouse = scanner.nextLine();
-
+        String roomHouse = Regex.checkName();
 
         System.out.println("Input numberOfFloor");
-        Integer numberOfFloor = Integer.parseInt(scanner.nextLine());
+        int numberOfFloor = ExceptionInteger.checkIntegerNumber();
+        while (numberOfFloor <= 0) {
+            System.out.println("The number of floor must be positive number, input again: ");
+            numberOfFloor = ExceptionInteger.checkIntegerNumber();
+        }
 
-        return new House(idService,name,area,rentalCosts,numberOfPeople,typeDate,roomHouse,numberOfFloor);
+        return new House(idService, name, area, rentalCosts, numberOfPeople, rentalType, roomHouse, numberOfFloor);
+    }
+
+    private static Room infoRoom() {
+
+        String idService = Regex.checkIDRoom();
+
+        String name = Regex.checkName();
+
+        double area = inputArea();
+
+
+        double rentalCosts = inputRentalCosts();
+
+
+        int numberOfPeople = inputNumberOfPeople();
+
+        String rentalType = rentalType();
+
+        System.out.println("Input freeService");
+        String freeService = scanner.nextLine();
+
+        return new Room(idService, name, area, rentalCosts, numberOfPeople, rentalType, freeService);
     }
 
     private static Villa infoVilla() {
         //String idService, String name, Double area, Double rentalCosts,
-        // Integer numberOfPeople, String typeDate, String roomStandards, Double areaPool, Integer numberOfFloor
-        System.out.println("Input idService");
-        String idService = scanner.nextLine();
+        // Integer numberOfPeople, String rentalType, String roomStandards, Double areaPool, Integer numberOfFloor
+        String idService = Regex.checkIDVilla();
 
-        System.out.println("Input name");
-        String name = scanner.nextLine();
+        String name = Regex.checkName();
 
-        System.out.println("Input area");
-        Double area = Double.parseDouble(scanner.nextLine());
+        double area = inputArea();
 
-        System.out.println("Input rentalCosts");
-        Double rentalCosts = Double.parseDouble(scanner.nextLine());
 
-        System.out.println("Input numberOfPeople");
-        Integer numberOfPeople = Integer.parseInt(scanner.nextLine());
-        System.out.println("Input typeDate");
-        String typeDate = scanner.nextLine();
+        double rentalCosts = inputRentalCosts();
+
+
+        int numberOfPeople = inputNumberOfPeople();
+
+
+        String rentalType = rentalType();
 
         System.out.println("Input roomStandards");
         String roomStandards = scanner.nextLine();
 
-        System.out.println("Input areaPool");
-        Double areaPool = Double.parseDouble(scanner.nextLine());
-        System.out.println("Input numberOfFloor");
-        Integer numberOfFloor = Integer.parseInt(scanner.nextLine());
-        return new Villa(idService,name,area,rentalCosts,numberOfPeople,typeDate,roomStandards,areaPool,numberOfFloor);
+        System.out.println("Input area pool (m2): ");
+        double areaPool = ExceptionDouble.checkParseDouble();
+        while (areaPool <= 30) {
+            System.out.println("The area must be greater than 30 m2, input again: ");
+            areaPool = ExceptionDouble.checkParseDouble();
+        }
+        System.out.println("Let's input number of floor: ");
+        int numberOfFloor = ExceptionInteger.checkIntegerNumber();
+        while (numberOfFloor <= 0) {
+            System.out.println("The number of floor must be positive number, input again: ");
+            numberOfFloor = ExceptionInteger.checkIntegerNumber();
+        }
+
+        return new Villa(idService, name, area, rentalCosts, numberOfPeople, rentalType, roomStandards, areaPool, numberOfFloor);
     }
 
 }
