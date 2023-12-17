@@ -25,20 +25,20 @@ dia_chi varchar(70) not null
 );
 
 create table sdt_nha_cung_cap(
-ma_nha_cung_cap varchar(20)primary key,
+ma_nha_cung_cap varchar(20),
 sdt int unique,
+primary key(ma_nha_cung_cap,sdt),
 foreign key (ma_nha_cung_cap) references nha_cung_cap(ma_nha_cung_cap)
 );
 
 create table chi_tiet_phieu_xuat(
 dg_xuat long not null,
 sl_xuat int not null,
-so_phieu_xuat varchar(20),
-ma_vat_tu varchar(20),
+so_phieu_xuat varchar(20) not null,
+ma_vat_tu varchar(20) not null,
 primary key (so_phieu_xuat,ma_vat_tu),
 foreign key (so_phieu_xuat) references phieu_xuat(so_phieu_xuat),
 foreign key (ma_vat_tu) references vat_tu(ma_vat_tu)
-
 );
 create table chi_tiet_phieu_nhap(
 dg_nhap long not null,
