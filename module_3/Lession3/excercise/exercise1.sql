@@ -11,9 +11,11 @@ select *
 from st_subject
 where credit >= 3 and credit <= 5;
 
+set sql_safe_updates = 0;
 update student
 set class_id = 2
 where student_name = 'Hung';
+set sql_safe_updates = 1;
 
 select student.student_name,st_subject.sub_name,mark.mark
 from mark
