@@ -1,28 +1,31 @@
 drop database if exists management_sell;
 create database if not exists management_sell;
 use management_sell;
-create table customer(
-customer_id int primary key auto_increment not null,
-customer_name varchar(30) not null,
-customer_age int check (customer_age>0)
+CREATE TABLE customer (
+    customer_id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    customer_name VARCHAR(30) NOT NULL,
+    customer_age INT CHECK (customer_age > 0)
 );
-create table order_goods(
-order_id int primary key auto_increment not null,
-customer_id int,
-order_date datetime not null,
-order_total_price long,
-foreign key (customer_id) references customer (customer_id)
+CREATE TABLE order_goods (
+    order_id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    customer_id INT,
+    order_date DATETIME NOT NULL,
+    order_total_price LONG,
+    FOREIGN KEY (customer_id)
+        REFERENCES customer (customer_id)
 );
-create table product(
-product_id int primary key ,
-product_name varchar(30) not null,
-product_price int check (product_price>0)
+CREATE TABLE product (
+    product_id INT PRIMARY KEY,
+    product_name VARCHAR(30) NOT NULL,
+    product_price INT CHECK (product_price > 0)
 );
-create table order_detail(
-order_id int,
-product_id int,
-order_detail_qty varchar(30),
-primary key (order_id,product_id),
-foreign key (order_id) references order_goods(order_id),
-foreign key (product_id) references product(product_id)
+CREATE TABLE order_detail (
+    order_id INT,
+    product_id INT,
+    order_detail_qty VARCHAR(30),
+    PRIMARY KEY (order_id , product_id),
+    FOREIGN KEY (order_id)
+        REFERENCES order_goods (order_id),
+    FOREIGN KEY (product_id)
+        REFERENCES product (product_id)
 );

@@ -1,26 +1,39 @@
 use quan_ly_sinh_vien;
-select * 
-from student
-where student_name like 'h%';
+SELECT 
+    *
+FROM
+    student
+WHERE
+    student_name LIKE 'h%';
 
-select * 
-from grade
-where month(start_date) = 12;
+SELECT 
+    *
+FROM
+    grade
+WHERE
+    MONTH(start_date) = 12;
 
-select *
-from st_subject
-where credit >= 3 and credit <= 5;
+SELECT 
+    *
+FROM
+    st_subject
+WHERE
+    credit >= 3 AND credit <= 5;
 
 set sql_safe_updates = 0;
-update student
-set class_id = 2
-where student_name = 'Hung';
+UPDATE student 
+SET 
+    class_id = 2
+WHERE
+    student_name = 'Hung';
 set sql_safe_updates = 1;
 
-select student.student_name,st_subject.sub_name,mark.mark
-from mark
-join student
-on student.student_id = mark.student_id
-join st_subject
-on st_subject.sub_id = mark.sub_id
-order by mark desc, student_name;
+SELECT 
+    student.student_name, st_subject.sub_name, mark.mark
+FROM
+    mark
+        JOIN
+    student ON student.student_id = mark.student_id
+        JOIN
+    st_subject ON st_subject.sub_id = mark.sub_id
+ORDER BY mark DESC , student_name;

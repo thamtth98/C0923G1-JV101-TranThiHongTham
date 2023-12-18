@@ -25,28 +25,42 @@ values (1,1,3),
 (2,5,4),
 (2,3,3);
 
-select order_id,order_date,order_total_price
-from order_goods;
+SELECT 
+    order_id, order_date, order_total_price
+FROM
+    order_goods;
 
-select customer.customer_id,customer.customer_name,order_goods.order_id
-from customer
-join order_goods
-on customer.customer_id = order_goods.customer_id;
+SELECT 
+    customer.customer_id,
+    customer.customer_name,
+    order_goods.order_id
+FROM
+    customer
+        JOIN
+    order_goods ON customer.customer_id = order_goods.customer_id;
 
-select customer.customer_id,customer.customer_name,order_goods.order_id
-from customer
-left join order_goods
-on customer.customer_id = order_goods.customer_id
-where order_goods.order_id is null;
+SELECT 
+    customer.customer_id,
+    customer.customer_name,
+    order_goods.order_id
+FROM
+    customer
+        LEFT JOIN
+    order_goods ON customer.customer_id = order_goods.customer_id
+WHERE
+    order_goods.order_id IS NULL;
 
-select order_goods.order_id,order_goods.order_date,
-sum(order_detail.order_detail_qty * product.product_price) as order_total_price
-from order_detail
-join product 
-on product.product_id = order_detail.product_id
-join order_goods
-on order_goods.order_id = order_detail.order_id
-group by order_goods.order_id,order_goods.order_date;
+SELECT 
+    order_goods.order_id,
+    order_goods.order_date,
+    SUM(order_detail.order_detail_qty * product.product_price) AS order_total_price
+FROM
+    order_detail
+        JOIN
+    product ON product.product_id = order_detail.product_id
+        JOIN
+    order_goods ON order_goods.order_id = order_detail.order_id
+GROUP BY order_goods.order_id , order_goods.order_date;
 
 
 
