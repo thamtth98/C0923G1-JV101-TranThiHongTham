@@ -47,24 +47,24 @@ DELIMITER //
 create procedure all_product_procedure()
    begin
    select * from products;
-   end;
-    //DELIMITER ;
+end;
+//DELIMITER ;
     
-    DELIMITER //
+DELIMITER //
 create procedure insert_product_procedure(
-in product_id INT,
-in product_code VARCHAR(20) ,
-in product_name VARCHAR(70),
-in product_price INT,
-in product_amount INT,
-in product_description VARCHAR(100),
-in product_status BIT
+	in product_id INT,
+	in product_code VARCHAR(20) ,
+	in product_name VARCHAR(70),
+	in product_price INT,
+	in product_amount INT,
+	in product_description VARCHAR(100),
+	in product_status BIT
 )
    begin
-   insert into products
-   values(product_id,product_code,product_name,product_price, product_amount,product_description,product_status);
+		insert into products
+		values(product_id,product_code,product_name,product_price, product_amount,product_description,product_status);
    end;
-    //DELIMITER ;
+//DELIMITER ;
     
     call insert_product_procedure(5,'P-005','Máy game',12000,8,'New',1);
     
@@ -94,14 +94,14 @@ DELIMITER ;
 
 call insert_product_procedure(5,'P-005','Máy nghe nhạc',12000,8,'New',1);
     
-    -- Tạo store procedure xoá sản phẩm theo id
-    	DELIMITER //
-    create procedure del_product_procedure(in del_product_id INT)
-    begin 
-    delete from products
-    where del_product_id = product_id;
-    end;
-    //DELIMITER ;
-    call del_product_procedure(2)
+-- Tạo store procedure xoá sản phẩm theo id
+DELIMITER //
+create procedure del_product_procedure(in del_product_id INT)
+begin 
+	delete from products
+	where del_product_id = product_id;
+end;
+//DELIMITER ;
+call del_product_procedure(2);
     
     
