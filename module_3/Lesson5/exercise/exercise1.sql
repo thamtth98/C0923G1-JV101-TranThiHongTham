@@ -49,6 +49,7 @@ create procedure all_product_procedure()
    select * from products;
 end;
 //DELIMITER ;
+call all_product_procedure();
     
 DELIMITER //
 create procedure insert_product_procedure(
@@ -68,7 +69,7 @@ create procedure insert_product_procedure(
     
     call insert_product_procedure(5,'P-005','Máy game',12000,8,'New',1);
     
-    -- Tạo store procedure sửa thông tin sản phẩm theo id
+-- Tạo store procedure sửa thông tin sản phẩm theo id
 DELIMITER //
 CREATE PROCEDURE edit_product_procdure(
 	IN p_product_id INT,
@@ -89,10 +90,10 @@ BEGIN
         product_description = p_product_description,
         product_status = p_product_status
     WHERE product_id = p_product_id;
-END //
-DELIMITER ;
+END 
+//DELIMITER ;
 
-call insert_product_procedure(5,'P-005','Máy nghe nhạc',12000,8,'New',1);
+call edit_product_procdure(5,'P-005','Máy nghe nhạc',12000,8,'New',1);
     
 -- Tạo store procedure xoá sản phẩm theo id
 DELIMITER //
