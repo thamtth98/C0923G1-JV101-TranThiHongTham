@@ -4,3 +4,26 @@ body {
     text-align: justify;
     margin: 50px;
 }
+a {
+    text-decoration: none;
+}
+#image img {
+    height:400px ;
+    width: 400px;
+}
+#title{
+    text-align: center;
+}
+#introduce{
+    display: flex;
+    justify-content: center;
+}
+
+#header{
+    display: flex;
+    justify-content: space-around;
+    /*height: 100px;*/
+    background-color: lavenderblush;
+    position: sticky;
+    top: 0;
+}
