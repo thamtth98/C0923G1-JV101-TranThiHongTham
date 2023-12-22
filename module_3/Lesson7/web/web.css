@@ -1,3 +1,156 @@
-body{
+body {
     margin: 0;
+    background-color: #d7d2d2;
 }
+.row{
+    display: block;
+}
+
+#header {
+    position: sticky;
+    top: 0;
+}
+
+.header-top {
+    display: flex;
+    height: 70px;
+    justify-content: space-between;
+    background-color: #252323;
+}
+
+.logo > img {
+    border-radius: 50%;
+}
+
+.logo > img:hover {
+    cursor: pointer;
+}
+
+.log {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.log-button:hover {
+    cursor: pointer;
+    background-color: darkgray;
+}
+
+.log-button {
+    border-radius: 10px;
+    height: 40px;
+    width: 100px;
+}
+
+.icon-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.margin-10 {
+    margin: 0 10px;
+}
+
+.search > label > input {
+    height: 30px;
+    width: 200px;
+    border-radius: 5px;
+}
+
+.link > a {
+    color: white;
+    text-decoration: none;
+    padding: 16px;
+    border-radius: 5px;
+}
+
+.link > a:hover {
+    color: black;
+    background-color: #eae5e5;
+}
+
+.header-bottom {
+    display: flex;
+    justify-content: center;
+    height: 50px;
+    background-color: #5b5555;
+    color: white;
+}
+
+#content {
+    background-color: #d7d2d2;
+    display: flex;
+    margin: 0 10px;
+}
+
+#column-left {
+    width: 40%;
+    height: 90vh;
+    background-color: #d7d2d2;
+    overflow: auto;
+}
+
+#column-right {
+    width: 60%;
+    height: 100%;
+    background-color: #d7d2d2;
+}
+
+.info-movie {
+    text-align: justify;
+    margin: 0 10px;
+}
+.item-video{
+    margin: 5px 10px;
+}
+
+#footer {
+    background-color: gray;
+    color: white;
+    height: 40px;
+    width: 100%;
+}
+h5{
+    margin: 0 10px;
+}
+
+@media only screen and (max-width: 560px) {
+    .search{
+        display: none;
+
+    }
+    .header-bottom{
+        display: none;
+        justify-content: left;
+    }
+    #content{
+        display: block;
+    }
+    #column-right{
+        width: 100%;
+        height: 315px;
+    }
+    #column-right > .item-video> iframe{
+        width: 100%;
+        height: 315px;
+    }
+    #container{
+        text-align: right;
+    }
+    h5{
+        margin: 0 10px;
+    }
+
+    #column-left{
+        width: 100%;
+        overflow: revert;
+    }
+
+    .info-movie > p{
+        display: none;
+        height: 100%;
+    }
+}
+

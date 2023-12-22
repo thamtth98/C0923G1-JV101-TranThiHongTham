@@ -76,3 +76,9 @@ hr{
     margin: 15px;
     background-color: #eae5e5;
 }
+@media only screen and (max-width: 815px){
+    .item-header{
+        display: none;
+        background-color:red;
+    }
+}
