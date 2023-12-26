@@ -12,8 +12,19 @@
 .item-bi a:hover{
     text-decoration: underline !important;
     margin: 0 5px;
+
+}
+.item-bi > a:hover >.icon{
+    margin: 0 5px !important;
+
 }
 .logo{
     border-right: 1px solid black;
     padding: 0 5px;
+}
+.back-gr-white{
+    background-color: white;
+}
+.tag-choose {
+
 }
