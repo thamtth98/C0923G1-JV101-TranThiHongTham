@@ -2,8 +2,8 @@
 <%--
   Created by IntelliJ IDEA.
   User: HP
-  Date: 12/28/2023
-  Time: 9:10 PM
+  Date: 12/29/2023
+  Time: 11:36 AM
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -28,19 +28,9 @@
         <td>${product.id}</td>
         <td>${product.name}</td>
         <td>${product.price}</td>
-        <td>
-            <button><a href="/product?action=view&id=${product.id}">Detail</a></button>
-        </td>
-        <td>
-            <button><a href="/product?action=edit&id=${product.id}">Edit</a></button>
-        </td>
-        <td>
-            <button><a href="/product?action=delete&id=${product.id}">Remove</a></button>
-        </td>
         </c:forEach>
     </tr>
     </tbody>
 </table>
-<button><a href="/product?action=create">Add new</a></button>
 </body>
 </html>

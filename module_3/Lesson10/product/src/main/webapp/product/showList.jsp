@@ -29,6 +29,9 @@
         <td>${product.name}</td>
         <td>${product.price}</td>
         <td>
+            <button><a href="/product?action=view&id=${product.id}">Detail</a></button>
+        </td>
+        <td>
             <button><a href="/product?action=edit&id=${product.id}">Edit</a></button>
         </td>
         <td>
@@ -38,5 +41,6 @@
     </tr>
     </tbody>
 </table>
+<button><a href="/product?action=create">Add new</a></button>
 </body>
 </html>

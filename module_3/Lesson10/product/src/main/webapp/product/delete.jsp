@@ -11,21 +11,22 @@
     <title>Title</title>
 </head>
 <body>
-<h1>Edit Product</h1>
+<h1>Delete Product</h1>
 <form action="product" method="post">
     <input type="hidden" name="action" value="delete">
     <table>
         <tr>
             <td>ID:</td>
-            <td><input type="text" name="id" value="${productDel.id}"></td>
+            <td>
+                <input type="text" name="id" value="${productDel.id}" readonly></td>
         </tr>
         <tr>
             <td>Name:</td>
-            <td><input type="text" name="name" value="${productDel.name}"></td>
+            <td>${productDel.name}</td>
         </tr>
         <tr>
             <td>Price:</td>
-            <td><input type="text" name="price" value="${productDel.price}"></td>
+            <td>${productDel.price}</td>
         </tr>
         <tr>
             <td>

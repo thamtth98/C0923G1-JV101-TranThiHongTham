@@ -20,15 +20,15 @@ public class ProductServlet extends HttpServlet {
     private IProductService iProductService = new ProductService();
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp)  {
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String action = req.getParameter("action");
-        if(action == null){
-            action ="";
+        if (action == null) {
+            action = "";
         }
-        switch (action){
+        switch (action) {
             case "create":
                 try {
-                    req.getRequestDispatcher("product/create.jsp").forward(req,resp);
+                    req.getRequestDispatcher("product/create.jsp").forward(req, resp);
                 } catch (ServletException e) {
                     System.out.println("ServletException");
                 } catch (IOException e) {
@@ -37,11 +37,11 @@ public class ProductServlet extends HttpServlet {
                 break;
             case "edit":
                 RequestDispatcher dispatcher = req.getRequestDispatcher("product/edit.jsp");
-                int id = Integer.parseInt(req.getParameter("id")) ;
+                int id = Integer.parseInt(req.getParameter("id"));
                 Product product = iProductService.findById(id);
-                req.setAttribute("productEdit",product);
+                req.setAttribute("productEdit", product);
                 try {
-                    dispatcher.forward(req,resp);
+                    dispatcher.forward(req, resp);
                 } catch (ServletException e) {
                     System.out.println("ServletException");
                 } catch (IOException e) {
@@ -50,71 +50,82 @@ public class ProductServlet extends HttpServlet {
                 break;
             case "delete":
                 dispatcher = req.getRequestDispatcher("product/delete.jsp");
-                id = Integer.parseInt(req.getParameter("id")) ;
+                id = Integer.parseInt(req.getParameter("id"));
                 product = iProductService.findById(id);
-                req.setAttribute("productDel",product);
+                req.setAttribute("productDel", product);
                 try {
-                    dispatcher.forward(req,resp);
+                    dispatcher.forward(req, resp);
                 } catch (ServletException e) {
                     System.out.println("ServletException");
                 } catch (IOException e) {
                     System.out.println("IOException");
                 }
+                break;
+            case "view":
+                viewDetail(req, resp);
+                break;
+            case "findByName":
+                dispatcher = req.getRequestDispatcher("product/findByName.jsp");
+
+                break;
             default:
-                showProductList(req,resp);
+                showProductList(req, resp);
         }
     }
 
-    private void showProductList(HttpServletRequest req, HttpServletResponse resp)  {
+    private void findByName(HttpServletRequest req, HttpServletResponse resp) {
+
+    }
+
+    private void viewDetail(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        RequestDispatcher dispatcher = req.getRequestDispatcher("product/viewDetail.jsp");
+        int id = Integer.parseInt(req.getParameter("id"));
+        Product product = iProductService.findById(id);
+        req.setAttribute("product", product);
+        dispatcher.forward(req, resp);
+    }
+
+    private void showProductList(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         List<Product> productList = iProductService.showProductList();
-        req.setAttribute("productList",productList);
-        try {
-            req.getRequestDispatcher("product/showList.jsp").forward(req,resp);
-        } catch (ServletException e) {
-            System.out.println("ServletException");
-        } catch (IOException e) {
-            System.out.println("IOException");
-        }
+        req.setAttribute("productList", productList);
+        req.getRequestDispatcher("product/showList.jsp").forward(req, resp);
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String action = req.getParameter("action");
-        if(action == null){
-            action ="";
+        if (action == null) {
+            action = "";
         }
-        switch (action){
+        switch (action) {
             case "create":
-                createProduct(req,resp);
+                createProduct(req, resp);
                 break;
             case "edit":
-                editProduct(req,resp);
+                editProduct(req, resp);
                 break;
             case "delete":
-                deleteProduct(req,resp);
+                deleteProduct(req, resp);
+                break;
             default:
-                showProductList(req,resp);
+                showProductList(req, resp);
                 break;
         }
     }
 
-    private void deleteProduct(HttpServletRequest req, HttpServletResponse resp) {
+    private void deleteProduct(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         int id = Integer.parseInt(req.getParameter("id"));
         Product product = iProductService.findById(id);
         iProductService.deleteProduct(product);
-        try {
-            resp.sendRedirect("/product");
-        } catch (IOException e) {
-            System.out.println("RuntimeException");
-        }
+        resp.sendRedirect("/product");
     }
 
     private void editProduct(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         int id = Integer.parseInt(req.getParameter("id"));
         String name = req.getParameter("name");
         int price = Integer.parseInt(req.getParameter("price"));
-        Product product = new Product(id,name,price);
-        iProductService.edit(id,product);
+        Product product = new Product(id, name, price);
+        iProductService.edit(id, product);
         try {
             resp.sendRedirect("/product");
         } catch (IOException e) {
@@ -126,7 +137,7 @@ public class ProductServlet extends HttpServlet {
         int id = Integer.parseInt(req.getParameter("id"));
         String name = req.getParameter("name");
         int price = Integer.parseInt(req.getParameter("price"));
-        Product product = new Product(id,name,price);
+        Product product = new Product(id, name, price);
         iProductService.createProduct(product);
         try {
             resp.sendRedirect("/product");

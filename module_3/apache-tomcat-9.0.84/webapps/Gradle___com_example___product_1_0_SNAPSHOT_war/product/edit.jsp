@@ -11,26 +11,25 @@
     <title>Title</title>
 </head>
 <body>
-<h1>Delete Product</h1>
+<h1>Edit Product</h1>
 <form action="product" method="post">
-    <input type="hidden" name="action" value="delete">
+    <input type="hidden" name="action" value="edit">
     <table>
         <tr>
-            <td>ID:</td>
+            <td>ID: </td>
+            <td><input type="text" name="id" value="${productEdit.id}"></td>
+        </tr>
+        <tr>
+            <td>Name: </td>
+            <td><input type="text" name="name" value="${productEdit.name}"></td>
+        </tr>
+        <tr>
+            <td>Price: </td>
+            <td><input type="text" name="price" value="${productEdit.price}"></td>
+        </tr>
+        <tr>
             <td>
-                <input type="text" name="id" value="${productDel.id}" readonly></td>
-        </tr>
-        <tr>
-            <td>Name:</td>
-            <td>${productDel.name}</td>
-        </tr>
-        <tr>
-            <td>Price:</td>
-            <td>${productDel.price}</td>
-        </tr>
-        <tr>
-            <td>
-                <button type="submit">Delete</button>
+                <button type="submit">Save</button>
             </td>
         </tr>
     </table>

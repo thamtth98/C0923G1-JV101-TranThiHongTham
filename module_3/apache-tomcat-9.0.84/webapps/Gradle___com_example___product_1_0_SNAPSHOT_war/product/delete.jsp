@@ -11,14 +11,13 @@
     <title>Title</title>
 </head>
 <body>
-<h1>Delete Product</h1>
+<h1>Edit Product</h1>
 <form action="product" method="post">
     <input type="hidden" name="action" value="delete">
     <table>
         <tr>
             <td>ID:</td>
-            <td>
-                <input type="text" name="id" value="${productDel.id}" readonly></td>
+            <td>${productDel.id}></td>
         </tr>
         <tr>
             <td>Name:</td>
