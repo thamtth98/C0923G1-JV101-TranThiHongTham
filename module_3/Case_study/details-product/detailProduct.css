@@ -1,40 +1,19 @@
-#pro-details{
-    background-color: rgba(0, 0, 0, 0.78);
-    color: white;
+.form-check{
     display: flex;
-    margin: 20px;
+    align-items: center;
+}
+.gift-wrapping{
+    background-color: #cbcaca;
+    padding: 5px;
+    border-radius: 5px;
+    width: 60%;
+}
+.description{
+    margin:  10px 50px;
+    text-align: justify;
+    font-family: sans-serif;
+}
+.btn-buy{
+    margin: 30px 10px 10px 0;
     padding: 20px;
-}
-#pro-details .single-pro-image{
-    width: 40%;
-    margin: 50px;
-}
-#pro-details .single-pro-details{
-    width: 50%;
-    padding-top: 30px;
-}
-#pro-details .single-pro-details .details-name-pro{
-    font-size: 40px;
-}
-#pro-details .single-pro-details h5{
-    font-size: 20px;
-}
-#pro-details .single-pro-details h2{
-    font-size: 20px;
-}
-#pro-details .single-pro-details input{
-    width: 10%;
-    height: 20px;
-    padding-left: 2px;
-    font-size: 16px;
-    margin-right: 10px;
-
-}
-#pro-details .single-pro-details .details-pro{
-    font-size: 25px;
-}
-#pro-details .single-pro-details button{
-    height: 30px;
-    background-color: black;
-    color: white;
 }

@@ -110,41 +110,29 @@ nav ul li:hover {
     transition: .5s ease-in-out;
 }
 
-.card_1:hover {
-    border: .1rem solid var(--secondary);
-    transform: scale(1.05);
-}
+/*.card_1:hover {*/
+/*    border: .1rem solid var(--secondary);*/
+/*    transform: scale(1.05);*/
+/*}*/
 
-.card_1::before, .card_1::after {
-    position: absolute;
-    content: "";
-    background-color: var(--secondary);
-    border-radius: 50%;
-    transition: .5s ease-in-out;
-    z-index: 100;
-}
+/*.card_1::before, .card_1::after {*/
+/*    position: absolute;*/
+/*    content: "";*/
+/*    background-color: var(--secondary);*/
+/*    border-radius: 50%;*/
+/*    transition: .5s ease-in-out;*/
+/*    z-index: 100;*/
+/*}*/
 
-.card_1::before {
-    top: -6%;
-    right: -6%;
-    width: 9rem;
-    height: 9rem;
-}
 
-.card_1::after {
-    bottom: -6%;
-    left: -6%;
-    width: 5rem;
-    height: 5rem;
-}
 
-.card_1:hover::before {
-    transform: scale(1.8);
-}
+/*.card_1:hover::before {*/
+/*    transform: scale(1.8);*/
+/*}*/
 
-.card_1:hover::after {
-    transform: scale(0);
-}
+/*.card_1:hover::after {*/
+/*    transform: scale(0);*/
+/*}*/
 
 .card-content_1 {
     position: absolute;
@@ -182,12 +170,12 @@ nav ul li:hover {
     transform: translateY(8rem);
     transition: .5s ease-in-out;
 }
-.card_1:hover .card-img_1,
-.card_1:hover .card-title_1,
-.card_1:hover .card-body_1,
-.card_1:hover .card-footer_1 {
-    transform: translateY(0);
-}
+/*.card_1:hover .card-img_1,*/
+/*.card_1:hover .card-title_1,*/
+/*.card_1:hover .card-body_1,*/
+/*.card_1:hover .card-footer_1 {*/
+/*    transform: translateY(0);*/
+/*}*/
 
 .card-img_1 {
     width: 65%;
