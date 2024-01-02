@@ -12,6 +12,8 @@
     <title>Title</title>
 </head>
 <body>
+    <input type="text" name="nameSearch" placeholder="Search name">
+    <button><a href="/product?action=findByName">Search</a></button>
 <table border="1px" style="border-collapse: collapse">
     <thead>
     <tr>

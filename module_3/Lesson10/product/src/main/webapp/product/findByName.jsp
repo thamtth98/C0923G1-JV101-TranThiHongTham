@@ -12,25 +12,25 @@
     <title>Title</title>
 </head>
 <body>
+
 <table border="1px" style="border-collapse: collapse">
     <thead>
     <tr>
         <th>STT</th>
         <th>Name product</th>
         <th>Price</th>
-        <th>Edit</th>
-        <th>Delete</th>
     </tr>
     </thead>
     <tbody>
-    <c:forEach items="${productList}" var="product">
+    <c:forEach items="${productListByName}" var="products">
     <tr>
-        <td>${product.id}</td>
-        <td>${product.name}</td>
-        <td>${product.price}</td>
+        <td>${products.id}</td>
+        <td>${products.name}</td>
+        <td>${products.price}</td>
         </c:forEach>
     </tr>
     </tbody>
 </table>
+
 </body>
 </html>

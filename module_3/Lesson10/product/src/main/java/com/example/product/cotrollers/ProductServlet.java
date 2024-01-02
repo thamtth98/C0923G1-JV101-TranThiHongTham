@@ -66,16 +66,21 @@ public class ProductServlet extends HttpServlet {
                 break;
             case "findByName":
                 dispatcher = req.getRequestDispatcher("product/findByName.jsp");
-
+                String nameSearch = req.getParameter("nameSearch");
+                List<Product> productListByName = iProductService.findByName(nameSearch);
+                if(productListByName !=null){
+                    req.setAttribute("productListByName", productListByName);
+                }else {
+                    System.out.println("not found");
+                }
+                dispatcher.forward(req, resp);
                 break;
             default:
                 showProductList(req, resp);
+                break;
         }
     }
 
-    private void findByName(HttpServletRequest req, HttpServletResponse resp) {
-
-    }
 
     private void viewDetail(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         RequestDispatcher dispatcher = req.getRequestDispatcher("product/viewDetail.jsp");
