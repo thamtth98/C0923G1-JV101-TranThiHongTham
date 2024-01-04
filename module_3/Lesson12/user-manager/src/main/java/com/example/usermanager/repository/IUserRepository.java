@@ -5,14 +5,20 @@ import com.example.usermanager.model.Users;
 import java.sql.SQLException;
 import java.util.List;
 
-public interface IUserDAO {
-    public void insertUser(Users user) throws SQLException;
+public interface IUserRepository {
 
-    public Users selectUser(int id);
 
-    public List<Users> selectAllUsers();
+    List<Users> showList();
 
-    public boolean deleteUser(int id) throws SQLException;
+    void createUser(Users users);
 
-    public boolean updateUser(Users user) throws SQLException;
+    Users findById(int id);
+
+    void editUser(Users users);
+
+    void deleteUser(int id);
+
+    List<Users> searchUser(String country);
+
+    List<Users> sortByName(String sortOption);
 }

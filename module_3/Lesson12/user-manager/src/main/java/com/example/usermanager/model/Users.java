@@ -1,10 +1,10 @@
 package com.example.usermanager.model;
 
 public class Users {
-    protected int id;
-    protected String name;
-    protected String email;
-    protected String country;
+    private int id;
+    private String name;
+    private String email;
+    private String country;
 
     public Users(int id, String name, String email, String country) {
         this.id = id;
@@ -14,6 +14,12 @@ public class Users {
     }
 
     public Users() {
+    }
+
+    public Users(String name, String email, String country) {
+        this.name = name;
+        this.email = email;
+        this.country = country;
     }
 
     public int getId() {
