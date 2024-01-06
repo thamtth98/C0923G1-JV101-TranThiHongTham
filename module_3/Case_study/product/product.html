@@ -39,12 +39,23 @@
             </button>
 
         </div>
+
         <div style="margin: 0 auto">
             <div class="collapse navbar-collapse ">
                 <nav>
                     <ul>
                         <li href="#">Trang Chủ</li>
-                        <li href="#">Thể loại</li>
+                        <li class="nav-item dropdown" style="padding: 10px;">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                               aria-expanded="false" style="color: #6d6969">
+                                Thể loại
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Trinh thám</a></li>
+                                <li><a class="dropdown-item" href="#">Tiểu thuyết</a></li>
+                                <li><a class="dropdown-item" href="#">Self-help</a></li>
+                            </ul>
+                        </li>
                         <li href="#">Tin tức</li>
                         <li href="#">Trợ giúp</li>
                     </ul>
@@ -79,12 +90,13 @@
     <div class="row col-12" style="margin:0 20px; font-family: sans-serif">
         <div class="col-4">
             <h2 style="margin-top: 100px">
-                Tiểu thuyết
+                Sách
             </h2>
             <p>
-                Tiểu thuyết là một dạng văn học dài, thường kể một câu chuyện dày đặc với nhân vật, sự kiện, và địa điểm
-                tương tác. Nó thường đòi hỏi sự phát triển đầy đủ của các yếu tố này để tạo nên một trải nghiệm đọc
-                phong phú và tương tác với độc giả.
+                Mỗi quyển sách là một cuộc phiêu lưu mới, là một bức tranh tâm huyết được vẽ nên từ tư duy sáng tạo của
+                tác giả. Trong mỗi dòng văn, những ý tưởng trở nên sống động, hình ảnh trở nên huyền bí, và từng lời
+                diễn đạt như là những bản nhạc êm đềm. Sách không chỉ là nguồn kiến thức mà còn là nguồn cảm hứng, là
+                nguồn năng lượng để tâm hồn ta trỗi dậy.
             </p>
         </div>
         <div class="banner-img col-8">
@@ -120,28 +132,32 @@
 <div class="container-fluid">
     <section class=" row col-12">
         <div class=" row col-12 wrapper-box-card">
-            <a href="../details-product/detailProduct.html"><div class="card box-card col-3" style="width: 18rem; height: 28rem">
-                <img src="https://eu.assouline.com/cdn/shop/products/YACHTS-Clamshell-Flat-BACK_8a266782-fdb9-422e-a21b-754153d89638_3000x.jpg?v=1648245747"
-                     class="card-img mt-4" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Harry Potter</h5>
-                    <div class="d-flex" style="justify-content: space-between; align-items: center;margin-bottom: 5px ">
-                        <div class="card-star">
-                            <span class="star_1">&#9733;</span>
-                            <span class="star_1">&#9733;</span>
-                            <span class="star_1">&#9733;</span>
-                            <span class="star_1">&#9733;</span>
-                            <span class="star_1">&#9733;</span>
+            <a href="../details-product/detailProduct.html">
+                <div class="card box-card col-3" style="width: 18rem; height: 28rem">
+                    <img src="https://eu.assouline.com/cdn/shop/products/YACHTS-Clamshell-Flat-BACK_8a266782-fdb9-422e-a21b-754153d89638_3000x.jpg?v=1648245747"
+                         class="card-img mt-4" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Harry Potter</h5>
+                        <div class="d-flex"
+                             style="justify-content: space-between; align-items: center;margin-bottom: 5px ">
+                            <div class="card-star">
+                                <span class="star_1">&#9733;</span>
+                                <span class="star_1">&#9733;</span>
+                                <span class="star_1">&#9733;</span>
+                                <span class="star_1">&#9733;</span>
+                                <span class="star_1">&#9733;</span>
+                            </div>
+                            <div class="card-price__2" style="font-weight: bold">999.999đ</div>
                         </div>
-                        <div class="card-price__2" style="font-weight: bold">999.999đ</div>
-                    </div>
-                    <div class="d-flex" style="justify-content: space-between; align-items: center;margin-bottom: 5px">
-                        <a href="#" class="btn btn-outline-dark"><span>
+                        <div class="d-flex"
+                             style="justify-content: space-between; align-items: center;margin-bottom: 5px">
+                            <a href="#" class="btn btn-outline-dark"><span>
                             <i class="fa-solid fa-cart-shopping"></i>+Giỏ Hàng</span></a>
-                        <a href="#" class="btn btn-outline-dark" style="margin-left: 15px">Chi tiết</a>
+                            <a href="#" class="btn btn-outline-dark" style="margin-left: 15px">Chi tiết</a>
+                        </div>
                     </div>
                 </div>
-            </div></a>
+            </a>
             <div class="card box-card col-3" style="width: 18rem; height: 28rem">
                 <img src="https://sachtiengviet.com/cdn/shop/products/bc2b49473ba80ebe93901aaa9f7b9ac9.jpg?v=1694760419"
                      class="card-img mt-4" alt="...">
