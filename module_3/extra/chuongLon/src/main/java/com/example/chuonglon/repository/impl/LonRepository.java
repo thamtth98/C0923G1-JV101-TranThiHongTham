@@ -23,7 +23,6 @@ public class LonRepository implements ILonRepository {
             ResultSet resultSet = statement.executeQuery();
             Lon lon = null;
             while (resultSet.next()) {
-
                 int idLon = resultSet.getInt("id_lon");
                 String tenLon = resultSet.getString("ten_lon");
                 int trongLuong = Integer.parseInt(resultSet.getString("trong_luong"));
