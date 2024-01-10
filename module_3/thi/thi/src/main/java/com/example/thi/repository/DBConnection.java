@@ -5,11 +5,11 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class DBConnection {
-    private static String jdbcURL = "jdbc:mysql://localhost:3306/quan_ly_sinh_vien";
+    private static String jdbcURL = "jdbc:mysql://localhost:3306/employee_manage";
     private static String jdbcUsername = "root";
     private static String jdbcPassword = "123456789";
+    private static Connection connection;
     public static Connection getConnection() {
-        Connection connection = null;
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             connection = DriverManager.getConnection(jdbcURL, jdbcUsername, jdbcPassword);
@@ -18,8 +18,14 @@ public class DBConnection {
         }
         return connection;
     }
-
-    public static void main(String[] args) {
-        System.out.println(getConnection());
+    public static void close(){
+        if(connection != null){
+            try {
+                connection.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
     }
+
 }

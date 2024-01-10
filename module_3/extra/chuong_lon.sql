@@ -19,4 +19,5 @@ primary key(id_lon)
 );
 
 INSERT INTO `quan_ly_chuong_lon`.`lon` (`id_lon`, `ten_lon`, `trong_luong`, `tuoi`, `gioi_tinh`, `chuong_hien_tai`) VALUES (1, 'hi', '100', 3, 'nai', '1');
+select * from lon where id_lon = 1;
 
