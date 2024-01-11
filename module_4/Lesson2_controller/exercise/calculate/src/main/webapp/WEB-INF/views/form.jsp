@@ -22,13 +22,5 @@
 </form>
 <h3>Result ${operator}: ${result}</h3>
 
-<%--<script>--%>
-<%--    function calculate(number) {--%>
-<%--        switch (number) {--%>
-<%--            case 1:--%>
-<%--                break;--%>
-<%--        }--%>
-<%--    }--%>
-<%--</script>--%>
 </body>
 </html>
