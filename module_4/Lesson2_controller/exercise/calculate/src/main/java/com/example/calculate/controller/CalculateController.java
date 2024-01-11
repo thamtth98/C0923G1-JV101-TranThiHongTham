@@ -16,8 +16,8 @@ public class CalculateController {
         return "form";
     }
     @PostMapping("/calculate")
-    public String calculate(@RequestParam(name = "firstNumber") double firstNumber,
-                            @RequestParam(name = "secondNumber",defaultValue = "1") double secondNumber,
+    public String calculate(@RequestParam(name = "firstNumber", defaultValue = "0") double firstNumber,
+                            @RequestParam(name = "secondNumber",defaultValue = "0") double secondNumber,
                             @RequestParam(name = "operator") String operator,
                             Model model){
         model.addAttribute("firstNumber",firstNumber);

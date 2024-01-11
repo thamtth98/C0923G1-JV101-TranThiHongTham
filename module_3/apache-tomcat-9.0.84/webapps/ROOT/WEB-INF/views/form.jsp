@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: HP
@@ -20,15 +21,10 @@
     <button type="submit" name="operator" value="mul">Multiplication(X)</button>
     <button type="submit" name="operator" value="div">Division(/)</button>
 </form>
-<h3>Result ${operator}: ${result}</h3>
+<h3>
+    <c:if test="${}">
 
-<%--<script>--%>
-<%--    function calculate(number) {--%>
-<%--        switch (number) {--%>
-<%--            case 1:--%>
-<%--                break;--%>
-<%--        }--%>
-<%--    }--%>
-<%--</script>--%>
+    </c:if>
+            Result ${operator}: ${result}</h3>
 </body>
 </html>
