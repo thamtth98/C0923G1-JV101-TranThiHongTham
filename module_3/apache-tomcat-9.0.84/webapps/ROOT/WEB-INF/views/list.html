@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table,tr,td,th{
+            border-collapse: collapse;
+            border: 1px solid black;
+        }
+        table{
+            width: 50%;
+        }
+    </style>
+</head>
+<body>
+<h3>Product</h3>
+
+<div>
+    <a th:href="@{/products/create}">Add new product</a>
+</div>
+<div class="notify">
+    <div th:if="${showMessage}">
+        <span th:text="${showMessage}"></span>
+    </div>
+</div>
+
+
+<table id="product">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Describe</th>
+        <th>Producer</th>
+        <th>Edit</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="product,iterStat : ${productList}">
+        <td th:text="${product.id}"></td>
+        <td th:text="${product.name}"></td>
+        <td th:text="${product.price}"></td>
+        <td th:text="${product.describe}"></td>
+        <td th:text="${product.producer}"></td>
+
+        <td><a th:href="@{/products/edit/{id}(id=${product.id})}">Edit</a></td>
+        <td><a th:href="@{/products/delete/{id}(id=${product.id})}">Delete</a></td>
+        <td><a th:href="@{/products/view/{id}(id=${product.getId()})}">View</a></td>
+    </tr>
+    </tbody>
+</table>
+
+
+<form th:action="@{/products/search}" method="get" style="width: 30%;padding-left: 35%">
+    <input type="text" name="name">
+    <input type="submit" value="Search">
+</form>
+
+</body>
+</html>

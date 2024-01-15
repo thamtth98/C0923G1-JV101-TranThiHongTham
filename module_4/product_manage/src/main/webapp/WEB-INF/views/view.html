@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3>View detail Product</h3>
+<p>
+  <a th:href="@{/products}">
+    Back to product list
+  </a>
+</p>
+<div id="form">
+  <form th:object="${product}" >
+    <input type="hidden" th:field="*{id}"/>
+    <table id="product">
+      <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Describe</th>
+        <th>Producer</th>
+
+      </tr>
+      </thead>
+      <tbody>
+      <tr >
+        <td th:text="*{id}"></td>
+        <td th:text="*{name}"></td>
+        <td th:text="*{price}"></td>
+        <td th:text="*{describe}"></td>
+        <td th:text="*{producer}"></td>
+      </tr>
+      </tbody>
+    </table>
+  </form>
+</div>
+</body>
+</html>
