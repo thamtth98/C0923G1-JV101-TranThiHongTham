@@ -61,7 +61,7 @@ public class BlogController {
     public String deleteBlog(@PathVariable int idBlog, RedirectAttributes attributes){
         Blog blog = blogService.findById(idBlog);
         blogService.delete(blog);
-        attributes.addFlashAttribute("showMessage","Edit success!");
+        attributes.addFlashAttribute("showMessage","Delete success!");
         return "redirect:/blog";
     }
 

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <style>
-        .italic{
+        .italic {
             font-style: italic;
         }
     </style>
@@ -16,17 +16,17 @@
     </div>
 </div>
 <a th:href="@{/blog/create}">Add the blog</a>
-    <div th:each="blog:${blogList}">
-        <div style="font-weight: bold" th:text="${blog.getTitleBlog()}"></div>
-        <div th:text="${blog.getContent()}"></div>
-        <div class="italic" th:text="${blog.getAuthor()}"></div>
-        <div class="italic" th:text="${blog.getPostingDate()}"></div>
-        <div><a th:href="@{/blog/detail/{idBlog}(idBlog=${blog.getIdBlog()})}">View</a></div>
-        <div><a th:href="@{/blog/detail/{idBlog}(idBlog=${blog.getIdBlog()})}">Edit</a></div>
-        <div><a th:href="@{/blog/detail/{idBlog}(idBlog=${blog.getIdBlog()})}">Delete</a></div>
-        <hr>
+<div th:each="blog:${blogList}">
+    <div style="font-weight: bold" th:text="${blog.getTitleBlog()}"></div>
+    <div th:text="${blog.getContent()}"></div>
+    <div class="italic" th:text="${blog.getAuthor()}"></div>
+    <div class="italic" th:text="${blog.getPostingDate()}"></div>
+    <div><a th:href="@{/blog/detail/{idBlog}(idBlog=${blog.getIdBlog()})}">View</a></div>
+    <div><a th:href="@{/blog/detail/{idBlog}(idBlog=${blog.getIdBlog()})}">Edit</a></div>
+            <div><a th:href="@{/blog/detail/{idBlog}(idBlog=${blog.getIdBlog()})}">Delete</a></div>
+    <hr>
 
-    </div>
+</div>
 
 </body>
 </html>
