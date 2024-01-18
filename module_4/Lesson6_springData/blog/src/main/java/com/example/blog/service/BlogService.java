@@ -5,6 +5,7 @@ import com.example.blog.repository.IBlogRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
@@ -19,6 +20,7 @@ public class BlogService implements IBlogService{
 
     @Override
     public void save(Blog blog) {
+        blog.setPostingDate(LocalDate.now());
         blogRepository.save(blog);
     }
 

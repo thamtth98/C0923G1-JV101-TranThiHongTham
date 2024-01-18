@@ -1,9 +1,6 @@
 package com.example.blog.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.time.LocalDate;
@@ -15,6 +12,7 @@ public class Blog {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idBlog;
     private String titleBlog;
+    @Column(name = "content", columnDefinition = "LONGTEXT")
     private String content;
     private String author;
 //    @DateTimeFormat(pattern = "dd-MM-yyyy")
