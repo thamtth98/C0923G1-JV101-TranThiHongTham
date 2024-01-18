@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
 
 @Entity
@@ -17,6 +18,13 @@ public class Blog {
     private String author;
 //    @DateTimeFormat(pattern = "dd-MM-yyyy")
     private LocalDate postingDate;
+    public String getFormattedDate(){
+        if(postingDate != null){
+            DateTimeFormatter dateTimeFormat = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+            return postingDate.format(dateTimeFormat);
+        }
+        return null;
+    }
 
     public Blog(String titleBlog, String content, String author) {
         this.titleBlog = titleBlog;
