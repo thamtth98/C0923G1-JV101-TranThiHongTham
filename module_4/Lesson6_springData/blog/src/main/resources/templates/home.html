@@ -22,11 +22,9 @@
     <div class="italic" th:text="${blog.getAuthor()}"></div>
     <div class="italic" th:text="${blog.getPostingDate()}"></div>
     <div><a th:href="@{/blog/detail/{idBlog}(idBlog=${blog.getIdBlog()})}">View</a></div>
-    <div><a th:href="@{/blog/detail/{idBlog}(idBlog=${blog.getIdBlog()})}">Edit</a></div>
-            <div><a th:href="@{/blog/detail/{idBlog}(idBlog=${blog.getIdBlog()})}">Delete</a></div>
+    <div><a th:href="@{/blog/edit/{idBlog}(idBlog=${blog.getIdBlog()})}">Edit</a></div>
+    <div><a th:href="@{/blog/detail/{idBlog}(idBlog=${blog.getIdBlog()})}">Delete</a></div>
     <hr>
-
 </div>
-
 </body>
 </html>

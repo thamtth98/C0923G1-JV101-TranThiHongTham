@@ -49,16 +49,23 @@ public class BlogController {
         model.addAttribute("blog",blog);
         return "detail";
     }
+
+
     @GetMapping("/edit/{idBlog}")
-    public String showEdit(@PathVariable int idBlog, RedirectAttributes attributes){
+    public String Edit(@PathVariable int idBlog, Model model){
         Blog blog = blogService.findById(idBlog);
+        model.addAttribute("blog",blog);
+        return "edit";
+    }
+    @PostMapping("/edit")
+    public String showEdit(Blog blog, RedirectAttributes attributes){
         blogService.save(blog);
         attributes.addFlashAttribute("showMessage","Edit success!");
         return "redirect:/blog";
     }
 
     @GetMapping("/delete/{idBlog}")
-    public String deleteBlog(@PathVariable int idBlog, RedirectAttributes attributes){
+    public String deleteBlog(@PathVariable Integer idBlog, RedirectAttributes attributes){
         Blog blog = blogService.findById(idBlog);
         blogService.delete(blog);
         attributes.addFlashAttribute("showMessage","Delete success!");

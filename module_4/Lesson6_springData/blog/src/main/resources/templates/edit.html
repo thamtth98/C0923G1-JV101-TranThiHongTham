@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+<style>
+    .italic{
+        font-style: italic;
+    }
+</style>
+</head>
+<body>
+<a th:href="@{/blog}">Back to List blog</a>
+<h3>Edit</h3>
+
+<form action="/blog/edit" method="post" th:object="${blog}" >
+    <input type="hidden" th:field="*{idBlog}"/>
+    <div>
+        <label for="titleBlog">Title</label>
+        <input type="text" id="titleBlog" th:field="*{titleBlog}"/>
+    </div>
+    <div>
+        <label for="content">Content</label>
+        <input type="text" id="content" th:field="*{content}"/>
+    </div>
+    <div>
+        <label for="author">author</label>
+        <input type="text" id="author" th:field="*{author}"/>
+    </div>
+    <div>
+        <label for="postingDate">postingDate</label>
+        <input type="text" id="postingDate" th:field="*{postingDate}"/>
+    </div>
+
+    <button type="submit">Update</button>
+</form>
+
+</body>
+</html>
