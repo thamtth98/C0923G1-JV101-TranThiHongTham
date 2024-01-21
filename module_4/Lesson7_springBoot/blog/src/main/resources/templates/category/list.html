@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<a th:href="@{/blog}">Back to blog</a>
+<a th:href="@{/category/create}">Add new category</a>
+<div th:if="${message}">
+    <span th:text="${message}"></span>
+</div>
+
+<h3>Danh sách thể loại</h3>
+<table>
+    <tr th:each="category:${categoryList}">
+        <td th:text="${category.getNameCategory()}"></td>
+        <td> <a th:href="@{/category/edit/{idCategory}(idCategory = ${category.getIdCategory()})}">Edit</a></td>
+        <td><a th:href="@{/category/delete/{idCategory}(idCategory = ${category.getIdCategory()})}">Delete</a></td>
+    </tr>
+</table>
+
+</body>
+</html>
