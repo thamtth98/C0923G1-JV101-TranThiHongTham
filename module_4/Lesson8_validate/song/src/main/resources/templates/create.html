@@ -1,10 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
 <body>
+<div class="container">
+    <form action="/song/create" method="post" th:object="${song}">
+        <input type="hidden" th:text="${song.getIdSong()}">
+        <div class="mb-3">
+            <label for="nameSong" class="form-label">Name</label>
+            <input type="text" class="form-control" id="nameSong" name="nameSong" th:field="*{nameSong}">
+            <div th:if="${#fields.hasErrors('nameSong')}" th:errors="*{nameSong}">Name Error</div>
+        </div>
+        <div class="mb-3">
+            <label for="singer" class="form-label">Singer</label>
+            <input type="text" class="form-control" id="singer" name="singer" th:field="*{singer}">
+            <div th:if="${#fields.hasErrors('singer')}" th:errors="*{singer}">Name Error</div>
+        </div>
+        <div class="mb-3">
+            <label for="kindOfMusic" class="form-label">Kind Of Music</label>
+            <input type="text" class="form-control" id="kindOfMusic" name="kindOfMusic" th:field="*{kindOfMusic}">
+            <div th:if="${#fields.hasErrors('kindOfMusic')}" th:errors="*{kindOfMusic}">Name Error</div>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
 </body>
 </html>

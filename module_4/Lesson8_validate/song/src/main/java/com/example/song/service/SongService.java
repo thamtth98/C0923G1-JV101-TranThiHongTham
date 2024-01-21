@@ -15,4 +15,9 @@ public class SongService implements ISongService{
     public List<Song> findAll() {
         return iSongRepository.findAll();
     }
+
+    @Override
+    public void save(Song song) {
+        iSongRepository.save(song);
+    }
 }
