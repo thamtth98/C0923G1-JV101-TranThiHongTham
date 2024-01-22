@@ -7,6 +7,10 @@
         .italic {
             font-style: italic;
         }
+
+        .pagination {
+            display: flex;
+        }
     </style>
 </head>
 <body>
@@ -27,6 +31,14 @@
     <div><a th:href="@{/blog/edit/{idBlog}(idBlog=${blog.getIdBlog()})}">Edit</a></div>
     <div><a th:href="@{/blog/detail/{idBlog}(idBlog=${blog.getIdBlog()})}">Delete</a></div>
     <hr>
+</div>
+<div class="pagination">
+    <div th:each="pageNumber : ${#numbers.sequence(0, blogList.getTotalPages() - 1)}">
+                <span th:if="${pageNumber != blogList.number}">
+                    <a th:href="@{/blog(page=${(pageNumber)})}" th:text="${pageNumber}+1 +' / '"></a>
+                </span>
+        <span th:if="${pageNumber == blogList.number}" th:text="${pageNumber} + 1 " style="color: red"></span>
+    </div>
 </div>
 <a th:href="@{/category}">Quản lý thể loại</a>
 </body>

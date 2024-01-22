@@ -31,8 +31,7 @@ public class BlogController {
 
     @GetMapping()
     public String showBlog(Model model, @RequestParam(defaultValue = "0", required = false) Integer page) {
-//        List<Blog> blogList = blogService.findAll();
-        Pageable pageable = PageRequest.of(page, 2, Sort.Direction.valueOf("ASC"), "idBlog");
+        Pageable pageable = PageRequest.of(page, 2, Sort.Direction.valueOf("ASC"), "postingDate");
         Page<Blog> blogPage = this.blogService.findAllPage(pageable);
         model.addAttribute("blogList", blogPage);
         return "home";
