@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3>Để mượn cuốn sách <span th:text="${book.nameBook}"></span></h3>
+<form method="post" th:object="${user}">
+  <input type="hidden" th:field="*{idUser}">
+  <label for="phoneNumber">Phone number</label>
+  <input type="text" id="phoneNumber" th:field="*{phoneNumber}"><br>
+  <label for="nameUser"> Your name:</label>
+  <input type="text" id="nameUser" th:field="*{nameUser}">
+  <input type="submit" value="Mượn">
+</form>
+</body>
+</html>
