@@ -8,10 +8,15 @@ public class CodeBook {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idBorrow;
     private Integer idBookCode;
+    @ManyToOne
+    @JoinColumn(name = "id_book")
+    private Book book;
 
-    public CodeBook(Long idBorrow, Integer idBookCode) {
+
+    public CodeBook(Long idBorrow, Integer idBookCode, Book book) {
         this.idBorrow = idBorrow;
         this.idBookCode = idBookCode;
+        this.book = book;
     }
 
     public CodeBook() {
@@ -32,4 +37,13 @@ public class CodeBook {
     public void setIdBookCode(Integer idBookCode) {
         this.idBookCode = idBookCode;
     }
+
+    public Book getBook() {
+        return book;
+    }
+
+    public void setBook(Book book) {
+        this.book = book;
+    }
+
 }
