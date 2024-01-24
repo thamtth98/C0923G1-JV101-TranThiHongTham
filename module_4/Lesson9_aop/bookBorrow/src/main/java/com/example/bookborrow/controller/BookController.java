@@ -49,13 +49,17 @@ public class BookController {
         iBookService.saveUser(user);
         CodeBook codeBook = new CodeBook();
         Book book = iBookService.findById(id);
-        book.setQuantity(book.getQuantity() - 1);
-        codeBook.setBook(book);
-        codeBook.setIdBookCode(getRandomCode());
-        iBookService.saveCode(codeBook);
-        attributes.addFlashAttribute("message", "Code của bạn là " + codeBook.getIdBookCode());
-        return "redirect:/book";
-
+        if (book.getQuantity() == 0) {
+            attributes.addFlashAttribute("message", "Hết sách để mượn");
+            return "redirect:/book";
+        } else {
+            book.setQuantity(book.getQuantity() - 1);
+            codeBook.setBook(book);
+            codeBook.setIdBookCode(getRandomCode());
+            iBookService.saveCode(codeBook);
+            attributes.addFlashAttribute("message", "Code của bạn là " + codeBook.getIdBookCode());
+            return "redirect:/book";
+        }
     }
 
     private String getRandomCode() {
@@ -63,18 +67,20 @@ public class BookController {
         int randomNumber = random.nextInt(90000) + 10000;
         return String.valueOf(randomNumber);
     }
+
     @GetMapping("/{id}/return")
     public String returnBook() {
         return "checkCode";
     }
+
     @PostMapping("/{id}/return")
     public String returnBook(@RequestParam("code") String code,
-                             @PathVariable Integer id){
+                             @PathVariable Integer id) {
         Book book = iBookService.findById(id);
         List<CodeBook> codeBooks = iBookService.findAllCodeBook();
-        for (CodeBook codeBook: codeBooks){
-            if (codeBook.getIdBookCode().equals(code)){
-                book.setQuantity(book.getQuantity()+1);
+        for (CodeBook codeBook : codeBooks) {
+            if (codeBook.getIdBookCode().equals(code)) {
+                book.setQuantity(book.getQuantity() + 1);
                 iBookService.saveBook(book);
                 return "redirect:/book";
             }
