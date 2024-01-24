@@ -75,6 +75,7 @@ public class BookController {
         for (CodeBook codeBook: codeBooks){
             if (codeBook.getIdBookCode().equals(code)){
                 book.setQuantity(book.getQuantity()+1);
+                iBookService.saveBook(book);
                 return "redirect:/book";
             }
         }

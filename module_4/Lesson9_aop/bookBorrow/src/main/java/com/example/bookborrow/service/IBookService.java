@@ -18,4 +18,6 @@ public interface IBookService {
     void saveCode(CodeBook codeBook);
 
     List<CodeBook> findAllCodeBook();
+
+    void saveBook(Book book);
 }

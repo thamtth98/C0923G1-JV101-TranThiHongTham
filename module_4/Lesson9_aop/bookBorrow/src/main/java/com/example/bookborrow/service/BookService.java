@@ -44,4 +44,9 @@ public class BookService implements IBookService{
     public List<CodeBook> findAllCodeBook() {
         return iCodeRepository.findAll();
     }
+
+    @Override
+    public void saveBook(Book book) {
+        iBookRepository.save(book);
+    }
 }
