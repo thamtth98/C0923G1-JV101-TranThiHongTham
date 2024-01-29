@@ -7,18 +7,19 @@
           integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
 <body>
+<h2 style="color: deeppink;">Danh sách sản phẩm</h2>
 <a th:href="@{/cart}">
-    <button class="btn btn-success" value="cart">Cart</button>
+    <button class="btn btn-primary" value="cart">My Cart</button>
 </a>
 <div class="container">
     <div class="row d-flex">
         <div class="col-3" th:each="product:${productList}">
             <div class="card" style="width: 18rem;">
-                <img th:src="${product.getImage()}" class="card-img-top" alt="..." src="">
+                <img th:src="${product.getImage()}" class="card-img-top" alt="..." src="" style="height: 50%">
                 <div class="card-body">
                     <h5 class="card-title" th:text="${product.getName()}"></h5>
                     <p class="card-text" th:text=" 'Quantity: '+${product.getQuantity()}"></p>
-                    <a th:href="@{/product/detail/{id}(id = ${product.getId()})}" class="btn btn-primary">Detail</a>
+                    <a th:href="@{/product/detail/{id}(id = ${product.getId()})}" class="btn btn-primary" style="margin-bottom: 20px">Detail</a>
                 </div>
             </div>
         </div>

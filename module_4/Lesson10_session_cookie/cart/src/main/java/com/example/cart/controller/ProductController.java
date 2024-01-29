@@ -46,11 +46,30 @@ public class ProductController {
     public String addToCart(@PathVariable Integer id,
                             @ModelAttribute("cart") Cart cart) {
         Optional<Product> product = iProductService.findById(id);
-        if (!product.isPresent()) {
+        if (product.isEmpty()) {
             return "error";
         }
         cart.addProduct(product.get());
         System.out.println(cart.getProducts().size());
         return "redirect:/product";
+    }
+
+    @GetMapping("minus/{id}")
+    public String minus(@PathVariable Integer id,
+                        @SessionAttribute(value = "cart",required = false)  Cart cart){
+        Product product = iProductService.findById(id).get();
+        if(product != null){
+            cart.minusProductQuantity(product);
+        }
+        return "redirect:/cart";
+    }
+    @GetMapping("add/{id}")
+    public String addToCart(@PathVariable int id,
+                            @SessionAttribute(value = "cart",required = false) Cart cart){
+        Product product = iProductService.findById(id).get();
+        if(product != null){
+            cart.addProduct(product);
+        }
+        return "redirect:/cart";
     }
 }

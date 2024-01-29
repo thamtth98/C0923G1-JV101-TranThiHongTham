@@ -5,6 +5,7 @@ import jakarta.persistence.*;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Optional;
 
 
 public class Cart {
@@ -74,4 +75,11 @@ public class Cart {
         return payment;
     }
 
+    public void minusProductQuantity(Product product) {
+        Map.Entry<Product, Integer> itemEntry = selectItemInCart(product);
+        if (itemEntry.getValue() > 1) {
+            Integer newQuantity = itemEntry.getValue() - 1;
+            products.replace(itemEntry.getKey(), newQuantity);
+        }
+    }
 }

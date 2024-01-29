@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <style>
+        .italic {
+            font-style: italic;
+        }
+
+        .pagination {
+            display: flex;
+        }
+    </style>
+</head>
+<body>
+<form id="searchForm">
+    <input type="text" id="name" placeholder="Name blog"/>
+    <input type="button" th:onclick="|searchBtn()|" value="Search">
+</form>
+<div id="result"></div>
+<div class="notify">
+    <div th:if="${showMessage}">
+        <span th:text="${showMessage}"></span>
+    </div>
+</div>
+<div>
+    <a th:href="@{/blog/create}">Add the blog</a>
+</div>
+<div th:each="blog:${blogList}" id="showBlog">
+    <div style="font-weight: bold" th:text="${blog.getTitleBlog()}"></div>
+    <div th:text="${blog.getContent()}"></div>
+    <div class="italic" th:text=" 'Author: '+${blog.getAuthor()}"></div>
+    <div class="italic" th:text=" 'Date post: '+${blog.getFormattedDate()}"></div>
+    <div class="italic" th:text=" 'Category: '+ ${blog.category.nameCategory}"></div>
+
+    <div><a th:href="@{/blog/detail/{idBlog}(idBlog=${blog.getIdBlog()})}">View</a></div>
+    <div><a th:href="@{/blog/edit/{idBlog}(idBlog=${blog.getIdBlog()})}">Edit</a></div>
+    <div><a th:href="@{/blog/detail/{idBlog}(idBlog=${blog.getIdBlog()})}">Delete</a></div>
+    <hr>
+    <div style="text-align:center">
+        <button id="loadMore" class="btn btn-outline-primary">Tải thêm</button>
+    </div>
+</div>
+<!--<div class="pagination">-->
+<!--    <div th:each="pageNumber : ${#numbers.sequence(0, blogList.getTotalPages() - 1)}">-->
+<!--                <span th:if="${pageNumber != blogList.number}">-->
+<!--                    <a th:href="@{/blog(page=${(pageNumber)})}" th:text="${pageNumber}+1 +' / '"></a>-->
+<!--                </span>-->
+<!--        <span th:if="${pageNumber == blogList.number}" th:text="${pageNumber} + 1 " style="color: red"></span>-->
+<!--    </div>-->
+<!--</div>-->
+
+<script>
+    function searchBtn() {
+        let title = document.getElementById("name").value;
+        $.ajax({
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            url: `/blog/search/${title}`,
+            type: "GET",
+            success: function (data) {
+                console.log(data);
+                $("div").empty();
+                displaySearchResults(data);
+            },
+            error: function (error) {
+                console.error("There was a problem with the AJAX request:", error);
+            },
+        })
+    }
+
+    function displaySearchResults(blogList) {
+        let result = document.getElementById("result");
+        let row = "";
+        blogList.forEach(function (blog) {
+            row += `<div>
+             <div>${blog.titleBlog}</div>
+             <div>${blog.content}</div>
+             <div class="italic" >${blog.author}</div>
+             <div class="italic">Date post: ${blog.formattedDate}</div>
+             <div class="italic" >Category: ${blog.category.nameCategory}</div>
+             </div><hr>`;
+        })
+        result.innerHTML = row;
+    }
+
+    $(document).ready(function () {
+        let pageDisplay = 0;
+        $("#loadMore").click(function () {
+            $.ajax({
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                type: "get",
+                url: `/blog/page/${pageDisplay}`,
+                success: function (data){
+                    displaySearchResults(data);
+                },
+                error: function (error) {
+                    console.error("There was a problem with the AJAX request:", error);
+                },
+
+            })
+        })
+    })
+</script>
+<script>
+
+</script>
+</body>
+</html>

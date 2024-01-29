@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .italic {
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+<a th:href="@{/blog}">Back to List blog</a>
+<div th:object="${blog}">
+    <div style="font-weight: bold" th:text="${blog.getTitleBlog()}"></div>
+    <div th:text="${blog.getContent()}"></div>
+    <div class="italic" th:text="${blog.getAuthor()}"></div>
+    <div class="italic" th:text="${blog.getPostingDate()}"></div>
+</div>
+<a th:href="@{/blog/delete/{idBlog}(idBlog=${blog.getIdBlog()})}">Delete</a>
+
+</body>
+</html>
