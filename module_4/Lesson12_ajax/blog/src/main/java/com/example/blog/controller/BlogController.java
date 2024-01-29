@@ -39,12 +39,10 @@ public class BlogController {
 //        model.addAttribute("blogList", blogPage);
 //        return "home";
 //    }
-    @GetMapping()
-    public String showBlog(Model model){
-        List<Blog> blogList = blogService.findAll();
-        model.addAttribute("blogList",blogList);
-        return "ajax";
-    }
+@GetMapping()
+public ResponseEntity<List<Blog>> showBlog(Model model){
+    return  new ResponseEntity<>(blogService.findAll(),HttpStatus.OK);
+}
     @GetMapping("/search/{titleBlog}")
     public ResponseEntity<List<Blog>> findBlogByName(@PathVariable String titleBlog){
         List<Blog> blogList = blogService.findByTitle(titleBlog);
