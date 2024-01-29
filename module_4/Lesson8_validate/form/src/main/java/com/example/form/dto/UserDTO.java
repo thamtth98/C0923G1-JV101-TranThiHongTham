@@ -1,34 +1,28 @@
-package com.example.form.model;
+package com.example.form.dto;
 
-import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.validation.constraints.*;
 
-
-@Entity
-public class User {
+public class UserDTO {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idUser;
-
+    @Size(min = 2, max = 45)
+    @NotBlank
     private String firstName;
-
+    @Size(min = 5, max = 45)
+    @NotBlank
     private String lastName;
+    @Pattern(regexp = "^0[0-9]{9}$", message = "Sđt bắt đầu từ số 0 và có 10 số")
     private String phoneNumber;
+    @Min(18)
     private Integer age;
+    @Email
     private String email;
 
-    public User(String firstName, String lastName, String phoneNumber, Integer age, String email) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.phoneNumber = phoneNumber;
-        this.age = age;
-        this.email = email;
-    }
-
-    public User(Integer idUser, String firstName, String lastName, String phoneNumber, Integer age, String email) {
+    public UserDTO(Integer idUser, String firstName, String lastName, String phoneNumber, Integer age, String email) {
         this.idUser = idUser;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -37,7 +31,7 @@ public class User {
         this.email = email;
     }
 
-    public User() {
+    public UserDTO() {
     }
 
     public Integer getIdUser() {
@@ -87,4 +81,5 @@ public class User {
     public void setEmail(String email) {
         this.email = email;
     }
+
 }
