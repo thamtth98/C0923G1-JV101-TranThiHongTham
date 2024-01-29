@@ -1,7 +1,9 @@
 package com.example.song.controller;
 
+import com.example.song.dto.SongDTO;
 import com.example.song.model.Song;
 import com.example.song.service.ISongService;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -33,10 +35,12 @@ public class SongController {
     }
 
     @PostMapping("/create")
-    public String createSong(@Validated Song song, BindingResult bindingResult, RedirectAttributes attributes){
+    public String createSong(@Validated SongDTO songDTO, BindingResult bindingResult, RedirectAttributes attributes){
         if(bindingResult.hasFieldErrors()){
             return "create";
         }
+        Song song = new Song();
+        BeanUtils.copyProperties(songDTO,song);
         iSongService.save(song);
         attributes.addFlashAttribute("message","Add new success!!");
         return "redirect:/song";
