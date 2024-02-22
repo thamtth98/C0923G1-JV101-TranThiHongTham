@@ -93,7 +93,7 @@
                 type: "get",
                 url: `http://localhost:8080/blog`,
                 success: function (blogList) {
-                    console.log(blogList)
+
                     let count = 0;
                     let result = document.getElementById("result");
                     let row = "";
@@ -109,7 +109,6 @@
              <div class="italic" >Category: ${blog.category.nameCategory}</div>
              </div><hr>`;
                         count++;
-                        console.log(row);
                         result.innerHTML = row;
                     })
                     if (blogList.length === pageDisplay) {
