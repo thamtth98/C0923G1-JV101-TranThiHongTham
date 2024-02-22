@@ -20,4 +20,19 @@ public class ThanhPhoService implements IThanhPhoService{
     public ThanhPho findById(Integer idThanhPho) {
         return thanhPhoRepository.findById(idThanhPho).orElse(null);
     }
+
+    @Override
+    public void save(ThanhPho thanhPho) {
+        thanhPhoRepository.save(thanhPho);
+    }
+
+    @Override
+    public void deleteCity(Integer idThanhPho) {
+        thanhPhoRepository.deleteById(idThanhPho);
+    }
+
+    @Override
+    public void addCity(ThanhPho thanhPho) {
+        thanhPhoRepository.save(thanhPho);
+    }
 }

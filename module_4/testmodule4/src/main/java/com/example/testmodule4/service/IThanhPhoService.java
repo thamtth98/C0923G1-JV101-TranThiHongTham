@@ -8,4 +8,10 @@ public interface IThanhPhoService {
     Page<ThanhPho> findAll(Pageable pageable);
 
     ThanhPho findById(Integer idThanhPho);
+
+    void save(ThanhPho thanhPho);
+
+    void deleteCity(Integer idThanhPho);
+
+    void addCity(ThanhPho thanhPho);
 }
