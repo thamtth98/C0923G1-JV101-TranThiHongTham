@@ -17,10 +17,10 @@
                 <li><a th:href="@{/quocgia/list}" class="nav-link px-2 link-body-emphasis">Quốc Gia</a></li>
             </ul>
 
-            <form action="/city/list" method="get" class="row g-2">
+            <form th:action="@{/search}" method="get" class="row g-2">
                 <div class="col-auto">
                     <label for="inputSearch" class="visually-hidden">Password</label>
-                    <input type="text" class="form-control" id="inputSearch" name="thanhphosearch"
+                    <input type="text" class="form-control" id="inputSearch" name="nameCity"
                            placeholder="Tìm Tên Thành Phố ">
                 </div>
                 <div class="col-auto">

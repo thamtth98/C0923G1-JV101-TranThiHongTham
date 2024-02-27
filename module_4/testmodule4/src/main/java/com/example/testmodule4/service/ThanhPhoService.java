@@ -35,4 +35,11 @@ public class ThanhPhoService implements IThanhPhoService{
     public void addCity(ThanhPho thanhPho) {
         thanhPhoRepository.save(thanhPho);
     }
+
+    @Override
+    public Page<ThanhPho> findByNameCityContaining(String nameCity, Pageable pageable) {
+        return thanhPhoRepository.findByNameCityContaining(nameCity,pageable);
+    }
+
+
 }

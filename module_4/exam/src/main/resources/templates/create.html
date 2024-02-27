@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Exercise</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+
+<body>
+
+
+<!--Sửa Thành Phố-->
+<div class="container">
+  <form method="post" th:action="@{/song/create}">
+    <!--Quay lại trang chủ-->
+    <a class="btn btn-primary my-3" th:href="@{/song/list}" role="button">Quay lại trang chủ</a>
+
+    <h2 class="my-5" >Tạo mới bài hát</h2>
+    <div class="row" th:object="${songDTO}">
+<!--      <input type="hidden" th:field="*{codeSongDTO}" class="form-control" id="idCity">-->
+
+      <div class="mb-3">
+        <label for="codeSong" class="form-label">Mã bài hát</label>
+        <input type="text" th:field="*{codeSong}" class="form-control" id="codeSong" >
+        <div th:if="${#fields.hasErrors('codeSong')}" th:errors="*{codeSong}">Name Error</div>
+      </div>
+      <div class="mb-3">
+        <label for="nameSongDTO" class="form-label">Tên bài hát</label>
+        <input type="text" th:field="*{nameSongDTO}" class="form-control" id="nameSongDTO">
+        <div th:if="${#fields.hasErrors('nameSongDTO')}" th:errors="*{nameSongDTO}">Name Error</div>
+      </div>
+      <div class="mb-3">
+        <label for="nameAuthorDTO" class="form-label">Tên tác giả</label>
+        <input type="text" th:field="*{nameAuthorDTO}" class="form-control" id="nameAuthorDTO">
+        <div th:if="${#fields.hasErrors('nameSongDTO')}" th:errors="*{nameAuthorDTO}">Name Error</div>
+      </div>
+      <div class="mb-3">
+        <label for="dateSongDTO" class="form-label">Ngày phát hành</label>
+        <input type="date" th:field="*{dateSongDTO}" class="form-control" id="dateSongDTO">
+        <div th:if="${#fields.hasErrors('dateSongDTO')}" th:errors="*{dateSongDTO}">Name Error</div>
+      </div>
+      <div class="mb-3">
+        <label for="detailSongDTO" class="form-label">Mô tả</label>
+        <input type="text" th:field="*{detailSongDTO}" class="form-control" id="detailSongDTO">
+        <div th:if="${#fields.hasErrors('detailSongDTO')}" th:errors="*{detailSongDTO}">Name Error</div>
+      </div>
+
+      <div class="mb-3">
+        <label for="cage" class="form-label">Thể loại</label>
+        <select id="cage" class="form-select field" th:field="*{category}">
+          <option class="option-each-value-text" th:each="value:${categoryList}" th:value="${value.idCategory}" th:text="${value.nameCategory}"></option>
+        </select>
+      </div>
+      <div class="mb-3">
+        <button class="btn btn-primary" type="submit">Tạo mới</button>
+      </div>
+    </div>
+  </form>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+</body>
+</html>

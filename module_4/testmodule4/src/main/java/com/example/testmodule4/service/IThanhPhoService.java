@@ -14,4 +14,7 @@ public interface IThanhPhoService {
     void deleteCity(Integer idThanhPho);
 
     void addCity(ThanhPho thanhPho);
+
+
+    Page<ThanhPho> findByNameCityContaining(String nameCity, Pageable pageable);
 }

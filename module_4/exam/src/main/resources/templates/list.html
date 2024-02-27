@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Thi</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<header class="p-3 mb-3 border-bottom">
+  <div class="container">
+    <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+      <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+        <li><a href="{/}" class="nav-link px-2 link-secondary">Trang Chủ</a></li>
+      </ul>
+
+      <form action="/city/search" method="get" class="row g-2">
+        <div class="col-auto">
+          <label for="inputSearch" class="visually-hidden">Search</label>
+          <input type="text" class="form-control" id="inputSearch" name="nameSearch"
+                 placeholder="Tìm tên bài hát ">
+        </div>
+        <div class="col-auto">
+          <button type="submit" class="btn btn-primary mb-3">Tìm tên bài hát</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</header>
+<body>
+<!--message-->
+<div  th:if="message">
+  <span th:if="message"></span>
+</div>
+
+
+<div class="container">
+  <a class="btn btn-primary my-3" th:href="@{/song/create}" role="button">Thêm Mới bài hát</a>
+  <table class="table mt-3">
+    <thead>
+    <tr>
+      <th scope="col">STT</th>
+      <th scope="col">Mã bài hát</th>
+      <th scope="col">Tên bài hát</th>
+      <th scope="col">Thể loại</th>
+      <th scope="col">Tên tác giả</th>
+      <th scope="col">Ngày phát hành</th>
+      <th scope="col">Chức năng</th>
+<!--      <th scope="col" colspan="3">Chức năng</th>-->
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="song,loop:${songPage}">
+      <th th:text="${loop.count}" scope="row"></th>
+      <td th:text="${song.getCodeSong()}"></td>
+      <td th:text="${song.getNameSong()}"></td>
+      <td th:text="${song.getCategory().nameCategory}"></td>
+      <td th:text="${song.getNameAuthor()}"></td>
+      <td th:text="${song.getDateSong()}"></td>
+      <td>
+        <button th:attr="data-id-song= ${song.getIdSong()},data-name-song=${song.getNameSong()}"
+                onclick="btnDel(this.getAttribute('data-id-song'),this.getAttribute('data-name-song'))"
+                type="button" class="btn btn-danger"
+                data-bs-toggle="modal" data-bs-target="#exampleModal">
+          Xóa
+        </button>
+
+    </tr>
+    </tbody>
+  </table>
+  <!-- Pagination -->
+  <nav aria-label="Page navigation example">
+    <ul class="pagination justify-content-center">
+      <li th:if="${songPage.hasPrevious()}">
+        <a class="page-link" th:href="@{/song/list(page=${songPage.number - 1})}"> Trang trước</a>
+      </li>
+      <li th:if="${songPage.hasNext()}">
+        <a class="page-link" th:href="@{/song/list(page=${songPage.number + 1})}"> Trang sau</a>
+      </li>
+
+    </ul>
+  </nav>
+
+</div>
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Notification</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" id="modal-body-delete">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <a role="button" id="del-product" class="btn btn-danger">Corfirm</a>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+</body>
+</html>
