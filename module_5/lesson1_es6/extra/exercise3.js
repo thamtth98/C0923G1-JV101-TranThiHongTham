@@ -10,8 +10,8 @@ const sv2 = {
     degree: 'wewew',
     english: 'English'
 }
-let {firstName = "Quân",degree = "NA"} = sv1;
 let getInfo = (infoStudent)=>{
+    let {firstName = "Quân",degree = "NA"} = infoStudent ;
     let student = {firstName,degree};
     console.log(student);
 }
