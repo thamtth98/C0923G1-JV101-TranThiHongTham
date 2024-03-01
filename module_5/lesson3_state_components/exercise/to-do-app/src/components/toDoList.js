@@ -8,6 +8,7 @@ class ToDoList extends Component {
             item: ""
         }
     }
+
     handeChange = (event) => {
         this.setState({
             item: event.target.value,
@@ -26,7 +27,9 @@ class ToDoList extends Component {
                 <input value={this.state.item} onChange={this.handeChange}/>
                 <button onClick={this.handleAddItem}>Add</button>
                 {this.state.list.map(item => (
-                    <div>{item}</div>
+                    <ul key={item}>
+                        <li>{item}</li>
+                    </ul>
                 ))}
             </>
         )
