@@ -26,8 +26,8 @@ class ToDoList extends Component {
                 <h1>To Do List</h1>
                 <input value={this.state.item} onChange={this.handeChange}/>
                 <button onClick={this.handleAddItem}>Add</button>
-                {this.state.list.map(item => (
-                    <ul key={item}>
+                {this.state.list.map((item,index) => (
+                    <ul key={index}>
                         <li>{item}</li>
                     </ul>
                 ))}
