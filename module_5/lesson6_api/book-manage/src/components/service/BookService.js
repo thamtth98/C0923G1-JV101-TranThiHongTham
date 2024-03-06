@@ -29,7 +29,15 @@ export const getById = async (bookId)=>{
 }
 export const editBook = async (book) => {
     try {
-        await axios.put(`http://localhost:3001/bookList/${book.id}`,book);
+        await axios.put(`http://localhost:8080/bookList/${book.id}`,book);
+        return true;
+    } catch (e) {
+        return false;
+    }
+}
+export const delBook = async (book) => {
+    try {
+        await axios.delete(`http://localhost:8080/bookList/${book.id}`);
         return true;
     } catch (e) {
         return false;
