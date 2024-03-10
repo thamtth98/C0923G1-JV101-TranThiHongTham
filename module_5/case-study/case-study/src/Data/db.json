@@ -1,0 +1,152 @@
+{
+  "Villa": [
+    {
+      "id": 1,
+      "name": "Biệt Thự Biển 03 Phòng Ngủ",
+      "area": "300",
+      "rentalCosts": "4500000",
+      "maxPeople": "6",
+      "type": "date",
+      "roomStandards": "5",
+      "poolArea": "10",
+      "numberFloor": "2",
+      "otherAmenities": "Wifi miễn phí, Dịch vụ đưa đón",
+      "img": "https://furamavillasdanang.com/wp-content/uploads/2018/03/Three-Bedroom-Beachfront-1.jpg",
+      "detail": "Khám phá biệt thự 3 phòng ngủ tinh tế của chúng tôi nép mình giữa khung cảnh cây xanh tươi tốt và hồ bơi riêng. Với thời gian lưu trú 2 đêm được thiết kế cho 6 người, gói độc quyền của chúng tôi mang đến mức giá tốt nhất, đảm bảo bạn sẽ có một kỳ nghỉ khó quên."
+    },
+    {
+      "id": 2,
+      "name": "Biệt Thự Biển 04 Phòng Ngủ",
+      "area": "850",
+      "rentalCosts": "9500000",
+      "maxPeople": "10",
+      "type": "date",
+      "roomStandards": "5",
+      "poolArea": "50",
+      "numberFloor": "3",
+      "otherAmenities": "Wifi miễn phí, Dịch vụ đưa đón",
+      "img": "https://furamavillasdanang.com/wp-content/uploads/2018/03/Four-Bedroom-Beachfront-1.jpg",
+      "detail": "Biệt thự biển 04 phòng ngủ là hình ảnh thu nhỏ của sự sang trọng nhưng cũng không kém phần độc đáo trên bãi biển Đà Nẵng. Nép mình dọc theo bờ biển, những biệt thự này có nội thất rộng rãi, hồ bơi vô cực riêng và không gian sinh hoạt trong nhà-ngoài trời liền mạch."
+    },
+    {
+      "id": 3,
+      "name": "Biệt Thự Biển 03 Phòng Ngủ",
+      "area": "330",
+      "rentalCosts": "4900000",
+      "maxPeople": "8",
+      "type": "date",
+      "roomStandards": "5",
+      "poolArea": "12",
+      "numberFloor": "2",
+      "otherAmenities": "Wifi miễn phí, Dịch vụ đưa đón",
+      "img": "https://furamavillasdanang.com/wp-content/uploads/2018/03/Furama-One-Bedroom-Pool-Villa-01-1.jpg",
+      "detail": "Khám phá biệt thự 3 phòng ngủ tinh tế của chúng tôi nép mình giữa khung cảnh cây xanh tươi tốt và hồ bơi riêng"
+    },
+    {
+      "id": 4,
+      "name": "Biệt Thự Biển 02 Phòng Ngủ",
+      "area": "250",
+      "rentalCosts": "4000000",
+      "maxPeople": "5",
+      "type": "date",
+      "roomStandards": "5",
+      "poolArea": "8",
+      "numberFloor": "2",
+      "otherAmenities": "Wifi miễn phí, Dịch vụ đưa đón",
+      "img": "https://furamavillasdanang.com/wp-content/uploads/2018/03/Furama-Two-Bedroom-Pool-Villa-01.jpg",
+      "detail": "Furama Villas tận hưởng không gian xanh bao quanh với khu vườn nhiệt đới, hồ bơi Lagoon tươi mát và trang thiết bị nội thất đầy đủ."
+    },
+    {
+      "id": 5,
+      "name": "Biệt Thự Biển 03 Phòng Ngủ",
+      "area": "330",
+      "rentalCosts": "4500000",
+      "maxPeople": "5",
+      "type": "date",
+      "roomStandards": "5",
+      "poolArea": "8",
+      "numberFloor": "2",
+      "otherAmenities": "Wifi miễn phí, Dịch vụ đưa đón",
+      "img": "https://furamavillasdanang.com/wp-content/uploads/2018/03/Furama-Three-Bedroom-Pool-Villa-02.jpg",
+      "detail": "Biệt thự hồ bơi 3 phòng ngủ hướng vườn được trang bị nội thất sang trọng."
+    },
+    {
+      "id": 6,
+      "name": "Biệt Thự Biển 04 Phòng Ngủ",
+      "area": "850",
+      "rentalCosts": "10000000",
+      "maxPeople": "10",
+      "type": "date",
+      "roomStandards": "5",
+      "poolArea": "50",
+      "numberFloor": "3",
+      "otherAmenities": "Wifi miễn phí, Dịch vụ đưa đón",
+      "img": "https://furamavietnam.com/wp-content/uploads/2018/08/Vietnam_Danang_Furama_Villas_Pool_Villas-F-370x239.jpg",
+      "detail": "Biệt thự hồ bơi 4 phòng ngủ hướng vườn được trang bị nội thất sang trọng."
+    },
+    {
+      "name": "Biệt thự 3 phòng ngủ",
+      "area": "123",
+      "rentalCosts": "3000000",
+      "maxPeople": 5,
+      "type": "Ngày",
+      "roomStandards": 5,
+      "poolArea": "12",
+      "numberFloor": 2,
+      "otherAmenities": "Wifi",
+      "img": "https://furamavillasdanang.com/wp-content/uploads/2018/03/Three-Bedroom-Beachfront-5-1536x739.jpeg",
+      "detail": "hihi",
+      "id": 7
+    }
+  ],
+  "Customer": [
+    {
+      "id": 1,
+      "name": "Nguyễn Aâ",
+      "birthday": "2001-12-03",
+      "gender": "Nam",
+      "idCard": "1987654321",
+      "phoneNumber": "0905765432",
+      "email": "nguyenA@gmail.com",
+      "type": "Diamon",
+      "address": "Đà Nẵng"
+    },
+    {
+      "name": "Rose",
+      "birthday": "2024-03-09",
+      "gender": "Nam",
+      "idCard": "1234556778",
+      "phoneNumber": "0939393933",
+      "email": "minh@codegym.",
+      "type": "Member",
+      "address": "DN",
+      "id": 2
+    }
+  ],
+  "Employee": [
+    {
+      "id": 1,
+      "name": "Nguyễn Ân",
+      "birthday": "1998-12-12",
+      "idCard": "1999999999",
+      "phoneNumber": "0905123456",
+      "email": "nguyenAn@gmail.com",
+      "level": "University",
+      "position": "Director",
+      "parts": "Manage",
+      "salary": "27000000"
+    },
+    {
+      "name": "Thiên Ân",
+      "birthday": "1998-03-20",
+      "idCard": "98765334343",
+      "phoneNumber": "0939393933",
+      "email": "demo@minimals.cc",
+      "level": "University",
+      "position": "specialist",
+      "parts": "Sales – Marketing",
+      "salary": "1000000",
+      "id": 2
+    }
+  ]
+}

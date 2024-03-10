@@ -32,7 +32,6 @@ function ListBook(){
     return(
         <>
             <h3>Library</h3>
-
             <NavLink className="btn btn-primary" to={"/create"}>Add a new book</NavLink>
             <table className="table">
                 <thead>

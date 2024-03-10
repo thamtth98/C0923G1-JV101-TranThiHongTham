@@ -24,6 +24,7 @@ function CreateBook() {
     const handleAddBook = async (book) => {
         let isSuccess = await bookService.addBook(book);
         if(isSuccess) {
+            console.log("ok")
             toast.success("Thêm mới thành công")
             navigate("/")
         } else {
@@ -35,9 +36,7 @@ function CreateBook() {
             <h1>Add a new Book</h1>
             <Formik validationSchema={validation}
                 initialValues={initValue}
-                onSubmit={(book) => {
-                    handleAddBook(book)
-                }}>
+                onSubmit={handleAddBook}>
                 <Form>
                     <div className="mb-3">
                         <label htmlFor="name" className="form-label">Name</label>
