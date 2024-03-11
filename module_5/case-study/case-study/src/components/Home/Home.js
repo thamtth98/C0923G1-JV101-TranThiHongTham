@@ -11,7 +11,6 @@ function Home() {
         <>
             <Header/>
             <Body/>
-            <ControlledCarousel/>
             <Footer/>
         </>)
 };

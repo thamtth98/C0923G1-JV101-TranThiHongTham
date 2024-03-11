@@ -15,6 +15,7 @@ function Villa() {
         const villa = await villaService.getAllVilla();
         setVillaList(villa);
     }
+
     return (
         <>
             <Header/>

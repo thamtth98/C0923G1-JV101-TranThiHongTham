@@ -22,6 +22,10 @@ function Detail() {
         width: '100%',
         height: '500px',
     };
+    const formatCoat = (coatString) => {
+        const salary = parseInt(coatString);
+        return salary.toLocaleString('vi-VN') ;
+    };
     return (
         <>
             <Header/>
@@ -88,7 +92,7 @@ function Detail() {
                                         <li>Diện tích: {villaDetail.area} m<sup>2</sup></li>
                                         <li>Số lượng người: {villaDetail.maxPeople}</li>
 
-                                        <li>Giá thuê: {villaDetail.rentalCosts}/ngày</li>
+                                        <li>Giá thuê: {formatCoat(villaDetail.rentalCosts)}/ngày</li>
                                         <li>Diện tích hồ bơi: {villaDetail.poolArea} m<sup>2</sup></li>
                                         <li>Số tầng: {villaDetail.numberFloor}</li>
                                         <li>Dịch vụ khác: {villaDetail.otherAmenities}</li>

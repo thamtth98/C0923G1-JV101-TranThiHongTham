@@ -1,8 +1,15 @@
 import "./Body.css";
 import {Carousel} from "react-bootstrap";
 import React from "react";
+import {LinkTwoTone} from "@mui/icons-material";
+import {Link} from "react-router-dom";
 
 function Body() {
+    const imageStyle = {
+        width: '100%',
+        height: '700px',
+        padding: '28px'
+    };
 
     return (
         <>
@@ -127,179 +134,141 @@ function Body() {
                          style={{maxWidth: '500px'}}>
                         <h1 className="display-6">Các loại dịch vụ</h1>
                     </div>
-                    <div className="owl-carousel product-carousel wow fadeInUp" data-wow-delay="0.5s">
-                        <a href="" className="d-block product-item rounded">
-                            <Carousel>
-                                <Carousel.Item>
-                                    <img
-                                        className="d-block w-100"
-                                        src="https://furamavietnam.com/wp-content/uploads/2023/10/Furama_Resort-in-Danang-6-768x512.jpg"
-                                        alt="First slide"
-                                    />
-                                </Carousel.Item>
-                                <Carousel.Item>
-                                    <img
-                                        className="d-block w-100"
-                                        src="https://furamavietnam.com/wp-content/uploads/2023/11/Untitled-design-3-768x512.jpg"
-                                        alt="Second slide"
+                    {/*<div className="owl-carousel product-carousel wow fadeInUp" data-wow-delay="0.5s">*/}
+                    {/*    <a href="" className="d-block product-item rounded">*/}
+                    <Carousel>
+                        <Carousel.Item>
+                            <img
+                                className="d-block w-100"
+                                src="https://furamavietnam.com/wp-content/uploads/2023/11/Ariyana-Garden-tiec-cuoi-da-nang-3.jpg"
+                                alt="First slide"
+                                style={imageStyle}
 
+                            />
+                        </Carousel.Item>
+                        <Carousel.Item>
+                            <img
+                                className="d-block w-100"
+                                src="https://furamavietnam.com/wp-content/uploads/2023/11/Untitled-design-3-768x512.jpg"
+                                alt="Second slide"
+                                style={imageStyle}
 
-                                    />
-                                </Carousel.Item>
-                                <Carousel.Item>
-                                    <img
-                                        className="d-block w-100"
-                                        src="https://furamavietnam.com/wp-content/uploads/2024/02/Image-Culinary-Furama-resort-2-768x512.jpg"
-                                        alt="Third slide"
-                                    />
-                                </Carousel.Item>
-                                <Carousel.Item>
-                                    <img
-                                        className="d-block w-100"
-                                        src="https://furamavillasdanang.com/wp-content/uploads/2018/03/Three-Bedroom-Beachfront-5-1536x739.jpeg"
-                                        alt="Fourth slide"
-                                    />
-                                </Carousel.Item>
-                            </Carousel>
+                            />
+                        </Carousel.Item>
+                        <Carousel.Item>
+                            <img
+                                className="d-block w-100"
+                                src="https://furamavietnam.com/wp-content/uploads/2023/11/Furama-International-Convention-Palace-tiec-cuoi-da-nang-5.jpg"
+                                alt="Third slide"
+                                style={imageStyle}
+
+                            />
+                        </Carousel.Item>
+                        <Carousel.Item>
+                            <img
+                                className="d-block w-100"
+                                src="https://furamavietnam.com/wp-content/uploads/2023/10/Furama_Resort-in-Danang-7-768x512.jpg"
+                                alt="Fourth slide"
+                                style={imageStyle}
+                            />
+                        </Carousel.Item>
+                    </Carousel>
+                    <div className="bg-white shadow-sm text-center p-4 position-relative mt-n5 mx-4">
+
+                        <Link className="d-block product-item rounded">
+                            <img
+                                src="https://furamavietnam.com/wp-content/uploads/2023/11/Untitled-design-3-768x512.jpg"
+                                alt=""/>
                             <div className="bg-white shadow-sm text-center p-4 position-relative mt-n5 mx-4">
                                 <h4 className="text-primary">Ẩm thực</h4>
-                                <span className="text-body">Diam dolor diam ipsum sit diam amet diam et eos. Clita erat ipsum</span>
+                                <span className="text-body">Ẩm thực tại Furama Resort Đà Nẵng kết hợp một cách độc đáo giữa các món ăn truyền thống của Việt Nam và đa dạng hương vị ẩm thực từ Châu Á, Ý, và châu Âu.
+                                    Nhà hàng chính, Café Indochine, là điểm đến nổi tiếng với tiệc Buffet Chợ Hải Sản và những bữa trưa đậm chất Việt. Don Cipriani’s, với tinh túy ẩm thực Ý, cũng là lựa chọn không thể bỏ qua khi đến Furama Resort Đà Nẵng. Ngoài ra, Hải Vân Lounge là điểm đến tuyệt vời cho những thực khách yêu thích tiệc trà chiều, cocktails và các loại đồ uống đa dạng khác…
+                                </span>
                             </div>
-                        </a>
+                        </Link>
                         <a href="" className="d-block product-item rounded">
-                            <img src="img/service-1.webp" alt=""/>
+                            <img
+                                src="https://furamavietnam.com/wp-content/uploads/2023/11/Ariyana-Garden-tiec-cuoi-da-nang-3.jpg"
+                                alt="" width="65%"/>
                             <div className="bg-white shadow-sm text-center p-4 position-relative mt-n5 mx-4">
-                                <h4 className="text-primary">Black Tea</h4>
-                                <span className="text-body">Diam dolor diam ipsum sit diam amet diam et eos. Clita erat ipsum</span>
+                                <h4 className="text-primary">Tiệc cưới</h4>
+                                <span className="text-body">Với không gian bãi cỏ rộng rãi, hướng nhìn ra biển hay không gian bãi biển tuyệt đẹp thẳng tầm mắt hướng chân trời,… tạo nên khung cảnh tuyệt đẹp cho một lễ cưới đáng nhớ tại Quần thể du lịch Furama – Ariyana Đà Nẵng. Cô dâu chú rể có thể tùy thích lên ý tưởng với tông màu chủ đạo, hoa trang trí, sân khấu chính,… để ghi lại những dấu ấn cá nhân của từng cặp đôi.
+                                    Sau phần lễ cưới thơ mộng, tiệc tối thân mật trong không gian hội trường ấm cúng, sang trọng sẽ là điểm nhấn ấn tượng cho tất cả khách mời tham dự. Hãy viết nên câu chuyện tình yêu vĩnh cửu của bạn với khởi đầu hoàn hảo tại đây.</span>
                             </div>
                         </a>
-                        <a href="" className="d-block product-item rounded">
-                            <img src="img/service-3.jpg" alt=""/>
+                        <Link to={"/"} href="" className="d-block product-item rounded">
+                            <img src="https://furamavietnam.com/wp-content/uploads/2023/12/4.jpg" alt="" width="65%" height="500px"/>
                             <div className="bg-white shadow-sm text-center p-4 position-relative mt-n5 mx-4">
-                                <h4 className="text-primary">Spiced Tea</h4>
-                                <span className="text-body">Diam dolor diam ipsum sit diam amet diam et eos. Clita erat ipsum</span>
+                                <h4 className="text-primary">Spa</h4>
+                                <span className="text-body">Tọa lạc tại khu vườn nhiệt đới tuyệt đẹp hướng biển của “Ốc đảo xanh” Furama Resort Đà Nẵng, được văn hóa Chăm Pa thổi hồn trong từng nét kiến trúc. Hãy đến với V-senses Wellness & Spa để cùng đắm chìm vào khung cảnh bình yên, lắng nghe tiếng sóng vỗ về tâm hồn, cảm nhận sự thanh mát của thiên nhiên hòa vào từng nhịp thở, và hành trình tìm về sự tĩnh tại và khôi phục năng lượng sống chỉ mới bắt đầu…</span>
                             </div>
-                        </a>
-                        <a href="" className="d-block product-item rounded">
-                            <img src="img/service-3.jpg" alt=""/>
-                            <div className="bg-white shadow-sm text-center p-4 position-relative mt-n5 mx-4">
-                                <h4 className="text-primary">Organic Tea</h4>
-                                <span className="text-body">Diam dolor diam ipsum sit diam amet diam et eos. Clita erat ipsum</span>
-                            </div>
-                        </a>
+                        </Link>
                     </div>
                 </div>
             </div>
 
-            <div className="container-fluid px-0 mb-5 ">
-                <div id="carouselExampleInterval" className="carousel slide" data-bs-ride="carousel">
-                    <div className="carousel-inner">
-                        <div className="carousel-item active" data-bs-interval="10000">
-                            <img src="img/service-2.webp" className="d-block w-100" alt="..."/>
-                        </div>
-                        <div className="carousel-item" data-bs-interval="2000">
-                            <img src="img/service-2.webp" className="d-block w-100" alt="..."/>
-                        </div>
-                        <div className="carousel-item">
-                            <img src="img/service-1.webp" className="d-block w-100" alt="..."/>
-                        </div>
-                    </div>
-                    <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval"
-                            data-bs-slide="prev">
-                        <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span className="visually-hidden">Previous</span>
-                    </button>
-                    <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval"
-                            data-bs-slide="next">
-                        <span className="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span className="visually-hidden">Next</span>
-                    </button>
-                </div>
-            </div>
 
             {/*Villa*/}
             <div className="container-xxl py-5">
                 <div className="container">
                     <div className="section-title text-center mx-auto wow fadeInUp" data-wow-delay="0.1s"
                          style={{maxWidth: '500px'}}>
-                        <p className="fs-5 fw-medium fst-italic text-primary">Online Store</p>
-                        <h1 className="display-6">Want to stay healthy? Choose tea taste</h1>
+                        <h1 className="display-6">Lưu trú</h1>
                     </div>
                     <div className="row g-4">
                         <div className="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                             <div className="store-item position-relative text-center">
-                                <img className="img-fluid" src="img/store-product-1.jpg" alt=""/>
+                                <img className="img-fluid item-villa" src="https://furamavillasdanang.com/wp-content/uploads/2018/03/Three-Bedroom-Beachfront-5-1536x739.jpeg" alt=""/>
                                 <div className="p-4">
-                                    <div className="text-center mb-3">
-                                        <small className="fa fa-star text-primary"></small>
-                                        <small className="fa fa-star text-primary"></small>
-                                        <small className="fa fa-star text-primary"></small>
-                                        <small className="fa fa-star text-primary"></small>
-                                        <small className="fa fa-star text-primary"></small>
-                                    </div>
-                                    <h4 className="mb-3">Nature close tea</h4>
-                                    <p>Aliqu diam amet diam et eos. Clita erat ipsum lorem erat ipsum lorem sit
-                                        sed</p>
-                                    <h4 className="text-primary">$19.00</h4>
+
+                                    <h4 className="mb-3">Biệt thự 3 phòng ngủ</h4>
+                                    <p>Biệt thự hồ bơi 3 phòng ngủ hướng vườn được trang bị nội thất sang trọng.</p>
+                                    <h4 className="text-primary">Room Size: 330m<sup>2</sup></h4>
                                 </div>
                                 <div className="store-overlay">
-                                    <a href="" className="btn btn-primary rounded-pill py-2 px-4 m-2">More Detail <i
+                                    <a href="" className="btn btn-success rounded-pill py-2 px-4 m-2">Book Now <i
                                         className="fa fa-arrow-right ms-2"></i></a>
-                                    <a href="" className="btn btn-dark rounded-pill py-2 px-4 m-2">Add to Cart <i
+                                    <a href="" className="btn btn-dark rounded-pill py-2 px-4 m-2">More Detail<i
                                         className="fa fa-cart-plus ms-2"></i></a>
                                 </div>
                             </div>
                         </div>
                         <div className="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
                             <div className="store-item position-relative text-center">
-                                <img className="img-fluid" src="img/store-product-2.jpg" alt=""/>
+                                <img className="img-fluid item-villa" src="https://furamavietnam.com/wp-content/uploads/2018/08/Vietnam_Danang_Furama_Villas_Pool_Villas-F-370x239.jpg" alt=""/>
                                 <div className="p-4">
-                                    <div className="text-center mb-3">
-                                        <small className="fa fa-star text-primary"></small>
-                                        <small className="fa fa-star text-primary"></small>
-                                        <small className="fa fa-star text-primary"></small>
-                                        <small className="fa fa-star text-primary"></small>
-                                        <small className="fa fa-star text-primary"></small>
-                                    </div>
-                                    <h4 className="mb-3">Green tea tulsi</h4>
-                                    <p>Aliqu diam amet diam et eos. Clita erat ipsum lorem erat ipsum lorem sit
-                                        sed</p>
-                                    <h4 className="text-primary">$19.00</h4>
+
+                                    <h4 className="mb-3">Biệt thự 4 phòng ngủ</h4>
+                                    <p>Biệt thự hồ bơi 3 phòng ngủ hướng vườn được trang bị nội thất sang trọng.</p>
+                                    <h4 className="text-primary">Room Size: 850m<sup>2</sup></h4>
                                 </div>
                                 <div className="store-overlay">
-                                    <a href="" className="btn btn-primary rounded-pill py-2 px-4 m-2">More Detail <i
+                                    <a href="" className="btn btn-success rounded-pill py-2 px-4 m-2">Book Now <i
                                         className="fa fa-arrow-right ms-2"></i></a>
-                                    <a href="" className="btn btn-dark rounded-pill py-2 px-4 m-2">Add to Cart <i
+                                    <a href="" className="btn btn-dark rounded-pill py-2 px-4 m-2">More Detail<i
                                         className="fa fa-cart-plus ms-2"></i></a>
                                 </div>
                             </div>
                         </div>
                         <div className="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
                             <div className="store-item position-relative text-center">
-                                <img className="img-fluid" src="img/store-product-3.jpg" alt=""/>
+                                <img className="img-fluid item-villa" src="https://furamavillasdanang.com/wp-content/uploads/2018/03/Furama-Three-Bedroom-Pool-Villa-02.jpg" alt=""/>
                                 <div className="p-4">
-                                    <div className="text-center mb-3">
-                                        <small className="fa fa-star text-primary"></small>
-                                        <small className="fa fa-star text-primary"></small>
-                                        <small className="fa fa-star text-primary"></small>
-                                        <small className="fa fa-star text-primary"></small>
-                                        <small className="fa fa-star text-primary"></small>
-                                    </div>
-                                    <h4 className="mb-3">Instant tea premix</h4>
-                                    <p>Aliqu diam amet diam et eos. Clita erat ipsum lorem erat ipsum lorem sit
-                                        sed</p>
-                                    <h4 className="text-primary">$19.00</h4>
+
+                                    <h4 className="mb-3">Biệt thự 3 phòng ngủ</h4>
+                                    <p>Biệt thự hồ bơi 3 phòng ngủ hướng vườn được trang bị nội thất sang trọng.</p>
+                                    <h4 className="text-primary">Room Size: 330m<sup>2</sup></h4>
                                 </div>
                                 <div className="store-overlay">
-                                    <a href="" className="btn btn-primary rounded-pill py-2 px-4 m-2">More Detail <i
+                                    <a href="" className="btn btn-success rounded-pill py-2 px-4 m-2">Book Now <i
                                         className="fa fa-arrow-right ms-2"></i></a>
-                                    <a href="" className="btn btn-dark rounded-pill py-2 px-4 m-2">Add to Cart <i
+                                    <a href="" className="btn btn-dark rounded-pill py-2 px-4 m-2">More Detail<i
                                         className="fa fa-cart-plus ms-2"></i></a>
                                 </div>
                             </div>
                         </div>
                         <div className="col-12 text-center wow fadeInUp" data-wow-delay="0.1s">
-                            <a href="" className="btn btn-primary rounded-pill py-3 px-5">View More Products</a>
+                            <Link to={"/villa"} className="btn btn-success rounded-pill py-3 px-5">Xem thêm</Link>
                         </div>
                     </div>
                 </div>
