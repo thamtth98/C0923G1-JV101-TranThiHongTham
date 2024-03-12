@@ -1,0 +1,22 @@
+{
+  "SongList": [
+    {
+      "id": 1,
+      "name": "Tôi vui vẻ",
+      "type": {
+        "id": 1,
+        "name": "trữ tình"
+      }
+    }
+  ],
+  "Type": [
+    {
+      "id": 1,
+      "name": "trữ tình"
+    },
+    {
+      "id": 2,
+      "name": "balad"
+    }
+  ]
+}

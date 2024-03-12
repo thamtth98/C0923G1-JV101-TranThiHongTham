@@ -121,7 +121,9 @@
     vertical-align: middle;
     margin-left: 8px;
 }
-
+.img-logo{
+    height: 76px;
+}
 @media (max-width: 991.98px) {
     .navbar .navbar-brand {
         width: 126px;

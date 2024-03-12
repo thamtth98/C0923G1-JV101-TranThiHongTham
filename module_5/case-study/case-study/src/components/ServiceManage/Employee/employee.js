@@ -34,12 +34,14 @@ function Employee() {
         const salary = parseInt(salaryString);
         return salary.toLocaleString('vi-VN') ;
     };
+
     return (
         <>
             <Header/>
-            <div className="container-fluid page-header py-5 wow fadeIn" data-wow-delay="0.1s">
-                <div className="container text-center py-5">
-                    <h1 className="display-2 text-dark mb-4 animated slideInDown">Employee</h1>
+            <div>
+                <div>
+                    <img className="img-near-header" src="https://media-cdn-v2.laodong.vn/storage/newsportal/2018/12/22/648101/_MD48307.jpg?w=800&h=496&crop=auto&scale=both"
+                         height="600px" width="100%" style={{ filter: 'blur(1px)' }}/>
                 </div>
             </div>
 
@@ -84,7 +86,7 @@ function Employee() {
                                     <td>{item.parts}</td>
                                     <td>{formatSalary(item.salary)}</td>
                                     <td>
-                                        <Link to={`/employee/edit/${item.id}`}>Edit</Link>
+                                        <Link to={`/employee/edit/${item.id}`} className="btn btn-success">Edit</Link>
                                     </td>
                                     <td>
                                         <button className="btn btn-success"

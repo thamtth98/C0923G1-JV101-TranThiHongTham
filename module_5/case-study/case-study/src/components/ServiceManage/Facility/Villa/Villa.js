@@ -88,6 +88,7 @@ function Villa() {
                     </div>
                 </div>
             </div>
+            <Footer/>
         </>
     )
 }

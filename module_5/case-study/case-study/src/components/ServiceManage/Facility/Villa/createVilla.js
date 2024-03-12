@@ -5,15 +5,13 @@ import {ErrorMessage, Field, Form, Formik} from "formik";
 import * as villaService from "../../../../ServiceOfCode/VillaService"
 import {useNavigate} from "react-router-dom";
 import {toast} from "react-toastify";
+import * as Yup from "yup";
 
 function CreateVilla(){
 
     const [villa,setVilla] = useState({});
     const navigate = useNavigate();
 
-    const validation = () =>{
-
-    }
     const initValue = {
             "name": "",
             "area": "",
@@ -32,6 +30,25 @@ function CreateVilla(){
         navigate("/villa");
         toast.success("Thêm thành công!!")
     }
+    const validation = Yup.object({
+        name: Yup.string()
+            .required("Trường này không được để trống")
+        .matches(/^[^\d]+$/, "Tên dịch vụ không được chứa số"),
+        area: Yup.string().required("Trường này không được để trống"),
+        rentalCosts: Yup.string()
+            .required("Trường này không được để trống"),
+        maxPeople: Yup.string()
+            .required("Trường này không được để trống")
+        ,
+        type: Yup.string()
+            .required("Trường này không được để trống"),
+        roomStandards: Yup.string().required("Trường này không được để trống"),
+        poolArea: Yup.number().integer().positive().required("Diện tích hồ bơi là bắt buộc và phải là số nguyên dương")
+            .required("Trường này không được để trống"),
+        numberFloor: Yup.number().integer().positive().required("Diện tích hồ bơi là bắt buộc và phải là số nguyên dương"),       otherAmenities: Yup.string().required("Trường này không được để trống"),
+        img: Yup.string().required("Trường này không được để trống"),
+        detail: Yup.string().required("Trường này không được để trống")
+    })
     return(
         <>
             <Header/>
@@ -49,7 +66,7 @@ function CreateVilla(){
                         <h1>Thêm mới Villa</h1>
                         <Formik
                             onSubmit={handleSubmit}
-                            // validationSchema={validation}
+                            validationSchema={validation}
                             initialValues={initValue}
                         >
 
@@ -116,7 +133,7 @@ function CreateVilla(){
                                 <div className="row mb-3">
                                     <label htmlFor="poolArea" className="col-sm-2 col-form-label">Diện tích hồ bơi</label>
                                     <div className="col-sm-10">
-                                        <Field type="text" className="form-control" id="poolArea" name="poolArea"/>
+                                        <Field type="number" className="form-control" id="poolArea" name="poolArea"/>
                                         <ErrorMessage name="poolArea"/>
                                     </div>
                                 </div>

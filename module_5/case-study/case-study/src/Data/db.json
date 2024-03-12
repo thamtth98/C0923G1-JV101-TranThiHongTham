@@ -148,5 +148,15 @@
       "salary": "1000000",
       "id": 2
     }
+  ],
+  "Contract": [
+    {
+      "id": 1,
+      "numberContract": "HĐ-0001/11/23",
+      "dateStart": "01-11-2023",
+      "dateEnd": "08-11-2023",
+      "deposit": 12000000,
+      "totalCoat": 31500000
+    }
   ]
 }

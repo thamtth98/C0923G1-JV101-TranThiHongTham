@@ -15,6 +15,7 @@ import Villa from "./components/ServiceManage/Facility/Villa/Villa";
 import Detail from "./components/ServiceManage/Facility/Villa/detail";
 import CreateVilla from "./components/ServiceManage/Facility/Villa/createVilla";
 import EditVilla from "./components/ServiceManage/Facility/Villa/editVilla";
+import Contract from "./components/ServiceManage/Contract/contract";
 
 
 
@@ -35,6 +36,8 @@ function App() {
                    <Route path={"/employee"} element={<Employee/>}></Route>
                    <Route path={"/employee/create"} element={<CreateEmployee/>}></Route>
                    <Route path={"/employee/edit/:employeeId"} element={<EditEmployee/>}></Route>
+                   <Route path={"/contract"} element={<Contract/>}></Route>
+
                </Routes>
            </BrowserRouter>
             <ToastContainer></ToastContainer>

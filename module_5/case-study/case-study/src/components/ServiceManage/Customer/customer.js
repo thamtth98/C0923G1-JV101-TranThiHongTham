@@ -39,9 +39,10 @@ function Customer() {
         <>
 
             <Header/>
-            <div className="container-fluid page-header py-5 wow fadeIn" data-wow-delay="0.1s">
-                <div className="container text-center py-5">
-                    <h1 className="display-2 text-dark mb-4 animated slideInDown">Customer</h1>
+            <div>
+                <div>
+                    <img src="https://media.licdn.com/dms/image/C4D12AQEUyFaR1oBs0g/article-inline_image-shrink_1000_1488/0/1544170696542?e=1712188800&v=beta&t=yIrhab5Tuw1fYuVkmGDehFiX2h43wx51Yhca5levZ0w"
+                         height="500px" width="100%"/>
                 </div>
             </div>
 
@@ -83,7 +84,7 @@ function Customer() {
                                     <td>{item.type}</td>
                                     <td>{item.address}</td>
                                     <td>
-                                        <Link to={`/customer/editCustomer/${item.id}`}>Edit</Link>
+                                        <Link to={`/customer/editCustomer/${item.id}`} className="btn btn-success">Edit</Link>
                                     </td>
                                     <td>
                                         <button className="btn btn-success" onClick={() => openModal(item)}>Delete

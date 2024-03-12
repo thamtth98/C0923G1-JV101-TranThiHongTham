@@ -14,7 +14,7 @@ function Header(){
                 <div className="container">
                     <nav className="navbar navbar-expand-lg bg-white navbar-light py-2 py-lg-0">
                         <Link to={"/"} className="navbar-brand">
-                            <img className="img-fluid" src="img/logo.png" alt="Logo"/>
+                            <img className="img-fluid img-logo" src="img/logo.png" alt="Logo" />
                         </Link>
                         <button type="button" className="navbar-toggler ms-auto me-0" data-bs-toggle="collapse"
                                 data-bs-target="#navbarCollapse">
@@ -40,13 +40,12 @@ function Header(){
                                     <a href="#" className="nav-link "
                                        data-bs-toggle="dropdown">Quản lý Resort <KeyboardArrowDownIcon/></a>
                                     <div className="dropdown-menu bg-light rounded-0 m-0">
-                                        <Link to={"/service"} className="dropdown-item">Dịch vụ</Link>
                                         <Link to={"/employee"} className="dropdown-item">Nhân viên</Link>
                                         <Link to={"/customer"} className="dropdown-item">Khách hàng</Link>
-                                        <a href="404.html" className="dropdown-item">Hợp đồng thuê</a>
+                                        <Link to={"/contract"} className="dropdown-item">Hợp đồng thuê</Link>
                                     </div>
                                 </div>
-                                <a href="contact.html" className="nav-item nav-link">Liên hệ</a>
+                                <a href="" className="nav-item nav-link">Liên hệ</a>
                             </div>
                             <div className="border-start ps-4 d-none d-lg-block">
                                 <button type="button" className="btn btn-sm p-0"><i className="fa fa-search"></i>

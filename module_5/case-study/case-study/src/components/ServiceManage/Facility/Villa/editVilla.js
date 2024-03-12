@@ -6,6 +6,7 @@ import {useNavigate, useParams} from "react-router-dom";
 import * as villaService from "../../../../ServiceOfCode/VillaService";
 import {editVilla} from "../../../../ServiceOfCode/VillaService";
 import {toast} from "react-toastify";
+import * as Yup from "yup";
 
 function EditVilla() {
 
@@ -28,6 +29,25 @@ function EditVilla() {
         navigate("/villa")
 
     }
+    const validation = Yup.object({
+        name: Yup.string()
+            .required("Trường này không được để trống")
+            .matches(/^[^\d]+$/, "Tên dịch vụ không được chứa số"),
+        area: Yup.string().required("Trường này không được để trống"),
+        rentalCosts: Yup.string()
+            .required("Trường này không được để trống"),
+        maxPeople: Yup.string()
+            .required("Trường này không được để trống")
+        ,
+        type: Yup.string()
+            .required("Trường này không được để trống"),
+        roomStandards: Yup.string().required("Trường này không được để trống"),
+        poolArea: Yup.number().integer().positive().required("Diện tích hồ bơi là bắt buộc và phải là số nguyên dương")
+            .required("Trường này không được để trống"),
+        numberFloor: Yup.number().integer().positive().required("Diện tích hồ bơi là bắt buộc và phải là số nguyên dương"),       otherAmenities: Yup.string().required("Trường này không được để trống"),
+        img: Yup.string().required("Trường này không được để trống"),
+        detail: Yup.string().required("Trường này không được để trống")
+    })
     if (!villaEdit) {
         return <>Không có gì</>;
     } else {
@@ -48,7 +68,7 @@ function EditVilla() {
                             <h1>Chỉnh sửa Villa</h1>
                             <Formik
                                 onSubmit={handleSubmit}
-                                // validationSchema={validation}
+                                validationSchema={validation}
                                 initialValues={villaEdit}
                             >
 
