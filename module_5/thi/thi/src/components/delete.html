@@ -1,0 +1,22 @@
+import {Button, Modal} from "react-bootstrap";
+import * as songService from "../service/songService";
+
+function Delete({isShow,closeModal,songDel}){
+
+    return(
+        <>
+            <Modal >
+                <Modal.Header>
+                    Xóa
+                </Modal.Header>
+                <Modal.Body>
+                    Bạn có muốn xoá  không?
+                </Modal.Body>
+                <Modal.Footer>
+                    <Button >Xóa</Button>
+                    <Button >Không</Button>
+                </Modal.Footer>
+            </Modal>
+        </>
+    )
+}export default Delete;

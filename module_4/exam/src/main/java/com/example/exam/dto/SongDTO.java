@@ -11,79 +11,80 @@ import org.springframework.validation.annotation.Validated;
 import java.time.LocalDate;
 
 public class SongDTO {
-    private Integer idSongDTO;
+    private Integer idSong;
     @NotNull
     private String codeSong;
     @NotNull
     @Size(min = 1,max = 80)
-    private String nameSongDTO;
+    private String nameSong;
     @NotNull
-    private String nameAuthorDTO;
+    private String nameAuthor;
     @NotNull
-    private LocalDate dateSongDTO;
+    private LocalDate dateSong;
     @NotNull
-    private String detailSongDTO;
+    private String detailSong;
     private Category category;
 
-    public SongDTO(Integer idSongDTO, String codeSongDTO, String nameSongDTO, String nameAuthorDTO, LocalDate dateSongDTO, String detailSongDTO, Category category) {
-        this.idSongDTO = idSongDTO;
-        this.codeSong = codeSongDTO;
-        this.nameSongDTO = nameSongDTO;
-        this.nameAuthorDTO = nameAuthorDTO;
-        this.dateSongDTO = dateSongDTO;
-        this.detailSongDTO = detailSongDTO;
+
+    public SongDTO(Integer idSong, String codeSong, String nameSong, String nameAuthor, LocalDate dateSong, String detailSong, Category category) {
+        this.idSong = idSong;
+        this.codeSong = codeSong;
+        this.nameSong = nameSong;
+        this.nameAuthor = nameAuthor;
+        this.dateSong = dateSong;
+        this.detailSong = detailSong;
         this.category = category;
     }
 
     public SongDTO() {
     }
 
-    public Integer getIdSongDTO() {
-        return idSongDTO;
+    public Integer getIdSong() {
+        return idSong;
     }
 
-    public void setIdSongDTO(Integer idSongDTO) {
-        this.idSongDTO = idSongDTO;
+    public void setIdSong(Integer idSong) {
+        this.idSong = idSong;
     }
 
     public String getCodeSong() {
         return codeSong;
     }
 
-    public void setCodeSong(String codeSongDTO) {
-        this.codeSong = codeSongDTO;
+    public void setCodeSong(String codeSong) {
+        this.codeSong = codeSong;
     }
 
-    public String getNameSongDTO() {
-        return nameSongDTO;
+    public String getNameSong() {
+        return nameSong;
     }
 
-    public void setNameSongDTO(String nameSongDTO) {
-        this.nameSongDTO = nameSongDTO;
+    public void setNameSong(String nameSong) {
+        this.nameSong = nameSong;
     }
 
-    public String getNameAuthorDTO() {
-        return nameAuthorDTO;
+    public String getNameAuthor() {
+        return nameAuthor;
     }
 
-    public void setNameAuthorDTO(String nameAuthorDTO) {
-        this.nameAuthorDTO = nameAuthorDTO;
+    public void setNameAuthor(String nameAuthor) {
+        this.nameAuthor = nameAuthor;
     }
 
-    public LocalDate getDateSongDTO() {
-        return dateSongDTO;
+    public LocalDate getDateSong() {
+        return dateSong;
     }
 
-    public void setDateSongDTO(LocalDate dateSongDTO) {
-        this.dateSongDTO = dateSongDTO;
+    public void setDateSong(LocalDate dateSong) {
+        this.dateSong = dateSong;
     }
 
-    public String getDetailSongDTO() {
-        return detailSongDTO;
+    public String getDetailSong() {
+        return detailSong;
     }
 
-    public void setDetailSongDTO(String detailSongDTO) {
-        this.detailSongDTO = detailSongDTO;
+    public void setDetailSong(String detailSong) {
+        this.detailSong = detailSong;
     }
 
     public Category getCategory() {

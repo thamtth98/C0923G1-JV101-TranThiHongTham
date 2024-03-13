@@ -1,63 +1,78 @@
-import {useEffect, useState} from "react";
-import * as songService from "../service/songService";
 import {Link} from "react-router-dom";
-import Delete from "./delete";
+import {useEffect, useState} from "react";
+import * as bookService from "../service/bookService"
 
 function Home() {
-    const [songList, setSongList] = useState([]);
-
-    const getAllSong = async () => {
-        const res = await songService.getAll();
-        setSongList(res);
-    }
-
-    //delete
-    const [isShow, setIsShow] = useState(false);
-    const [songDel, setSongDel] = useState({});
-    const openModal = (item) => {
-        console.log("2")
-        setIsShow(true);
-        setSongDel(item);
-    }
-    const closeModal = () => {
-        setIsShow(false);
-    }
+    const [bookList, setBookList] = useState([]);
     useEffect(() => {
-        getAllSong()
-    }, [isShow])
+        getAllBook();
+    }, []);
+    const getAllBook = async () => {
+        try {
+            const res = await bookService.getAllBook();
+            setBookList(res);
+        } catch (e) {
+            console.log(e)
+        }
+
+    }
+    const convertDate = (stringDate) => {
+        const [year, month, day] = stringDate.split("-");
+        return `${day}/${month}/${year}`;
+    }
+    const [searchItem, setSearchItem] = useState();
+    const [searchFilter,setSearchFilter] = useState();
+
+    // useEffect(()=>{
+    //     if(searchItem != ""){
+    //         setSearchItem(searchItem)
+    //     }
+    // },[searchItem],[bookList])
+
+    // const handleSub = ()=>{
+    //     if(searchItem ===""){
+    //         setSearchFilter(bookList)
+    //     }else {
+    //     }
+    // }
     return (
         <>
-            <Link to={"/create"} className="btn btn-success m-2">Add new</Link>
+            <Link className="btn btn-success m-2" to={"/create"}>Add new</Link>
+            <div>
+                <input type="text" name="name"
+                       // value={searchItem} onChange={()=>setSearchItem(searchItem)}
+                />
+                <button className="btn btn-primary" type="submit" >Search</button>
+            </div>
             <table className="table table-striped m-5">
                 <thead>
                 <tr>
                     <th scope="col">#</th>
+                    <th scope="col">Code</th>
                     <th scope="col">Name</th>
-                    <th scope="col">Author</th>
                     <th scope="col">Date</th>
-                    <th scope="col">Category</th>
-                    <th scope="col" colSpan="2">Action</th>
+                    <th scope="col">Quantity</th>
+                    <th scope="col">Type</th>
                 </tr>
                 </thead>
                 <tbody>
-                {songList.map((item, index) => (
-                    <tr>
-                        <td>#</td>
+                {bookList.map((item, index) => (
+                    <tr key={item.id}>
+                        <td>{index + 1}</td>
+                        <td>{item.idDisplay}</td>
                         <td>{item.name}</td>
+                        <td>{convertDate(item.date)}</td>
+                        <td>{item.quantity}</td>
                         <td>{item.type.name}</td>
-                        <td>3</td>
-                        <td>4</td>
                         {/*<td><Link to= className="btn btn-success">Edit</Link></td>*/}
-                        <td><button to={`/delete/${item.id}`} className="btn btn-success" onClick={()=>{openModal(item)}}>Delete</button></td>
+                        {/*<td><button className="btn btn-success" }>Delete</button></td>*/}
                     </tr>
                 ))}
-
                 </tbody>
             </table>
-            <Delete isShow={isShow} closeModal={closeModal} songDel={songDel}></Delete>
+
         </>
     )
-
 }
 
 export default Home;

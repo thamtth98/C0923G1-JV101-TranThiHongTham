@@ -1,22 +1,95 @@
 {
-  "SongList": [
-    {
-      "id": 1,
-      "name": "Tôi vui vẻ",
-      "type": {
-        "id": 1,
-        "name": "trữ tình"
-      }
-    }
-  ],
   "Type": [
     {
       "id": 1,
-      "name": "trữ tình"
+      "name": "văn học"
     },
     {
       "id": 2,
-      "name": "balad"
+      "name": "tiểu thuyết"
+    },
+    {
+      "id": 3,
+      "name": "trinh thám"
+    }
+  ],
+  "Books": [
+    {
+      "id": 1,
+      "idDisplay": "BO-0001",
+      "name": "Tôi đi tìm tôi",
+      "date": "2022-02-19",
+      "quantity": 12,
+      "type": {
+        "id": 1,
+        "name": "văn học"
+      }
+    },
+    {
+      "id": 2,
+      "idDisplay": "BO-0002",
+      "name": "Muốn an được an",
+      "date": "2022-02-16",
+      "quantity": 10,
+      "type": {
+        "id": 2,
+        "name": "tiểu thuyết"
+      }
+    },
+    {
+      "idDisplay": "BO-0009",
+      "name": "Rose",
+      "date": "2023-02-23",
+      "quantity": 10,
+      "type": {
+        "id": 2,
+        "name": "tiểu thuyết"
+      },
+      "id": 3
+    },
+    {
+      "idDisplay": "BO-0010",
+      "name": "tui",
+      "date": "2022-02-16",
+      "quantity": 12,
+      "type": {
+        "id": 3,
+        "name": "trinh thám"
+      },
+      "id": 4
+    },
+    {
+      "idDisplay": "BO-0100",
+      "name": "R",
+      "date": "2024-02-13",
+      "quantity": 12,
+      "type": {
+        "id": 2,
+        "name": "tiểu thuyết"
+      },
+      "id": 5
+    },
+    {
+      "idDisplay": "BO-0016",
+      "name": "Rose",
+      "date": "2023-12-12",
+      "quantity": 12,
+      "type": {
+        "id": 3,
+        "name": "trinh thám"
+      },
+      "id": 6
+    },
+    {
+      "idDisplay": "BO-0019",
+      "name": "Rose",
+      "date": "2022-03-12",
+      "quantity": 12,
+      "type": {
+        "id": 3,
+        "name": "trinh thám"
+      },
+      "id": 7
     }
   ]
 }
